@@ -1,4 +1,4 @@
-// XERCÍCIO DE INTERPRETAÇÃO
+// EXERCÍCIO DE INTERPRETAÇÃO
 
 /* Exercício 1
 let a = 10
@@ -55,7 +55,7 @@ let perguntaAgua = "Bebeu água hoje?"
 let beberAgua = prompt(perguntaAgua);
 
 let perguntaAlmoco = "Já almoçou?"; 
-let respostaAlmoco = prompt(perguntaAlmoco);
+let almocoDia = prompt(perguntaAlmoco);
 
 console.log(perguntaClima, climaDia);
 console.log(perguntaAgua, beberAgua);
