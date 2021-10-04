@@ -48,13 +48,18 @@ console.log("Olá", nome, "você tem", idade, "anos.");
 
 // Exercício 2
 
-let climaDia = prompt("Hoje está fazendo sol?");
-let beberAgua = prompt("Bebeu água hoje?");
-let almocoDia = prompt("Já almoçou?");
+let perguntaClima = "Hoje está fazendo sol?";
+let climaDia = prompt(perguntaClima);
 
-console.log("Hoje está fazendo sol?", climaDia);
-console.log("Bebeu água hoje?", beberAgua);
-console.log("Já almoçou?", almocoDia);
+let perguntaAgua = "Bebeu água hoje?"
+let beberAgua = prompt(perguntaAgua);
+
+let perguntaAlmoco = "Já almoçou?"; 
+let respostaAlmoco = prompt(perguntaAlmoco);
+
+console.log(perguntaClima, climaDia);
+console.log(perguntaAgua, beberAgua);
+console.log(perguntaAlmoco, almocoDia);
 
 // Exercício 3
 
