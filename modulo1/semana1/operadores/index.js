@@ -119,3 +119,18 @@ console.log(grausCelsius + "°C em graus Fahrenheit são " + grausFahrenheit + "
 grausCelsius = Number(prompt("Informe a temperatura em graus Celsius que deseja converter para Fahrenheit"));
 grausFahrenheit = (grausCelsius)*(9/5) + 32;
 console.log(grausCelsius + "°C em graus Fahrenheit são " + grausFahrenheit + "°F");
+
+// Desafio 2
+
+let kwHora = 280;
+let valorKwh = 0.05
+let consumoKwh = kwHora * valorKwh;
+let desconto = 15/100;
+let consumoComDesconto = (kwHora * valorKwh) * desconto;
+
+
+//letra a
+console.log(consumoKwh);
+
+//letra b
+console.log(consumoKwh - consumoComDesconto);
