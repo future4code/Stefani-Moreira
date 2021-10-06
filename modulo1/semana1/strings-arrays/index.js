@@ -90,4 +90,4 @@ const arrayFrutas = ["Banana", "Morango", "Abacaxi", "Laranja", "Ameixa"];
 const acharIndice = arrayFrutas.indexOf("Abacaxi");
 
 console.log(`Índice: ${acharIndice};
-Tamanho do array: ${arrayFrutas[acharIndice].length}.`);
+Tamanho do array: ${arrayFrutas.length}.`);
