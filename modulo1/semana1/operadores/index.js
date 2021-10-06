@@ -126,11 +126,47 @@ let kwHora = 280;
 let valorKwh = 0.05
 let consumoKwh = kwHora * valorKwh;
 let desconto = 15/100;
-let consumoComDesconto = (kwHora * valorKwh) * desconto;
-
+let consumoComDesconto = consumoKwh * desconto;
 
 //letra a
 console.log(consumoKwh);
 
 //letra b
 console.log(consumoKwh - consumoComDesconto);
+
+// Desafio 3
+
+//letra a
+let libras = 20;
+let librasKg = libras / 2.205;
+console.log(libras + "lb equivalem a " + librasKg + "kg.");
+
+//letra b
+const oncas = 10.5;
+const oncasKg = oncas / 35.274;
+console.log(oncas + "oz equivalem a " + oncasKg + "kg.");
+
+//letra c
+const milhas = 100;
+const milhasMetro = milhas * 1609;
+console.log(milhas + "mi equivalem a " + milhasMetro + "m.");
+
+//letra d
+const pes = 50;
+const pesMetro = pes / 3.281;
+console.log(pes + "ft equivalem a " + pesMetro + "m.");
+
+//letra e
+const galao = 103.56;
+const galaoLitro = galao * 3.785;
+console.log(galao + "gal equivalem a " + galaoLitro + "l.");
+
+//letra f
+const xicara = 450;
+const xicaraLitro = xicara / 4.167;
+console.log(xicara + "xic equivalem a " + xicaraLitro + "l.");
+
+//letra g
+libras = Number(prompt("Informe a medida em libras:"));
+librasParaKg = libras / 2.205;
+console.log(libras + "lb equivalem a " + librasParaKg + "kg.");
