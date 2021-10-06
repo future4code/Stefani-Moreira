@@ -51,9 +51,7 @@ ${comidasFavoritas[3]};
 ${comidasFavoritas[4]}.`);
 
 //letra c
-let indiceComida = 1;
-const comidaFavoritaUsuario = prompt("Informe sua comida favorita");
-comidasFavoritas[indiceComida] = comidaFavoritaUsuario;
+const comidasFavoritas[1] = prompt("Informe sua comida favorita");
 console.log(comidasFavoritas)
 
 // Exercício 3
@@ -62,16 +60,19 @@ console.log(comidasFavoritas)
 let listaDeTarefas = [];
 
 //letra b
-listaDeTarefas.push(prompt("Informe 3 tarefas a serem realizadas hoje: 1ª tarefa -"), prompt("2ª tarefa -"), prompt("3ª tarefa -"));
+listaDeTarefas.push(prompt(`Informe 3 tarefas a serem realizadas hoje: 
+1ª tarefa -`), 
+prompt(`2ª tarefa -`), 
+prompt(`3ª tarefa -`));
 
 //letra c
 console.log(listaDeTarefas);
 
 //letra d
-const indiceTarefas = prompt("Informe de 1 - 3 a tarefa já realizada:") - 1;
+const tarefasFeitas = prompt("Informe de 1 - 3 a tarefa já realizada:") - 1;
 
 //letra e
-listaDeTarefas.splice(indiceTarefas, 1);
+listaDeTarefas.splice(tarefasFeitas, 1);
 
 //letra f
 console.log(listaDeTarefas);
