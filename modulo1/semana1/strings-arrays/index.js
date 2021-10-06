@@ -51,7 +51,7 @@ ${comidasFavoritas[3]};
 ${comidasFavoritas[4]}.`);
 
 //letra c
-const comidasFavoritas[1] = prompt("Informe sua comida favorita");
+comidasFavoritas[1] = prompt("Informe sua comida favorita");
 console.log(comidasFavoritas)
 
 // Exercício 3
