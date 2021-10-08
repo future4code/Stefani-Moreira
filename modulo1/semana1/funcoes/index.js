@@ -55,7 +55,7 @@ console.log(exibirInfosUsuario("Stefani", 22, "Salvador", "estudante"));
 
 // letra a - função que recebe dois numeros como parâmetros, faz a soma entre eles e retorna o resultado. Ao final imprime o resultado.
 
-function somarDoisNumeros (numero1, numero2) {
+function somarDoisNumeros(numero1, numero2) {
 
     const somaEntreNumeros = Number(numero1) + Number(numero2);
 
@@ -66,7 +66,7 @@ console.log(somarDoisNumeros(2, 5));
 
 //letra b - função que recebe dois parâmetros, faz a comparaçâo de maior ou igual entre eles e retorna o boolean dessa comparação. Ao final imprime o retorno.
 
-function compararNumeros (numero1, numero2) {
+function compararNumeros(numero1, numero2) {
 
     const maiorOuIgual = numero1 >= numero2;
 
@@ -77,7 +77,7 @@ console.log(compararNumeros(4, 5));
 
 //letra c - função que tem como parâmetro um número, verifica se é par e retorna o boolean dessa verificação. Ao final imprime o retorno.
 
-function verificarNumeroPar (numero1) {
+function verificarNumeroPar(numero1) {
 
     const numeroPar = numero1 % 2 === 0;
 
@@ -88,7 +88,7 @@ console.log(verificarNumeroPar(6));
 
 //letra d - função que tem como parâmetro uma mensagem, verifica o tamanho dessa mensagem e apresenta sua versão totalmente em maiúsculo. Ao final imprime os comandos.
 
-function modificarMensagem (mensagem) {
+function modificarMensagem(mensagem) {
 
     console.log(mensagem.length)
     console.log(mensagem.toUpperCase());
