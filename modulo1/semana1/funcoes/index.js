@@ -30,7 +30,7 @@ b) True. True. True.
 
 // Exercício 1
 
-//letra a - função sem parâmetro que imprime uma mensagem sobre "você".
+//letra a - função sem parâmetro que imprime uma mensagem sobre mim.
 
 function exibirMinhasInfos() {
 
@@ -86,19 +86,19 @@ function verificarNumeroPar (numero1) {
 
 console.log(verificarNumeroPar(6));
 
-//letra d - função que tem como parâmetro uma mensagem, em que retorna um array que verifica o tamanho dessa mensagem e apresenta sua versão totalmente em maiúsculo. Ao final imprime o retorno dos comandos.
+//letra d - função que tem como parâmetro uma mensagem, verifica o tamanho dessa mensagem e apresenta sua versão totalmente em maiúsculo. Ao final imprime os comandos.
 
 function modificarMensagem (mensagem) {
 
-    return [mensagem.length, mensagem.toUpperCase()];
+    console.log(mensagem.length)
+    console.log(mensagem.toUpperCase());
 }
 
-console.log(modificarMensagem("Hoje está fazendo sol."))
+modificarMensagem("Hoje está fazendo sol.")
 
 // Exercício 3
 
 // letra a - função operações apresenta duas variáveis que recebem seu valor através do prompt, tem 4 outras funções: somar, subtrair, multiplicar e dividir e retorna o valor dessas operações. Ao final imprime esses valores.
-
 
 function operacoes() {
 
