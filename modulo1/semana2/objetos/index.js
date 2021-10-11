@@ -69,8 +69,8 @@ const pessoa = {
     apelidos: ["Tef", "Steh", "Teté"]
 };
 
-function exibirInfosPessoa(pessoa) {
-    return `Eu sou ${pessoa.nome}, mas pode me chamar de: ${pessoa.apelidos[0]}, ${pessoa.apelidos[1]} ou ${pessoa.apelidos[2]}`
+function exibirInfosPessoa(parametro) {
+    return `Eu sou ${parametro.nome}, mas pode me chamar de: ${parametro.apelidos[0]}, ${parametro.apelidos[1]} ou ${parametro.apelidos[2]}`
 };
 
 console.log(exibirInfosPessoa(pessoa));
@@ -103,12 +103,12 @@ const amigoPessoa = {
 
 //letra b - função em que recebe os valores os objetos novaPessoa e amigoPessoa e retorna um array com as informações e o tamanho das chaves nome e profissão. Ao final imprime o retorno.
 
-function infosPessoaEAmigo (novaPessoa, amigoPessoa) {
-    return [novaPessoa.nome, novaPessoa.nome.length, novaPessoa.idade, novaPessoa.profissão,novaPessoa.profissão.length, 
-            amigoPessoa.nome, amigoPessoa.nome.length, amigoPessoa.idade, amigoPessoa.profissão, amigoPessoa.profissão.length];
+function infosPessoa (parametro) {
+    return [parametro.nome, parametro.nome.length, parametro.idade, parametro.profissão, parametro.profissão.length];
 }
 
-console.log(infosPessoaEAmigo(novaPessoa, amigoPessoa));
+console.log(infosPessoa(novaPessoa));
+console.log(infosPessoa(amigoPessoa));
 
 // Exercício 3
 
@@ -146,17 +146,24 @@ console.log(carrinho);
 
 /********************************************** DESAFIO **********************************************/
 
-//Desafio 1 - objeto que recebe como propriedades o nome, a idade e a profissão do usuário. Ao final imprime as informações recebidas e o tipo da variável infoUsuario.
+//Desafio 1 - função em que recebe nome, idade e profissão do usuário e tem objeto que recebe como valor essas variáveis. Ao final imprime as informações recebidas e o tipo da variável imprimirInfos.
 
-const infoUsuario = {
-    nome: prompt("Informe o seu nome:"),
-    idade: Number(prompt("Informe a sua idade:")),
-    profissão: prompt("Informe a sua profissão:")
+function infoUsuario() {
+    const nomeUsuario = prompt("Informe o seu nome:");
+    const idadeUsuario = Number(prompt("Informe a sua idade:"));
+    const profissaoUsuario = prompt("Informe a sua profissão:");
+
+    const imprimirInfos = {
+        nome: nomeUsuario,
+        idade: idadeUsuario,
+        profissão: profissaoUsuario
+    };
+
+    console.log(imprimirInfos);
+    console.log(typeof(imprimirInfos));
 };
 
-console.log(infoUsuario);
-
-console.log(typeof(infoUsuario));
+infoUsuario()
 
 //Desafio 2 - função que compara o ano de lançamento de dois filmes. Ao final imprime a comparação.
 
@@ -178,12 +185,12 @@ function compararLancamentoFilmes() {
 
 console.log(compararLancamentoFilmes());
 
-//Desafio 3 - funcao em que retorna a disponibilidade de uma das frutas do exercício 3
+//Desafio 3 - função em que retorna a disponibilidade de uma das frutas do exercício 3
 
-function controleEstoque(goiaba) {
-    return goiaba = {
-        ...goiaba,
-        disponibilidade: !goiaba.disponibilidade
+function controleEstoque(fruta) {
+    return fruta = {
+        ...fruta,
+        disponibilidade: !fruta.disponibilidade
     };
 };
 
