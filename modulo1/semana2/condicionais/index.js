@@ -96,7 +96,7 @@ if (turnoEstudoUsuario === "M") {
     console.log("Informação inválida!")
 }
 
-// // Exercício 3 - programa em que pede ao usuário para informar o turno em que estuda, verifica a condição (utilizando switch case) e imprime uma mensagem correspondente.
+// // Exercício 3 - programa em que verifica a condição do turno informado pelo usuário (utilizando switch case) e imprime uma mensagem correspondente.
 
 switch (turnoEstudoUsuario) {
     case "M": console.log("Bom Dia!"); break;
@@ -118,7 +118,7 @@ if(generoFilme === "fantasia" && valorIngresso < 15) {
 
 // /********************************************** DESAFIO **********************************************/
 
-// // Desafio 1 - programa em que pergunta ao usuário o gênero do filme, o valor do ingresso e o lanche que será pedido. Caso corresponda ao exigido será impresso uma mensagem desejando bom filme e que aproveite o lanche, caso contrario pedirá ao usuário para escolher outro filme.
+// // Desafio 1 - programa em que verifica o gênero do filme, o valor do ingresso e o lanche que será pedido. Caso corresponda ao exigido será impresso uma mensagem desejando bom filme e que aproveite o lanche, caso contrario pedirá ao usuário para escolher outro filme.
 
 const lancheCinema = prompt("Informe o lanche que deseja comprar:")
 
@@ -129,7 +129,7 @@ if(generoFilme === "fantasia" && valorIngresso < 15) {
     console.log("Escolha outro filme :(")
 }
 
-// // // Desafio 2 - programa em que pede ao usuário se nome, tipo de jogo, etapada do jogo, categoria e quantidade de ingresso. Ao final é impresso essas informações e o valor a ser pago.
+// // // Desafio 2 - programa em que pede ao usuário seu nome, tipo de jogo, etapa do jogo, categoria e quantidade de ingresso. Ao final é impresso essas informações e o valor a ser pago.
 
 const nomeCompleto = prompt("Informe o seu nome completo");
 const tipoJogo = prompt("Informe o tipo de jogo (IN - internacional ou DO - doméstico):");
