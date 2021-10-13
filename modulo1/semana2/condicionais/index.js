@@ -84,7 +84,7 @@ if (idadeUsuario >= 18) {
 
 // Exercício 2 - programa em que pede ao usuário para informar o turno em que estuda, verifica a condição (utilizando if/else) e imprime uma mensagem correspondente.
 
-const turnoEstudoUsuario = prompt("Informe o turno em que estuda M, V ou N");
+const turnoEstudoUsuario = prompt("Informe o turno em que estuda M, V ou N").toUpperCase();
 
 if (turnoEstudoUsuario === "M") {
     console.log("Bom Dia!");
@@ -107,7 +107,7 @@ switch (turnoEstudoUsuario) {
 
 // // Exercício 4 - programa em que pergunta ao usuário o gênero do filme e o valor do ingresso. Caso corresponda ao exigido será impresso uma mensagem desejando bom filme, caso contrario pedirá ao usuário para escolher outro filme.
 
-const generoFilme = prompt("Informe o gênero do filme:");
+const generoFilme = prompt("Informe o gênero do filme:").toLowerCase();
 const valorIngresso = Number(prompt("Informe o valor do ingresso para esse filme:"));
 
 if(generoFilme === "fantasia" && valorIngresso < 15) {
