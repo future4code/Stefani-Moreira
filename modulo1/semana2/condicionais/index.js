@@ -132,8 +132,8 @@ if(generoFilme === "fantasia" && valorIngresso < 15) {
 // // // Desafio 2 - programa em que pede ao usuário seu nome, tipo de jogo, etapa do jogo, categoria e quantidade de ingresso. Ao final é impresso essas informações e o valor a ser pago.
 
 const nomeCompleto = prompt("Informe o seu nome completo");
-const tipoJogo = prompt("Informe o tipo de jogo (IN - internacional ou DO - doméstico):");
-const etapaJogo = prompt("Informe a etapa do jogo (SF - semi-final, DT - terceiro lugar, FI - final)");
+const tipoJogo = prompt("Informe o tipo de jogo (IN - internacional ou DO - doméstico):").toUpperCase();
+const etapaJogo = prompt("Informe a etapa do jogo (SF - semi-final, DT - terceiro lugar, FI - final)").toUpperCase();
 const categoriaJogo = Number(prompt("Informe a categoria (1, 2, 3 ou 4):"));
 const quantidadeIngresso = Number(prompt("Informe a quantidade de ingressos"));
 
