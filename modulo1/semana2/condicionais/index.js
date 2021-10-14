@@ -139,104 +139,52 @@ const quantidadeIngresso = Number(prompt("Informe a quantidade de ingressos"));
 
 let valorIngresso, valorTotalIngresso, etapaJogoEscolhida, tipoJogoEscolhido, numeroIngressosComprados, moedaCompra;
 
-if(tipoJogo === "IN") {
-    tipoJogoEscolhido = "Internacional";
+if(tipoJogo === "IN" || tipoJogo === "DO") {
     if(etapaJogo === "SF") {
         etapaJogoEscolhida = "Semi-final";
         if(categoriaJogo === 1) {
-            valorIngresso = 1320 / 4.10;
-            valorTotalIngresso = `U$ ${quantidadeIngresso * valorIngresso}`;
+            valorIngresso = 1320;
         } else if (categoriaJogo === 2) {
-            valorIngresso = 880 / 4.10;
-            valorTotalIngresso = `U$ ${quantidadeIngresso * valorIngresso}`;
+            valorIngresso = 880;
         } else if (categoriaJogo === 3) {
-            valorIngresso = 550 / 4.10;
-            valorTotalIngresso = `U$ ${quantidadeIngresso * valorIngresso}`;
+            valorIngresso = 550;
         } else if (categoriaJogo === 4) {
-            valorIngresso = 220 / 4.10;
-            valorTotalIngresso = `U$ ${quantidadeIngresso * valorIngresso}`;
+            valorIngresso = 220;
         }
     } else if (etapaJogo === "DT") {
         etapaJogoEscolhida = "Terceiro Lugar";
         if(categoriaJogo === 1) {
-            valorIngresso = 660 / 4.10;
-            valorTotalIngresso = `U$ ${quantidadeIngresso * valorIngresso}`;
+            valorIngresso = 660;
         } else if (categoriaJogo === 2) {
-            valorIngresso = 440 / 4.10;
-            valorTotalIngresso = `U$ ${quantidadeIngresso * valorIngresso}`;
+            valorIngresso = 440;
         } else if (categoriaJogo === 3) {
-            valorIngresso = 330 / 4.10;
-            valorTotalIngresso = `U$ ${quantidadeIngresso * valorIngresso}`;
+            valorIngresso = 330;
         } else if (categoriaJogo === 4) {
-            valorIngresso = 170 / 4.10;
-            valorTotalIngresso = `U$ ${quantidadeIngresso * valorIngresso}`;
+            valorIngresso = 170;
         }
     } else if (etapaJogo === "FI") {
         etapaJogoEscolhida = "Final";
         if(categoriaJogo === 1) {
-            valorIngresso = 1980 / 4.10;
-            valorTotalIngresso = `U$ ${quantidadeIngresso * valorIngresso}`;
+            valorIngresso = 1980;
         } else if (categoriaJogo === 2) {
-            valorIngresso = 1320 / 4.10;
-            valorTotalIngresso = `U$ ${quantidadeIngresso * valorIngresso}`;
+            valorIngresso = 1320;
         } else if (categoriaJogo === 3) {
-            valorIngresso = 880 / 4.10;
-            valorTotalIngresso = `U$ ${quantidadeIngresso * valorIngresso}`;
+            valorIngresso = 880;
         } else if (categoriaJogo === 4) {
-            valorIngresso = 330 / 4.10;
-            valorTotalIngresso = `U$ ${quantidadeIngresso * valorIngresso}`;        
+            valorIngresso = 330;
         }
     }
-    moedaCompra = `U$ ${valorIngresso}`;
+} 
+
+if(tipoJogo === "IN") {
+    tipoJogoEscolhido = "Internacional"
+    valorIngresso = valorIngresso / 4.10;
+    moedaCompra = `U$ ${valorIngresso}`
+    valorTotalIngresso = `U$ ${quantidadeIngresso * valorIngresso}`
 } else if (tipoJogo === "DO") {
     tipoJogoEscolhido = "Nacional";
-    if(etapaJogo === "SF") {
-        etapaJogoEscolhida = "Semi-final"
-        if(categoriaJogo === 1) {
-            valorIngresso = 1320;
-            valorTotalIngresso = `R$ ${quantidadeIngresso * valorIngresso}`;
-        } else if (categoriaJogo === 2) {
-            valorIngresso = 880;
-            valorTotalIngresso = `R$ ${quantidadeIngresso * valorIngresso}`;
-        } else if (categoriaJogo === 3) {
-            valorIngresso = 550;
-            valorTotalIngresso = `R$ ${quantidadeIngresso * valorIngresso}`;
-        } else if (categoriaJogo === 4) {
-            valorIngresso = 220;
-            valorTotalIngresso = `R$ ${quantidadeIngresso * valorIngresso}`;
-        }
-    } else if (etapaJogo === "DT") {
-        etapaJogoEscolhida = "Terceiro Lugar"
-        if(categoriaJogo === 1) {
-            valorIngresso = 660;
-            valorTotalIngresso = `R$ ${quantidadeIngresso * valorIngresso}`;
-        } else if (categoriaJogo === 2) {
-            valorIngresso = 440;
-            valorTotalIngresso = `R$ ${quantidadeIngresso * valorIngresso}`;
-        } else if (categoriaJogo === 3) {
-            valorIngresso = 330;
-            valorTotalIngresso = `R$ ${quantidadeIngresso * valorIngresso}`;
-        } else if (categoriaJogo === 4) {
-            valorIngresso = 170;
-            valorTotalIngresso = `R$ ${quantidadeIngresso * valorIngresso}`;
-        }
-    } else if (etapaJogo === "FI") {
-        etapaJogoEscolhida = "Final"
-        if(categoriaJogo === 1) {
-            valorIngresso = 1980;
-            valorTotalIngresso = `R$ ${quantidadeIngresso * valorIngresso}`;
-        } else if (categoriaJogo === 2) {
-            valorIngresso = 1320;
-            valorTotalIngresso = `R$ ${quantidadeIngresso * valorIngresso}`;
-        } else if (categoriaJogo === 3) {
-            valorIngresso = 880;
-            valorTotalIngresso = `R$ ${quantidadeIngresso * valorIngresso}`;
-        } else if (categoriaJogo === 4) {
-            valorIngresso = 330;
-            valorTotalIngresso = `R$ ${quantidadeIngresso * valorIngresso}`;
-        }
-    }
-    moedaCompra = `R$ ${valorIngresso}`;
+    moedaCompra = `R$ ${valorIngresso}`
+    valorTotalIngresso = `R$ ${quantidadeIngresso * valorIngresso}`
 }
 
 if(quantidadeIngresso <= 1) {
