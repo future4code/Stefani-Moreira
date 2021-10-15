@@ -61,7 +61,7 @@ if(numeroPet === 0) {
 
 const arrayOriginal = [2, 13, 6, 9, 10, 11, 4, 15, 17, 8];
 
-//letra a 
+//letra a - programa em que imprime os valores do array acima.
 function imprimirValoresArray() {
   for (let i = 0; i < arrayOriginal.length; i++) {
     console.log(arrayOriginal[i]);
@@ -70,7 +70,7 @@ function imprimirValoresArray() {
 
 imprimirValoresArray();
 
-//letra b
+//letra b - programa em que imprime os valores do array acima divididos por 10.
 function imprimirValoresDivididoPor10() {
   for(let i = 0; i < arrayOriginal.length; i++) {
     console.log(arrayOriginal[i] /= 10);
@@ -79,35 +79,35 @@ function imprimirValoresDivididoPor10() {
 
 imprimirValoresDivididoPor10();
 
-//letra c
+//letra c - programa em que cria um novo array contendo os numeros pares presentes no array acima.
 let arrayPares = [];
 
 function imprimirValoresPares() {
   for(let numero of arrayOriginal) {
     if(numero % 2 === 0) {
-      arrayPares.push(numero)
-    }
-  }
-  console.log(arrayPares)
-}
+      arrayPares.push(numero);
+    };
+  };
+  console.log(arrayPares);
+};
 
-imprimirValoresPares()
+imprimirValoresPares();
 
-//letra d
+//letra d - programa em que transforma uma frase em elementos de um array.
 let arrayStrings = [];
 let fraseArray;
 
 function imprimirValoresEStrings() {
   for(let i = 0; i < arrayOriginal.length; i++) {
-    fraseArray = `O elemento do índex ${i} é: ${arrayOriginal[i]}`
-    arrayStrings.push(fraseArray)
-  }
-    console.log(arrayStrings)
-}
+    fraseArray = `O elemento do índex ${i} é: ${arrayOriginal[i]}`;
+    arrayStrings.push(fraseArray);
+  };
+    console.log(arrayStrings);
+};
   
-imprimirValoresEStrings()
+imprimirValoresEStrings();
 
-//letra e
+//letra e - programa em que verifica no array o seu maior elemento e menor elemento. Ao final imprime esses valores.
 let maiorElemento = 0;
 let menorElemento = 99;
   
@@ -116,12 +116,68 @@ function acharMaiorEMenorlemento() {
   for(let numero of arrayOriginal) {
     if(numero > maiorElemento) {
       maiorElemento = numero;
-    }
+    };
     if(numero < menorElemento) {
       menorElemento = numero;
-    }
-  }
-  console.log(`O maior número é ${maiorElemento} e o menor é ${menorElemento}.`)
-}
+    };
+  };
+  console.log(`O maior número é ${maiorElemento} e o menor é ${menorElemento}.`);
+};
 
-acharMaiorEMenorlemento()
+acharMaiorEMenorlemento();
+
+/********************************************** DESAFIO **********************************************/
+
+// Desafio 1 - programa em que é necessário dois jogadores. O primeiro jogador põe o número inicial e o segundo jogador precisa advinha qual foi o número escolhido.  O sistema retorna a pergunta de escolha para novo número até que o segundo jogador acerte.
+
+const numeroJogador1 = Number(prompt("Escolha um número:"));
+
+if (numeroJogador1 >= 0) {
+  console.log("Vamos jogar!");
+};
+
+let numeroJogador2 = Number(prompt("Tente advinhar o número escolhido pelo Jogador 1"));
+let numeroTentativas = 1;
+
+while (numeroJogador2 !== numeroJogador1) {
+    console.log(`O número chutado foi: ${numeroJogador2}`);
+
+    if(numeroJogador2 < numeroJogador1) {
+        console.log("Errrrou, o número escolhido é maior. Tente novamente.");
+    } else if(numeroJogador2 > numeroJogador1) {
+        console.log("Errrrou, o número escolhido é menor. Tente novamente.");
+    };
+    
+    numeroJogador2 = Number(prompt("Qual o número escolhido pelo Jogador 1?"));
+    numeroTentativas++
+};
+
+console.log(`Acertoooou!
+Você tentou ${numeroTentativas}x. O número chutado foi: ${numeroJogador2}.`);
+
+//Desafio 2 - programa em que o sistema escolhe um número e um jogador precisa advinhar o número escolhido. O sistema retorna a pergunta de escolha para novo número até que o jogador acerte.
+
+const numeroJogador1 = Math.round(Math.random()*100);
+
+if (numeroJogador1 >= 0) {
+  console.log("Vamos jogar!");
+};
+
+let numeroJogador2 = Number(prompt("Tente advinhar o número escolhido pelo Jogador 1"));
+let numeroTentativas = 1;
+
+while (numeroJogador2 !== numeroJogador1) {
+    console.log(`O número chutado foi: ${numeroJogador2}`);
+
+    if(numeroJogador2 < numeroJogador1) {
+        console.log("Errrrou, o número escolhido é maior. Tente novamente.");
+    } else if(numeroJogador2 > numeroJogador1) {
+        console.log("Errrrou, o número escolhido é menor. Tente novamente.");
+    };
+    
+    numeroJogador2 = Number(prompt("Qual o número escolhido pelo Jogador 1?"));
+    numeroTentativas++
+};
+
+console.log(`Acertoooou!
+Você tentou ${numeroTentativas}x. O número chutado foi: ${numeroJogador2}.`);
