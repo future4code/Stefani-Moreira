@@ -124,7 +124,7 @@ const descontoProdutos = produtos.map((parametro) => {
   const desconto = parametro.preco * 0.05;
   const precoProdutos = (parametro.preco - desconto).toFixed(2);
 
-  return { nomeProdutos, precoProdutos };
+  return { nome: nomeProdutos, preco: precoProdutos };
 });
 
 console.log(descontoProdutos);
