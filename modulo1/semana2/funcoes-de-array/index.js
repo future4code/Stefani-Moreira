@@ -177,8 +177,8 @@ const tiposPokemons = pokemons.map((parametro) => {
   return parametro.tipo;
 });
 
-const simplicarTiposPokemons = tiposPokemons.filter((pokemon, tipo, array) => {
+const simplificarTiposPokemons = tiposPokemons.filter((pokemon, tipo, array) => {
   return array.indexOf(pokemon) === tipo;
 });
 
-console.log(simplicarTiposPokemons);
+console.log(simplificarTiposPokemons);
