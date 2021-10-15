@@ -129,14 +129,14 @@ const descontoProdutos = produtos.map((parametro) => {
 
 console.log(descontoProdutos);
 
-//letra c - função em que filtrar os produtos da categoria Bebidas no objeto acima.
+//letra c - função em que filtra os produtos da categoria Bebidas no objeto acima.
 const produtosBebidas = produtos.filter((parametro) => {
   return parametro.categoria === "Bebidas";
 });
 
 console.log(produtosBebidas);
 
-// letra d - função em que filtrar os produtos com o nome Ypê do objeto acima.
+// letra d - função em que filtra os produtos com o nome Ypê do objeto acima.
 const produtosYpe = produtos.filter((parametro) => {
   return parametro.nome.includes("Ypê");
 });
