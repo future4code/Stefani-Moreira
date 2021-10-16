@@ -12,10 +12,10 @@
  */
 
 //Cada jogador começa o jogo com duas cartas que estão dentro de um array.
-let cartaJogador1 = [comprarCarta(), comprarCarta()];
-let cartaJogador2 = [comprarCarta(), comprarCarta()];
+const cartaJogador1 = [comprarCarta(), comprarCarta()];
+const cartaJogador2 = [comprarCarta(), comprarCarta()];
 
-//A função indica qual carta foi sorteda para o jogador e as exibe de acordo com sua posição no array.
+//A função indica qual carta foi sorteada para o jogador e as exibe de acordo com sua posição no array.
 function textoCartas(parametro) {
   return `${parametro[0].texto}, ${parametro[1].texto}`;
 }
@@ -25,21 +25,35 @@ function somarCartas(parametro) {
   return parametro[0].valor + parametro[1].valor;
 }
 
-// A função exibe as informações do jogo para cada jogador. As informações são quais cartas foram sorteadas e a soma dos valores dessas cartas.
+//A função exibe as informações do jogo para cada jogador. As informações são quais cartas foram sorteadas e a soma dos valores dessas cartas.
 function imprimirPontuacao(parametro) {
-  let mensagemInfosJogadores;
+  let infosJogadores;
 
   if (parametro === cartaJogador1) {
-   mensagemInfosJogadores = `Usuário - cartas: ${textoCartas(parametro)} - pontuação: ${somarCartas(parametro)}`;
+    infosJogadores = `Usuário - cartas: ${textoCartas(parametro)} - pontuação: ${somarCartas(parametro)}`;
   } else if (parametro === cartaJogador2) {
-   mensagemInfosJogadores = `Computador - cartas: ${textoCartas(parametro)} - pontuação: ${somarCartas(parametro)}`;
+    infosJogadores = `Computador - cartas: ${textoCartas(parametro)} - pontuação: ${somarCartas(parametro)}`;
   }
-  return mensagemInfosJogadores;
+  return infosJogadores;
+}
+
+//A função, de acordo com a comparação entre as cartas dos jogadores, define se alguém ganhou ou se houve empate.
+function ganharJogo() {
+  let mensagemGanhador;
+
+  if (somarCartas(cartaJogador1) === somarCartas(cartaJogador2)) {
+    mensagemGanhador = "Empate!";
+  } else if (somarCartas(cartaJogador1) > somarCartas(cartaJogador2)) {
+    mensagemGanhador = "O usuário ganhou!";
+  } else if (somarCartas(cartaJogador1) < somarCartas(cartaJogador2)) {
+    mensagemGanhador = "O computador ganhou!";
+  }
+  return mensagemGanhador;
 }
 
 /******************************************* EXECUÇÃO DO JOGO *******************************************/
 
-//O  jogo inicia dando as boas vindas ao jogador e perguntando se deseja jogar, caso confirme, é impresso quais cartas foram sorteadas e a soma dos valores. De acordo com a comparação entre as cartas dos jogadores é definido se alguém ganhou ou se houve empate. Caso o usuário não deseje jogar, é impresso que o jogo acabou.
+//O  jogo inicia dando as boas vindas ao jogador e perguntando se deseja jogar, caso confirme, é impresso quais cartas foram sorteadas, a soma dos valores e quem é o ganhador. Caso o usuário não deseje jogar, é impresso que o jogo acabou.
 
 console.log("Boas vindas ao jogo de Blackjack!");
 
@@ -48,14 +62,7 @@ const iniciarJogo = confirm("Deseja iniciar a jogada?");
 if (iniciarJogo === true) {
   console.log(imprimirPontuacao(cartaJogador1));
   console.log(imprimirPontuacao(cartaJogador2));
-
-  if (somarCartas(cartaJogador1) === somarCartas(cartaJogador2)) {
-    console.log("Empate!");
-  } else if (somarCartas(cartaJogador1) > somarCartas(cartaJogador2)) {
-    console.log("O usuário ganhou!");
-  } else if (somarCartas(cartaJogador1) < somarCartas(cartaJogador2)) {
-    console.log("O computador ganhou!");
-  }
+  console.log(ganharJogo());
 } else {
   console.log("O jogo acabou.");
 }
