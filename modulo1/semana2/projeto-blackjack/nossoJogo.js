@@ -38,7 +38,7 @@ function imprimirPontuacao(parametro) {
 }
 
 //A função, de acordo com a comparação entre as cartas dos jogadores, define se alguém ganhou ou se houve empate.
-function ganharJogo() {
+function resultadoJogo() {
   let mensagemGanhador;
 
   if (somarCartas(cartaJogador1) === somarCartas(cartaJogador2)) {
@@ -62,7 +62,7 @@ const iniciarJogo = confirm("Deseja iniciar a jogada?");
 if (iniciarJogo === true) {
   console.log(imprimirPontuacao(cartaJogador1));
   console.log(imprimirPontuacao(cartaJogador2));
-  console.log(ganharJogo());
+  console.log(resultadoJogo());
 } else {
   console.log("O jogo acabou.");
 }
