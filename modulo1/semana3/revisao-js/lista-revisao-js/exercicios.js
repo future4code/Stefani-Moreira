@@ -73,17 +73,23 @@ function classificaTriangulo(ladoA, ladoB, ladoC) {
     
     if (ladoA === ladoB && ladoA === ladoC) {
         return "Equilátero"
-    } else if(ladoA === ladoB && ladoA !== ladoC || ladoA === ladoC && ladoA !== ladoB || ladoC === ladoB) {
-        return "Isósceles"
-    } else {
+    } else if(ladoA !== ladoB && ladoA !== ladoC && ladoB !== ladoC) {
         return "Escaleno"
+    } else {
+        return "Isósceles"
     }
     
 }
 
 // EXERCÍCIO 10
 function retornaSegundoMaiorESegundoMenor(array) {
-  
+  retornaArrayOrdenado(array)
+
+  let arraySegundoMaiorEMenor = []
+  arraySegundoMaiorEMenor.push(array[array.length -2])
+  arraySegundoMaiorEMenor.push(array[1])
+
+  return arraySegundoMaiorEMenor;
 }
 
 // EXERCÍCIO 11
