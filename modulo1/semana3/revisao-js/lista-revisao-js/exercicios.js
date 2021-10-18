@@ -160,5 +160,6 @@ function retornaArrayOrdenadoPorData(consultas) {
       return 1;
     }
   });
+  
   return ordenarDatas;
 }
