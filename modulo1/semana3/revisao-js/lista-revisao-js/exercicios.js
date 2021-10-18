@@ -10,7 +10,7 @@ function retornaTamanhoArray(array) {
 
 // EXERCÍCIO 02
 function retornaArrayInvertido(array) {
-
+  return array.reverse();
 }
 
 // EXERCÍCIO 03
@@ -30,7 +30,7 @@ function retornaNumerosParesElevadosADois(array) {
 
 // EXERCÍCIO 06
 function retornaMaiorNumero(array) {
-  return Math.max(...array);
+
 }
 
 // EXERCÍCIO 07
