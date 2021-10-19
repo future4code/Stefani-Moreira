@@ -95,9 +95,7 @@ function posicaoJogo() {
 
 alert("Boas vindas ao jogo de Blackjack!");
 
-const iniciarJogo = confirm(
-  "Deseja iniciar a jogada?  - A sua pontuação será informada no console do navegador"
-);
+const iniciarJogo = confirm("Deseja iniciar a jogada?  - A sua pontuação será informada no console do navegador");
 
 if (iniciarJogo === true) {
   posicaoJogo();
