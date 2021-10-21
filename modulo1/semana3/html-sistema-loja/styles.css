@@ -1,0 +1,110 @@
+body {
+    font-family: 'Poppins';
+    margin: 0rem;
+
+}
+
+th, td {
+    padding: 48px 48px 0px;
+    text-align: center;
+}
+
+h2, h4, .form-page, .nav-link {
+    padding-left: 16px;
+}
+
+/*** Header Section ***/
+.header, .navbar, #filtro, .footer {
+    color: #555555;
+}
+
+.header{
+    font-size: 24px;
+    background-color: #F1AE89; 
+    padding: 16px;
+}
+
+.brand, .title {
+    display: inline;
+}
+
+
+/*** Navbar Section ***/
+.nav > span {
+    font-size: 20px;
+    padding: 12px;
+    font-weight: bold;
+}
+
+.nav-link, #filtro {
+    padding-left: 16px;
+    font-size: 18px;
+}
+
+.add-product {
+    position: relative;
+    left: 90px
+}
+
+/*** Middle-page Section ***/
+
+#middle-page {
+    font-size: 18px;
+    margin: 30px 20px 12px;
+    padding-left: 19px;
+    text-align: justify;
+}
+
+.collaborators {
+    text-align: justify
+}
+/***Form Section ***/
+.form-page{
+    margin-bottom: 110px;
+}
+
+.form-client, .form-product {
+    display: inline-block;
+    width: 100%;
+    position: relative;
+}
+
+.questions-client, .questions-product, #checkbox{
+     position: absolute; 
+     top: 4px;
+     width: 225px;
+}
+
+.questions-client {
+    left: 170px;
+}
+
+.questions-product {
+    left: 200px;
+}
+
+
+#checkbox{
+    left: 60px;
+}
+
+.form-add {
+    padding: 90px, 12px;
+}
+
+table {
+    margin-bottom: 72px;
+}
+
+/*** Footer Section ***/
+.footer{
+    background-color: #D68060;
+    padding:2px 30px 20px;
+    font-size: 18px;
+    text-align: center;
+}
+
+.social-icon {
+    margin-left: 0px;
+    padding: 0px 132px 0px;
+}
