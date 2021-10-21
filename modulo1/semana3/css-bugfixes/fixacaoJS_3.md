@@ -1,4 +1,4 @@
-## Exercício de ficação JavaScript
+## Exercício de fixação JavaScript
 
 Sistema que calcula a média ponderada das  atividades propostas a alunos de uma determinada escola, e apresenta o conceito de aprovação com base nessa média.
 
