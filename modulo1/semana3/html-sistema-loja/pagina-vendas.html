@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <meta http-equiv="X-UA-Compatible" content="ie=edge"/>
+    <link rel="stylesheet" href="styles.css"/>
+    <link rel="shortcut icon" href="image/favicon.ico" type="image/x-icon"/>
+    <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@300&family=Poppins:wght@200&display=swap" rel="stylesheet"/>
+    <title>Página de Vendas</title>
+  </head>
+
+  <body>
+
+    <div class="header">
+      <img class="brand" src="image/marca-90.png" />
+      <h1 class="title">NORDESTÃO ONLINE</h1>
+      <div class="nav">
+        <a class="nav-link" href="index.html">Página Inicial</a>
+        <a class="nav-link" href="pagina-vendas.html">Página de Vendas</a>
+        <a class="nav-link" href="cadastro-cliente.html">Cadastro de Cliente</a>
+        <a class="nav-link" href="ctrl-estoque.html">Controle de Estoque</a>
+        <a class="nav-link" href="add-produto.html">Adicionar Produto</a>
+      </div>
+    </div>
+
+    <a href="historico-vendas.html"><h4 class="sales">Histórico de Vendas</h4></a>
+
+    <h2>Página de vendas</h2>
+
+    <form class="form-page" action="">
+
+      <div class="form-product">
+        <label for="product">Produto: </label>
+        <select class="questions-product" class="questions-product">
+          <option></option>
+          <option>Headset Gamer Redragon Zeus 2 Sakura Edition 7.1</option>
+          <option>HyperX Teclado Gamer HyperX Alloy Core Rg, ABNT2</option>
+          <option>Micro-ondas Midea Mtfs22 20 Litros</option>
+          <option>Refrigerador Electrolux 2 Portas Frost Free 382 Litros</option>
+          <option>Smartphone Multilaser F 32GB</option>
+          <option>Smartphone Iphone 12 Pro Max 128GB</option>
+          <option>Smartphone Samsung S20 FE 120GB</option>
+        </select>
+      </div>
+
+      <div class="form-product">
+        <label for="preco">Preço (em R$): </label>
+        <!-- Adicione o id apropriado e o type para receber números abaixo -->
+        <input type="number" min="269.00" max="10000.00" step="0.01" class="questions-product" name="preço"/>
+      </div>
+
+      <div class="form-product">
+        <!-- Preencha as propriedades necessárias para os elementos abaixo -->
+        <label>Quantidade:</label>
+        <select class="questions-product" class="questions-product">
+          <option></option>
+          <option>1</option>
+          <option>2</option>
+          <option>3</option>
+          <option>4</option>
+          <option>5</option>
+        </select>
+      </div>
+
+      <div class="form-product">
+        <label for="collaborator">Colaborador: </label>
+        <!-- Adicione o id apropriado para o input abaixo -->
+        <input type="text" class="questions-product" name="collaborator" />
+      </div>
+
+      <div class="form-product">
+        <label for="data-nascimento">Data de Compra:</label>
+        <input type="date" class="questions-product" name="data-nascimento" />
+      </div>
+
+      <div class="form-product">
+        <label for="product">Opção de pagamento: </label>
+        <select class="questions-product">
+          <option></option>
+          <option>Cartão de crédito</option>
+          <option>Cartão de débito</option>
+          <option>Pix</option>
+          <option>Dinheiro</option>
+        </select>
+      </div>
+
+      <div class="form-add">
+        <!-- Adicione ao type do botão abaixo o valor para que ele submeta o formulário -->
+        <button onclick="alert('Produto adicionado ao carrinho')">
+          <img src="image/carrinho-de-compras.png">
+        </button>
+      </div>
+    </form>
+
+    <div class="footer">
+      <p>Siga-nos nas redes sociais!</p>
+
+      <div>
+        <img class="social-icon" src="https://image.flaticon.com/icons/png/32/25/25305.png"/>
+        <img class="social-icon" src="https://image.flaticon.com/icons/png/32/25/25425.png"/>
+        <img class="social-icon" src="https://image.flaticon.com/icons/png/32/8/8800.png"/>
+      </div>
+    </div>
+    
+  </body>
+</html>
