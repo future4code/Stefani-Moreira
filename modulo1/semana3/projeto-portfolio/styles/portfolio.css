@@ -1,68 +1,155 @@
 img{
-    width: 60%; 
+    width: 80%; 
 }
 
-#image-container {
-    display: inline-block;
+h2 {
+    margin-top: 90px;
+    text-align: center;
+    font-size: 2.5rem
 }
 
-div a p {
-    display: none;
+.image-container {
+    padding: 60px 30px 20px;
+    margin-left: 70px;
+    margin-top: 0;
 }
 
-div a:hover p {
+.image-container a {
+    text-decoration: none;
+}
+
+#tincat p, #simon-game p, #drum-game p, #random-dicee p {
+    color: white;
+}
+
+.image-container p {
+    text-align: center;
+    position: relative;
+    right: 50px;
+    bottom: 100px;
+}
+
+#container-child-1, #container-child-2{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+#container-child-2 {
+    margin-top: 100px;
+}
+
+a {
+    text-decoration: none;
+}
+
+a p {
+    display:none;
+}
+
+a:hover p {
     display: block;
-}
-
-#tincat {
-    width: 60%;
-    position: absolute;
-    bottom: 250px;
-    right: 600px;
 }
 
 .img-portfolio:hover{
     opacity: 0.5;
 }
 
-#simon-game {
+.techs li{
+    color: #40514E;
+    font-family: 'Merriweather';
+    font-size: 14.5px
+}
+/********************************* SITES ONE PAGE *********************************/
+
+.site-one-page-container {
+    display: flex;
+    margin-top: 139.9px
+}
+
+.site-one-page-img {
     width: 60%;
+    position: relative;
+    left: 100px;
+    bottom: 50px
+}
+
+.site-one-page-description {
+    width: 60%;
+    position: relative;
+    right: 100px;
+    bottom: 60px;
+}
+
+/********************************* PERSONAL SITE *********************************/
+#personal-site-container {
+    display: flex;
+    width: 80%;
+    margin-left: 150px;
+    padding-top: 30px;
+}
+
+#img-site {
+    width: 70%;
+    position: relative;
+    bottom: 30px;
+}
+
+#img-site img {
+    padding: 10px
+}
+
+
+/********************************* NORDESTAO *********************************/
+#nordestao-container {
+    display: flex;
+    flex-direction: row;
+    margin-left: 80px
+}
+
+#nordestao-description {
+    width: 70%;
+    position: relative;
+    right: 80px
+}
+
+#img-nordestao {
+    position: relative;
+    left: 100px;
+}
+
+#img-nordestao img {
+    padding: 5px;
+    width: 50%
+}
+
+/********************************* TINCAT *********************************/
+
+.img-tincat{
+    width: 30%
+}
+
+#tincat-container {
+    display: flex;
+    flex-direction: row;
+    margin-top: 0;
+    padding-top: 0;
+}
+
+#img-tincat-1 {
+    padding-bottom: 20px;
+}
+
+a {
+    text-decoration: none;
+}
+
+#tincat-description {
+    display: flex;
+    flex-direction: column;
     position: absolute;
-    bottom: 250px;
+    bottom: 50px;
     left: 600px;
-}
-
-#personal {
-    width: 60%;
-    position: absolute;
-    top: 450px;
-    right: 600px;
-
-}
-
-#nordestao {
-    width: 60%;
-    position: absolute;
-    top: 450px;
-    left: 600px;
-}
-
-#random-dicee {
-    width: 60%;
-    position: absolute;
-    top: 750px;
-    right: 600px;
-}
-
-#drum-game {
-    width: 60%;
-    position: absolute;
-    top: 750px;
-    left: 600px;
-}
-
-.bottom-container {
-    width: 100%;
-    position: absolute;
-    top: 1050px;
+    width: 50%;
+    margin-top: 0;
 }

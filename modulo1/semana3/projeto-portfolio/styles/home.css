@@ -1,6 +1,8 @@
 /********************************* TOP-PAGE *********************************/
 .top-container { 
-    padding: 10rem;
+    padding: 13rem;
+    display: flex;
+    justify-content: center;
 }
 
 h1 {
@@ -19,9 +21,7 @@ h2 {
     padding-bottom: 0.625rem;
 }
 
-h4 {
-    color: #F6A9A9;
-}
+
 
 #apresentation {
     font-size: 2rem;
@@ -33,118 +33,117 @@ h4 {
 #subtitle {
     color: #F6A9A9;
     padding: 0rem;
-    font-family: 'Montserrat';
     position: absolute;
     left: 780px;
-    top: 370px
+    top: 410px
 }
 
+hr {
+    border-style: none;
+    border-top-style: dotted;
+    border-color: #FF9A8C;
+    border-width: 0.3125rem;
+    width: 5%;
+}
 
+header {
+    background-color: #FFF8E5;
+}
 /********************************* MIDDLE-PAGE *********************************/
-
-/********************************* Degrees *********************************/
 #profile-row {
-    width: 100%;
-    position: absolute;
-    top: 700px;
-    right: 0.5px;
+    margin: 5% 0%;
+    text-align: center;
+    width: 100%
+}
+
+/******************** Degrees ********************/
+#degree-title, #skills-title, #soft-title {
+    text-align: center;
+}
+
+#degrees-row {
     background-color: #FFF8E5;
 }
 
-hr{
-    position: absolute;
-    top: 1150px;
-    right: 640px;
-}
-
-#degree-row {
-    position: relative;
-    top: 1000px;
-}
-
-#degree-title {
-    position: absolute;
-    top: 1150px;
-    right: 42%
+#degrees-container {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 2%;
 }
 
 #academia {
-    position: absolute;
-    left: 200px;
-    top: 1250px;
-    width: 500px;
-    text-align: left
-} 
+    padding: 1%;
+}
 
-.college {
-    font-size: 14px;
+#vertical-line {
+    height: 290px;
+    border-right: 3px dotted #FF9A8C;
+    position: relative;
+    top: 37px;
+    border-width: 0.3125rem;
+    left: 68px;
 }
 
 #courses {
-    position: absolute;
-    top: 1250px;
-    left: 800px;
-    width: 500px;
-    text-align: left;
+    padding-top: 1%;
+    position: relative;
+    left: 150px;
+
 }
 
 /********************************* Skills *********************************/
-.middle-container {
-   background-color: #FFF8E5;
-}
-
-
-
-#skills-row {
-    line-height: 2;
-    position: absolute;
-    top: 1650px;
-    display: block;
-    margin: 0;
-}
-
-
 #hard-skills {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 1%;
+    width: 90%
+}
+
+#programming-title {
     position: relative;
-    left: 150px;
-    width: 500px;
-    text-align: left;
-    top: 50px;
+    bottom: 7px;
+    left: 120px;
+}
+
+#programming-description {
+    padding-top: 2%;
+    position: relative;
+    left: 170px;
+    width: 35%
+}
+
+#tech-icons {
+    padding-top: 5%;
+    position: relative;
+    left: 50px;
+    width: 30%
+}
+
+#tech-icons img {
+    height: 1.5rem
 }
 
 #soft-skills {
-    padding-left: 150px;
-    width: 100%;
-    text-align: left;
-} 
-
-#soft-title {
-    position: relative;
-    left: 450px;
-    top: 100px
+    margin: 4rem 0rem;
 }
 
-#description-one, #description-two, #description-three {
-    width: 32%;
+#soft-skills-container {
+    display: flex;
+    width: 70%;
+    margin-left: 200px
 }
 
-#description-one { 
-    position: relative;
-    right: 100px;
-    top: 130px
+#description-two {
+position: relative;
+left: 35px
 }
 
-#description-two { 
+#description-three {
     position: relative;
-    left: 320px;
-    bottom: 42px;
+    left: 60px
 }
- 
-#description-three { 
-    position: relative;
-    left: 770px;
-    bottom: 210px;
-}
-.tech-icon {
-    display: block;
+
+div hr {
+    margin-top: 60px;
+    text-align: center
 }

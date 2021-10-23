@@ -1,18 +1,89 @@
-input, textarea{
-    height: 20px;
-    width: 300px;
-    border-style: solid;
-    border-width: 0px 0px 2px;
+h2 {
+    text-align: center;
 }
 
-input {
-    /* position: absolute; 
-    top: 400px;
-    right: 170px; */
+main {
+    margin-top: 77px;
+}
+
+#contact-container {
+    display: flex;
+    justify-content: space-around;
+    margin: 50px 0 59.4px 0;
+}
+
+#contact-child-1 {
+    width: 60%;
+    font-size: 16px;
+    position: relative;
+    left: 170px;
+}
+
+#contact-description {
+    width: 40%
+}
+
+.contact-icon {
+    width: 30%
+}
+#instagram {
+    width: 31%
+}
+#contact-child-2 {
+    position: relative;
+    right: 150px;
+}
+
+input, textarea{
+    border-style: solid;
+    border-width: 0px 0px 2px;
+    position: absolute; 
+    width:300px;
 }
 
 textarea {
-    position: absolute; 
-    top: 400px;
-    right: 170px;
+    height:140px;
+}
+
+#name {
+    position: relative;
+    left: 50px;
+}
+
+#email {
+    position: relative;
+    left: 43px
+}
+
+#description {
+    position: relative;
+    left: 35px
+}
+
+#contact{
+    margin-top: 10px
+}
+
+#message {
+    position: relative;
+    bottom: 126px
+}
+
+#message-textarea {
+    position: relative;
+    left: 18px;
+}
+
+button {
+    position: relative;
+    top: 5px;
+    left: 345px;
+    border: 2px solid #F6A9A9;
+    border-radius: 10px;
+    background-color: #F6A9A9;
+    color: #000
+}
+
+button:active {
+    background-color:#FFF8E5
 }
