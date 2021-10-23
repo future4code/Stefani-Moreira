@@ -1,5 +1,6 @@
 h2 {
     text-align: center;
+    font-size: 2.5rem
 }
 
 main {
@@ -81,7 +82,7 @@ button {
     border: 2px solid #F6A9A9;
     border-radius: 10px;
     background-color: #F6A9A9;
-    color: #000
+    color: #40514E;
 }
 
 button:active {

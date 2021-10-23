@@ -57,7 +57,7 @@ header {
 }
 
 /******************** Degrees ********************/
-#degree-title, #skills-title, #soft-title {
+#degree-title, .degree-subtitle, #skills-title, #soft-title {
     text-align: center;
 }
 
