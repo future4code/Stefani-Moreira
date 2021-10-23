@@ -1,0 +1,18 @@
+input, textarea{
+    height: 20px;
+    width: 300px;
+    border-style: solid;
+    border-width: 0px 0px 2px;
+}
+
+input {
+    /* position: absolute; 
+    top: 400px;
+    right: 170px; */
+}
+
+textarea {
+    position: absolute; 
+    top: 400px;
+    right: 170px;
+}

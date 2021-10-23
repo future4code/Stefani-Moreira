@@ -1,0 +1,35 @@
+img {
+    width: 60%
+}
+
+#img-tincat-1 {
+    width: 50%;
+    position: absolute;
+    right: 780px;
+}
+
+#img-tincat-2 {
+    width: 50%;
+    position: absolute;
+    right: 340px;
+}
+
+#img-tincat-3 {
+    width: 50%;
+    position: absolute;
+    left: 770px
+}
+
+#img-tincat-4 {
+    width: 50%;
+    position: absolute;
+    right: 780px;
+    top: 600px;
+}
+
+#img-tincat-5 {
+    width: 50%;
+    position: absolute;
+    left: 780px;
+    top: 600px;
+}

@@ -1,0 +1,94 @@
+/********************************* HEADER *********************************/
+.nav {
+    background-color: #FFF8E5;
+    color: #194350;
+    font-family: 'Montserrat-light';
+}
+
+#nav-title {
+    position: absolute;
+    left: 30px;
+    font-size: 1.1rem;
+}
+
+
+a {
+    text-decoration: none;
+}
+
+.nav-item {
+    padding: 0rem 1rem;
+}
+
+.nav-link {
+    font-size: 1.1rem;
+    position: relative;
+    left: 2rem;
+} 
+
+header ul {
+  display: inline-flex;
+  list-style-type: none;
+  margin-left:58rem;
+  overflow: hidden;
+}
+
+header li {
+    margin-top: 0;
+}
+
+li a {
+    text-align: center;
+    padding: 14px 16px;
+  }
+
+
+/********************************* GENERAL *********************************/
+
+/* html, body {
+    height: 100%;
+} */
+
+body {
+    margin: 0rem;
+    text-align: center;
+    font-family: 'Merriweather', serif;
+}
+
+hr {
+    border-style: none;
+    border-top-style: dotted;
+    border-color: #FF9A8C;
+    border-width: 0.3125rem;
+    width: 5%;
+}
+
+p{
+    color: #40514E;
+}
+
+h2, h3 {
+    color: #FFA0A0;
+    font-family: 'Montserrat', sans-serif;
+}
+/********************************* FOOTER *********************************/
+
+.bottom-container {
+        background-color:#FF8882;;
+        text-align: center;
+        width: 100%;
+        position: absolute;
+        top: 2550px;
+}
+
+.bottom-container img {
+    width: 5%
+}
+
+.footer-link{
+    height: 1.25rem;
+}
+
+.referencia-name {
+    color:#194350;
+}

@@ -1,0 +1,150 @@
+/********************************* TOP-PAGE *********************************/
+.top-container { 
+    padding: 10rem;
+}
+
+h1 {
+    color: #F6A9A9;
+    font-family: 'Sacramento', cursive;
+    font-size: 5.625rem;
+    line-height: 2;
+    margin: 3.125rem auto 0rem auto;
+}
+
+h2 {
+    font-size: 2.5rem;
+    font-weight: normal;
+    margin: 0rem;
+    padding-top: 2.5rem;
+    padding-bottom: 0.625rem;
+}
+
+h4 {
+    color: #F6A9A9;
+}
+
+#apresentation {
+    font-size: 2rem;
+    text-align: left;
+    position: absolute;
+    left: 400px;
+}
+
+#subtitle {
+    color: #F6A9A9;
+    padding: 0rem;
+    font-family: 'Montserrat';
+    position: absolute;
+    left: 780px;
+    top: 370px
+}
+
+
+/********************************* MIDDLE-PAGE *********************************/
+
+/********************************* Degrees *********************************/
+#profile-row {
+    width: 100%;
+    position: absolute;
+    top: 700px;
+    right: 0.5px;
+    background-color: #FFF8E5;
+}
+
+hr{
+    position: absolute;
+    top: 1150px;
+    right: 640px;
+}
+
+#degree-row {
+    position: relative;
+    top: 1000px;
+}
+
+#degree-title {
+    position: absolute;
+    top: 1150px;
+    right: 42%
+}
+
+#academia {
+    position: absolute;
+    left: 200px;
+    top: 1250px;
+    width: 500px;
+    text-align: left
+} 
+
+.college {
+    font-size: 14px;
+}
+
+#courses {
+    position: absolute;
+    top: 1250px;
+    left: 800px;
+    width: 500px;
+    text-align: left;
+}
+
+/********************************* Skills *********************************/
+.middle-container {
+   background-color: #FFF8E5;
+}
+
+
+
+#skills-row {
+    line-height: 2;
+    position: absolute;
+    top: 1650px;
+    display: block;
+    margin: 0;
+}
+
+
+#hard-skills {
+    position: relative;
+    left: 150px;
+    width: 500px;
+    text-align: left;
+    top: 50px;
+}
+
+#soft-skills {
+    padding-left: 150px;
+    width: 100%;
+    text-align: left;
+} 
+
+#soft-title {
+    position: relative;
+    left: 450px;
+    top: 100px
+}
+
+#description-one, #description-two, #description-three {
+    width: 32%;
+}
+
+#description-one { 
+    position: relative;
+    right: 100px;
+    top: 130px
+}
+
+#description-two { 
+    position: relative;
+    left: 320px;
+    bottom: 42px;
+}
+ 
+#description-three { 
+    position: relative;
+    left: 770px;
+    bottom: 210px;
+}
+.tech-icon {
+    display: block;
+}

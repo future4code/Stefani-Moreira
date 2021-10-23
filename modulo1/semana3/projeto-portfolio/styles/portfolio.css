@@ -1,0 +1,68 @@
+img{
+    width: 60%; 
+}
+
+#image-container {
+    display: inline-block;
+}
+
+div a p {
+    display: none;
+}
+
+div a:hover p {
+    display: block;
+}
+
+#tincat {
+    width: 60%;
+    position: absolute;
+    bottom: 250px;
+    right: 600px;
+}
+
+.img-portfolio:hover{
+    opacity: 0.5;
+}
+
+#simon-game {
+    width: 60%;
+    position: absolute;
+    bottom: 250px;
+    left: 600px;
+}
+
+#personal {
+    width: 60%;
+    position: absolute;
+    top: 450px;
+    right: 600px;
+
+}
+
+#nordestao {
+    width: 60%;
+    position: absolute;
+    top: 450px;
+    left: 600px;
+}
+
+#random-dicee {
+    width: 60%;
+    position: absolute;
+    top: 750px;
+    right: 600px;
+}
+
+#drum-game {
+    width: 60%;
+    position: absolute;
+    top: 750px;
+    left: 600px;
+}
+
+.bottom-container {
+    width: 100%;
+    position: absolute;
+    top: 1050px;
+}
