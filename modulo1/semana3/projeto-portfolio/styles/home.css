@@ -1,6 +1,6 @@
 /********************************* TOP-PAGE *********************************/
 .top-container { 
-    padding: 13rem;
+    padding: 11.8rem;
     display: flex;
     justify-content: center;
 }
@@ -27,15 +27,15 @@ h2 {
     font-size: 2rem;
     text-align: left;
     position: absolute;
-    left: 400px;
+    left: 25rem;
 }
 
 #subtitle {
     color: #F6A9A9;
     padding: 0rem;
     position: absolute;
-    left: 780px;
-    top: 410px
+    left: 48.8rem;
+    top: 24.7rem
 }
 
 hr {
@@ -56,12 +56,12 @@ header {
     width: 100%
 }
 
-/******************** Degrees ********************/
-#degree-title, .degree-subtitle, #skills-title, #soft-title {
+/******************** Study ********************/
+.title{
     text-align: center;
 }
 
-#degrees-row {
+#study-row {
     background-color: #FFF8E5;
 }
 
@@ -69,7 +69,7 @@ header {
     display: flex;
     justify-content: center;
     margin-bottom: 2%;
-    padding: 40px 0;
+    padding: 40px 5px;
 }
 
 #academia {
@@ -77,18 +77,18 @@ header {
 }
 
 #vertical-line {
-    height: 290px;
+    height: 18rem;
     border-right: 3px dotted #FF9A8C;
     position: relative;
-    top: 37px;
+    top: 2rem;
     border-width: 0.3125rem;
-    left: 68px;
+    left: 5rem;
 }
 
 #courses {
     padding-top: 1%;
     position: relative;
-    left: 150px;
+    left: 9.8rem;
 
 }
 
@@ -103,13 +103,13 @@ header {
 #programming-title {
     position: relative;
     bottom: 7px;
-    left: 120px;
+    left: 7.5rem;
 }
 
 #programming-description {
     padding-top: 2%;
     position: relative;
-    left: 170px;
+    left: 10.7rem;
     width: 35%
 }
 
@@ -120,23 +120,24 @@ header {
     width: 30%
 }
 
+
 #tech-icons img {
-    height: 1.5rem
+    height: 1.3rem
 }
 
 #soft-skills {
-    margin: 4rem 0rem;
+    margin: 4.5rem 0rem;
 }
 
 #soft-skills-container {
     display: flex;
     width: 70%;
-    margin-left: 200px
+    margin-left: 12.5rem;
 }
 
 #description-two {
-position: relative;
-left: 35px
+    position: relative;
+    left: 35px;
 }
 
 #description-three {
@@ -145,6 +146,11 @@ left: 35px
 }
 
 div hr {
-    margin-top: 60px;
+    margin-top: 40px;
     text-align: center
+}
+
+.bottom-container {
+    position: relative;
+    top: 15px
 }

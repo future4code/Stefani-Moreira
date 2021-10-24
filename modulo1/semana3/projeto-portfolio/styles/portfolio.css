@@ -18,20 +18,19 @@ h2 {
     text-decoration: none;
 }
 
-#tincat p, #simon-game p, #drum-game p, #random-dicee p {
+.title-white {
     color: white;
 }
 
 .image-container p {
     text-align: center;
     position: relative;
-    right: 50px;
-    bottom: 100px;
+    right: 12.5rem;
+    bottom: 5rem;
 }
 
 #container-child-1, #container-child-2{
     display: flex;
-    flex-direction: row;
     justify-content: center;
 }
 
@@ -45,22 +44,27 @@ a {
 
 a p {
     display:none;
+    color: #40514E;
 }
 
-a:hover p {
-    display: block;
-}
 
 .img-portfolio:hover{
-    opacity: 0.5;
+    opacity: 0.8;
 }
+
+.img-portfolio:hover p {
+    display: inline;
+    font-size: 0.9rem;
+    font-weight: bold;
+}
+
 
 .techs li{
     color: #40514E;
     font-family: 'Merriweather';
     font-size: 14.5px
 }
-/********************************* SITES ONE PAGE *********************************/
+/********************************* GAMES *********************************/
 
 .site-one-page-container {
     display: flex;
@@ -81,75 +85,31 @@ a:hover p {
     bottom: 60px;
 }
 
-/********************************* PERSONAL SITE *********************************/
-#personal-site-container {
-    display: flex;
-    width: 80%;
-    margin-left: 150px;
-    padding-top: 30px;
-}
 
-#img-site {
-    width: 70%;
-    position: relative;
-    bottom: 30px;
-}
+/********************************* SITES *********************************/
 
-#img-site img {
-    padding: 10px
-}
-
-
-/********************************* NORDESTAO *********************************/
-#nordestao-container {
-    display: flex;
-    flex-direction: row;
-    margin-left: 80px
-}
-
-#nordestao-description {
-    width: 70%;
-    position: relative;
-    right: 80px
-}
-
-#img-nordestao {
-    position: relative;
-    left: 100px;
-}
-
-#img-nordestao img {
-    padding: 5px;
-    width: 50%
-}
-
-/********************************* TINCAT *********************************/
-
-.img-tincat{
+.img-site{
     width: 30%
 }
 
-#tincat-container {
+.site-container {
     display: flex;
     flex-direction: row;
     margin-top: 0;
     padding-top: 0;
 }
 
-#img-tincat-1 {
+.image-1 {
     padding-bottom: 20px;
 }
 
-a {
-    text-decoration: none;
-}
 
-#tincat-description {
+.site-description {
     display: flex;
     flex-direction: column;
     position: absolute;
-    bottom: 50px;
-    left: 600px;
+    bottom: 80px;
+    left: 37.5rem;
     width: 50%;
     margin-top: 0;
 }

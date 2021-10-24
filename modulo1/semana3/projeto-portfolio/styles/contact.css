@@ -17,7 +17,7 @@ main {
     width: 60%;
     font-size: 16px;
     position: relative;
-    left: 170px;
+    left: 10.63rem;
 }
 
 #contact-description {
@@ -25,15 +25,19 @@ main {
 }
 
 .contact-icon {
-    width: 30%
+    width: 30%;
+    height: 1.5rem;
 }
+
 #instagram {
     width: 31%
 }
+
 #contact-child-2 {
     position: relative;
-    right: 150px;
+    right: 9.38rem;
 }
+
 
 input, textarea{
     border-style: solid;
@@ -43,7 +47,7 @@ input, textarea{
 }
 
 textarea {
-    height:140px;
+    height:8.8rem;
 }
 
 #name {
@@ -67,19 +71,19 @@ textarea {
 
 #message {
     position: relative;
-    bottom: 126px
+    bottom: 8rem;
 }
 
 #message-textarea {
     position: relative;
-    left: 18px;
+    left: 16px;
 }
 
 button {
     position: relative;
     top: 5px;
-    left: 345px;
-    border: 2px solid #F6A9A9;
+    left: 21.6rem;
+    border: 1px solid #F6A9A9;
     border-radius: 10px;
     background-color: #F6A9A9;
     color: #40514E;
