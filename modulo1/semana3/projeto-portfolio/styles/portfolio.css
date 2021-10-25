@@ -1,4 +1,18 @@
-img{
+/********************************* GENERAL *********************************/
+#container-child-1, #container-child-2, .site-one-page-container{
+    display: flex;
+} 
+
+.image-container p, .site-one-page-img, .site-one-page-description {
+    position: relative;
+}
+
+a p, li, p a {
+    color: #40514E;
+}
+
+/********************************* PORTFOLIO PAGE *********************************/
+main div a img{
     width: 80%; 
 }
 
@@ -11,7 +25,6 @@ h2 {
 .image-container {
     padding: 60px 30px 20px;
     margin-left: 70px;
-    margin-top: 0;
 }
 
 .image-container a {
@@ -23,14 +36,12 @@ h2 {
 }
 
 .image-container p {
-    text-align: center;
-    position: relative;
+    text-align: center;   
     right: 12.5rem;
     bottom: 5rem;
 }
 
 #container-child-1, #container-child-2{
-    display: flex;
     justify-content: center;
 }
 
@@ -42,11 +53,9 @@ a {
     text-decoration: none;
 }
 
-a p {
+a p{
     display:none;
-    color: #40514E;
 }
-
 
 .img-portfolio:hover{
     opacity: 0.8;
@@ -58,58 +67,46 @@ a p {
     font-weight: bold;
 }
 
-
-.techs li{
-    color: #40514E;
-    font-family: 'Merriweather';
-    font-size: 14.5px
-}
-/********************************* GAMES *********************************/
-
+/********************************* SITES *********************************/
 .site-one-page-container {
-    display: flex;
-    margin-top: 139.9px
+    margin-top: 139.9px;
 }
 
-.site-one-page-img {
+.site-one-page-img, .site-one-page-description {
     width: 60%;
-    position: relative;
-    left: 100px;
-    bottom: 50px
 }
 
-.site-one-page-description {
-    width: 60%;
-    position: relative;
-    right: 100px;
+.site-one-page-img, .site-one-page-description {
     bottom: 60px;
 }
 
-
-/********************************* SITES *********************************/
-
-.img-site{
-    width: 30%
+.site-one-page-img {    
+    left: 100px;
 }
 
-.site-container {
-    display: flex;
-    flex-direction: row;
-    margin-top: 0;
-    padding-top: 0;
+.site-one-page-description {
+    right: 100px;
 }
 
-.image-1 {
-    padding-bottom: 20px;
-}
-
-
-.site-description {
-    display: flex;
-    flex-direction: column;
+/********************************* BUTTONS *********************************/
+.prev-button, .next-button {
     position: absolute;
-    bottom: 80px;
-    left: 37.5rem;
-    width: 50%;
-    margin-top: 0;
+    font-size: 3rem;
+    bottom: 16rem;
+}
+
+.prev-button {
+    left: 1rem;
+}
+
+.next-button {
+    right: 1rem;  
+}
+
+.prev-button:hover, .next-button:hover {
+    opacity: 0.4;
+}
+
+.prev-button a, .next-button a {
+    color: #FF8882;
 }

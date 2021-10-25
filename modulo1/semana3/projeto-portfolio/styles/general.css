@@ -1,49 +1,20 @@
-/********************************* HEADER *********************************/
-
-/******** Nav bar **********/
-header, nav ul{
-    background-color: #FFF8E5;
-}
-
-nav ul {
-    justify-content: right;   
-}
-
-
-li a {
-    text-align: center;
-    padding: 0.8rem 1rem;
-    text-decoration: none;
-    font-size: 1.1rem;
-    display: flex;
-    justify-content: space-between;
-    color: #FF8882;
-}
-
-.nav-item {
-    display: inline-block;
-    padding-left: 2rem
-}
-
-.nav-link {
-    padding-left: 3rem;
-}
-
-#nav-title {
-    position: relative;
-    right: 48.75rem;
-}
-
 /********************************* GENERAL *********************************/
-html body {
-    margin: 0;
-    padding: 0;
-    width: 100%;
+body {
     font-family: 'Merriweather';
     font-size: 14.5px;
 }
 
-html body, .bottom-container li a {
+header{
+    background-color: #FFF8E5;
+}
+
+body, nav ul, .bottom-container, .bottom-container li a {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+}
+
+body, .bottom-container li a {
     color: #40514E;
 }
 
@@ -52,26 +23,47 @@ h2, h3, h4 {
     font-family: 'Montserrat';
 }
 
-nav ul, .bottom-container ul {
-    margin: 0;
-    padding: 0;
-    width: 100%;
+nav ul, li a, .bottom-container ul {
     display: flex;
-    overflow: hidden;
     list-style-type: none;
     font-family: 'Montserrat-light';
 } 
 
-/********************************* FOOTER *********************************/
+.nav-item, .nav-link {
+    padding-left: 2.5rem;
+}
 
-.bottom-container, .bottom-container li a {
-    margin: 0;
-    padding: 0;
-    bottom: 0;
-    width: 100%;
+li a, .bottom-container {
     text-align: center;
+}   
+
+/********************************* HEADER *********************************/
+/******** Nav bar **********/
+nav ul {
+    justify-content: right;   
+}
+
+li a {
+    padding: 0.8rem 1rem;
+    text-decoration: none;
+    font-size: 1.1rem;
+    justify-content: space-between;
+    color: #FF8882;
+}
+
+.nav-item {
+    display: inline-block;
+}
+
+#nav-title {
+    position: absolute;
+    left: 0.1rem;
+}
+
+/********************************* FOOTER *********************************/
+.bottom-container, .bottom-container li a {
     background-color:#FF8882;
-    font-size: 14px;
+    font-size: 0.8rem;
 }
 
 .bottom-container ul {
@@ -79,21 +71,23 @@ nav ul, .bottom-container ul {
     padding-top: 1rem;
 }
 
-.bottom-container li a:hover {
-    color: #FFF8E5;
+.bottom-container li a:hover img {
+    opacity: 0.5
 }
 
 .bottom-container p {
     padding-bottom: 0.5rem;
 }
 
-.bottom-container li a {
-    padding-left: 30px;
+.bottom-container, .bottom-container li a {
     position: relative;
-    right: 20px;
+}
+
+.bottom-container li a {
+    right: 60px;
+    padding-left: 5rem;
 }
 
 .bottom-container {
-    position: relative;
-    top: 14px
+    top: 13px;
 }

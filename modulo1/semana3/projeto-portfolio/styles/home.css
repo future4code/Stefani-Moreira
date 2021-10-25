@@ -1,16 +1,35 @@
+/********************************* GENERAL *********************************/
+.top-container, #degrees-container, #hard-skills, #soft-skills-container {
+    display: flex;
+}  
+
+.top-container, #degrees-container, #hard-skills { 
+    justify-content: center;
+}
+
+#apresentation, #profile-row, .title{
+    text-align: center;
+}
+
+#courses, #vertical-line, #programming-title, #programming-description, #tech-icons, #description-two, #description-three {
+    position: relative;
+}
+
+#courses, #programming-title {
+    left: 9.8rem;
+}
+
 /********************************* TOP-PAGE *********************************/
 .top-container { 
-    padding: 11.8rem;
-    display: flex;
-    justify-content: center;
+    padding: 11.9rem;
 }
 
 h1 {
     color: #F6A9A9;
     font-family: 'Sacramento', cursive;
-    font-size: 5.625rem;
+    font-size: 5.63rem;
     line-height: 2;
-    margin: 3.125rem auto 0rem auto;
+    margin: 3.2rem auto 0rem auto;
 }
 
 h2 {
@@ -18,111 +37,88 @@ h2 {
     font-weight: normal;
     margin: 0rem;
     padding-top: 2.5rem;
-    padding-bottom: 0.625rem;
+    padding-bottom: 0.63rem;
 }
 
-
+#apresentation, #subtitle {
+    position: absolute;
+}
 
 #apresentation {
     font-size: 2rem;
-    text-align: left;
-    position: absolute;
     left: 25rem;
 }
 
 #subtitle {
-    color: #F6A9A9;
     padding: 0rem;
-    position: absolute;
     left: 48.8rem;
-    top: 24.7rem
+    top: 24.9rem;
 }
 
+/********************************* MIDDLE-PAGE *********************************/
 hr {
+    border-color: #FF9A8C;
     border-style: none;
     border-top-style: dotted;
-    border-color: #FF9A8C;
-    border-width: 0.3125rem;
+    border-width: 0.32rem;
     width: 5%;
 }
 
-header {
-    background-color: #FFF8E5;
-}
-/********************************* MIDDLE-PAGE *********************************/
 #profile-row {
     margin: 5% 0%;
-    text-align: center;
     width: 100%
 }
 
 /******************** Study ********************/
-.title{
-    text-align: center;
-}
-
 #study-row {
     background-color: #FFF8E5;
 }
 
 #degrees-container {
-    display: flex;
-    justify-content: center;
     margin-bottom: 2%;
     padding: 40px 5px;
 }
 
-#academia {
-    padding: 1%;
+#academia, #courses {
+    padding-top: 1%;
 }
 
 #vertical-line {
     height: 18rem;
     border-right: 3px dotted #FF9A8C;
-    position: relative;
+    border-width: 0.32rem;
     top: 2rem;
-    border-width: 0.3125rem;
-    left: 5rem;
+    left: 5.5rem;
 }
 
-#courses {
-    padding-top: 1%;
-    position: relative;
-    left: 9.8rem;
-
+.college {
+    font-size: 12px;
 }
 
 /********************************* Skills *********************************/
 #hard-skills {
-    display: flex;
-    justify-content: center;
     margin-bottom: 1%;
-    width: 90%
+    width: 90%;
 }
 
 #programming-title {
-    position: relative;
     bottom: 7px;
-    left: 7.5rem;
 }
 
 #programming-description {
     padding-top: 2%;
-    position: relative;
     left: 10.7rem;
-    width: 35%
+    width: 35%;
 }
 
 #tech-icons {
     padding-top: 5%;
-    position: relative;
     left: 50px;
-    width: 30%
+    width: 30%;
 }
 
-
 #tech-icons img {
-    height: 1.3rem
+    height: 1.3rem;
 }
 
 #soft-skills {
@@ -130,27 +126,14 @@ header {
 }
 
 #soft-skills-container {
-    display: flex;
     width: 70%;
     margin-left: 12.5rem;
 }
 
 #description-two {
-    position: relative;
     left: 35px;
 }
 
 #description-three {
-    position: relative;
-    left: 60px
-}
-
-div hr {
-    margin-top: 40px;
-    text-align: center
-}
-
-.bottom-container {
-    position: relative;
-    top: 15px
+    left: 60px;
 }
