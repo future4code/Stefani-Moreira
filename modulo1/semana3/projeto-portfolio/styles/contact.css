@@ -1,3 +1,4 @@
+/********************************* GENERAL *********************************/
 h2 {
     text-align: center;
     font-size: 2.5rem
@@ -7,6 +8,11 @@ main {
     margin-top: 77px;
 }
 
+#contact-child-1, #contact-child-2, #name, #email, #subject, #message, #message-textarea, button {
+    position: relative;
+}
+
+/********************************* SECTIONS PAGE *********************************/
 #contact-container {
     display: flex;
     justify-content: space-around;
@@ -16,7 +22,6 @@ main {
 #contact-child-1 {
     width: 60%;
     font-size: 16px;
-    position: relative;
     left: 10.63rem;
 }
 
@@ -34,7 +39,6 @@ main {
 }
 
 #contact-child-2 {
-    position: relative;
     right: 9.38rem;
 }
 
@@ -51,17 +55,14 @@ textarea {
 }
 
 #name {
-    position: relative;
     left: 50px;
 }
 
 #email {
-    position: relative;
     left: 43px
 }
 
-#description {
-    position: relative;
+#subject {
     left: 35px
 }
 
@@ -70,17 +71,14 @@ textarea {
 }
 
 #message {
-    position: relative;
     bottom: 8rem;
 }
 
 #message-textarea {
-    position: relative;
     left: 16px;
 }
 
 button {
-    position: relative;
     top: 5px;
     left: 21.6rem;
     border: 1px solid #F6A9A9;

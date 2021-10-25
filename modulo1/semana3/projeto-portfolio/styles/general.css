@@ -33,9 +33,13 @@ nav ul, li a, .bottom-container ul {
     padding-left: 2.5rem;
 }
 
-li a, .bottom-container {
+li a, .referencia-name {
     text-align: center;
-}   
+}  
+
+p {
+    text-align: justify; 
+} 
 
 /********************************* HEADER *********************************/
 /******** Nav bar **********/
@@ -75,7 +79,7 @@ li a {
     opacity: 0.5
 }
 
-.bottom-container p {
+.referencia-name {
     padding-bottom: 0.5rem;
 }
 
