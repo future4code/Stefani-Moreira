@@ -13,7 +13,7 @@ video {
 main {
     border: 1px solid lightblue;
     display: grid;
-    grid-template-columns: 1fr 4fr;
+    grid-template-columns: 1fr 5fr;
     justify-items: start;
     align-items: baseline;
 }
@@ -28,4 +28,14 @@ section {
     display: flex;
     align-items: center;
     justify-content: space-between;
+}
+
+.nav-brand {
+    display: flex;
+    align-items: center;
+    padding-left: 10px;
+}
+
+.nav-brand img {
+    padding-right: 4px;
 }
