@@ -1,0 +1,31 @@
+video {
+    width: 90%
+}
+
+#container {
+    border: 1px solid lightcoral;
+    width: 100%;
+    display: grid;
+    grid-template-rows: 1fr, 6fr, 1fr;
+
+}
+
+main {
+    border: 1px solid lightblue;
+    display: grid;
+    grid-template-columns: 1fr 4fr;
+    justify-items: start;
+    align-items: baseline;
+}
+
+section {
+    border: 1px solid lightgreen;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+}
+
+.horizontal-nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
