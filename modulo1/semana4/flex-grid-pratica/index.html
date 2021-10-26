@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
     <title>LabeTube</title>
 </head>
@@ -12,12 +13,21 @@
         <header>
             <nav class="horizontal-nav">
                 <div class="nav-brand">
-                    <img src="images/online-video.png" alt="">
-                    <a href="index.html"><h2>LabeTube</h2></a>
+                    <a href="index.html">
+                        <img src="images/online-video.png" alt="">
+                        <h2>LabeTube</h2>
+                    </a>
                 </div>
                 <div class="search-box">
-                    <input type="text" placeholder="PESQUISAR">
-                    <button type="submit">Pesquisa</button>
+                    <input type="text" placeholder=" PESQUISAR">
+                    <img class="icon" src="images/search.png">
+                    <img class="icon" src="images/microfone.png">
+                </div>
+                <div class="horizontal-nav-icons">
+                    <img src="images/video.png">
+                    <img src="images/quadrado.png">
+                    <img src="images/sino.png">
+                    <img src="https://cdn.iconscout.com/icon/free/png-512/account-profile-avatar-man-circle-round-user-30452.png">
                 </div>
             </nav>
         </header>      
@@ -27,92 +37,102 @@
                     <div>
                         <ul>
                             <li>
-                                <div>
+                                <div class="vertical-nav-item">
+                                    <img src="https://cdn2.iconfinder.com/data/icons/pittogrammi/142/65-512.png">
                                     <p>Início</p>
                                 </div>
                             </li>
                             <li>
-                                <p>Explorar</p>
+                                <div class="vertical-nav-item">
+                                    <img src="images/explorar.png">
+                                    <p>Explorar</p>
+                                </div>
                             </li>
                             <li>
-                                <div>
+                                <div class="vertical-nav-item">
+                                    <img src="images/inscricao.png" alt="">
                                     <p>Inscrições</p>
                                 </div>
                             </li>
-                        </ul>
-                        <div class="Horizontal-line"></div>
-                        <ul>
                             <li>
-                                <div>
+                                <div class="vertical-nav-item">
+                                    <img src="images/youtuber.png" alt="">
                                     <p>Biblioteca</p>
                                 </div>
                             </li>
-                            <li>
-                                <p>Histórico</p>
-                            </li>
-                            <li>
-                                <div>
-                                    <p>Seus vídeos</p>
-                                </div>
-                            </li>
                         </ul>
+                
                     </div>
                 </nav>
             </aside>
             <section id="principal-page-section">
-                <div class="midia-card">
-                    <video src="https://storage.googleapis.com/future-apis.appspot.com/1.mp4">
-                        Your browser does not support the video tag.
-                    </video>
-                    <a href="midia-pages-labetube/midia-1.html"><p>Conheça a beleza natura e arquitetura...</p></a>
+                <div class="media-card">
+                    <a href="midia-pages-labetube/midia-1.html">
+                        <video src="https://storage.googleapis.com/future-apis.appspot.com/1.mp4">
+                            Your browser does not support the video tag.
+                        </video>
+                    <p>Conheça a beleza natural e arquitetura...</p></a>
                 </div>
-                <div class="midia-card">
-                    <video src="https://storage.googleapis.com/future-apis.appspot.com/2.mp4">
-                        Your browser does not support the video tag.
-                    </video>
-                    <p>Conheça a beleza natura e arquitetura da Irlanda</p>
+                <div class="media-card">
+                    <a href="midia-pages-labetube/midia-2.html">
+                        <video src="https://storage.googleapis.com/future-apis.appspot.com/2.mp4">
+                            Your browser does not support the video tag.
+                        </video>
+                    <p>Impressionante vídeo de hemácias captadas...</p></a>
                 </div>
-                <div class="midia-card">
-                    <video src="https://storage.googleapis.com/future-apis.appspot.com/3.mp4">
-                        Your browser does not support the video tag.
-                    </video>
-                    <p>Conheça a beleza natura e arquitetura da Irlanda</p>
+                <div class="media-card">
+                    <a href=#>
+                        <video src="https://storage.googleapis.com/future-apis.appspot.com/3.mp4">
+                            Your browser does not support the video tag.
+                        </video>
+                        <p>Bela dança de cores você vai ficar impresionado...</p>
+                    </a>
                 </div>
-                <div class="midia-card">
-                    <video src="https://storage.googleapis.com/future-apis.appspot.com/4.mp4">
-                        Your browser does not support the video tag.
-                    </video>
-                    <p>Conheça a beleza natura e arquitetura da Irlanda</p>
+                <div class="media-card">
+                    <a href=#>
+                        <video src="https://storage.googleapis.com/future-apis.appspot.com/4.mp4">
+                            Your browser does not support the video tag.
+                        </video>
+                        <p>Filmei com meu drone o mar no leste Europeu...</p>
+                    </a>
                 </div>
-                <div class="midia-card">
-                    <video src="https://storage.googleapis.com/future-apis.appspot.com/5.mp4">
-                        Your browser does not support the video tag.
-                    </video>
-                    <p>Conheça a beleza natura e arquitetura da Irlanda</p>
+                <div class="media-card">
+                    <a href=#>
+                        <video src="https://storage.googleapis.com/future-apis.appspot.com/5.mp4">
+                            Your browser does not support the video tag.
+                        </video>
+                        <p>Capturei imagens da minha Fazenda o dia inteiro...</p>
+                    </a>
                 </div>
-                <div class="midia-card">
-                    <video src="https://storage.googleapis.com/future-apis.appspot.com/6.mp4">
-                        Your browser does not support the video tag.
-                    </video>
-                    <p>Conheça a beleza natura e arquitetura da Irlanda</p>
+                <div class="media-card">
+                    <a href=#>
+                        <video src="https://storage.googleapis.com/future-apis.appspot.com/6.mp4">
+                            Your browser does not support the video tag.
+                        </video>
+                        <p>Encontrei coelho fofo no Central Park veja a reação dele ao ...</p>
+                    </a>
                 </div>
-                <div class="midia-card">
-                    <video src="https://storage.googleapis.com/future-apis.appspot.com/7.mp4">
-                        Your browser does not support the video tag.
-                    </video>
-                    <p>Conheça a beleza natura e arquitetura da Irlanda</p>
+                <div class="media-card">
+                    <a href=#>
+                        <video src="https://storage.googleapis.com/future-apis.appspot.com/7.mp4">
+                            Your browser does not support the video tag.
+                        </video>
+                        <p>Incrível imagens de uma nebulosa filmada por astronautas...</p>
+                    </a>
                 </div>
-                <div class="midia-card">
-                    <video src="https://storage.googleapis.com/future-apis.appspot.com/8.mp4">
-                        Your browser does not support the video tag.
-                    </video>
-                    <p>Conheça a beleza natura e arquitetura da Irlanda</p>
+                <div class="media-card">
+                    <a href=#>
+                        <video src="https://storage.googleapis.com/future-apis.appspot.com/8.mp4">
+                            Your browser does not support the video tag.
+                        </video>
+                        <p>SpaceX divulga imagens do novo foguete que partirá em missão...</p>
+                    </a>
                 </div>
         
             </section>
         </main>
-        <footer>
-            <h2>FOOTER</h2>
+        <footer id="footer-principal-page">
+            <h2>© Copyright 2021 LabeTube</h2>
         </footer>
     </div>
 </body>

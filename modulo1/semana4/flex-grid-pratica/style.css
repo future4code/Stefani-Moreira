@@ -1,69 +1,171 @@
 * {
     margin: 0;
     padding: 0;
+    font-family: 'Roboto';
 }
 
 #principal-page video {
-    width: 90%
+    width: 100%
 }
 
 #container {
-    border: 1px solid lightcoral;
-    width: 100%;
     display: grid;
     grid-template-rows: 1fr, 6fr, 1fr;
-
 }
 
 #principal-page {
-    border: 1px solid lightblue;
     display: grid;
-    grid-template-columns: 1fr 6fr;
+    grid-template-columns: 0.3fr 5fr;
     justify-items: start;
-    align-items: baseline;
+    align-items: start;
 }
 
 #principal-page-section {
-    border: 1px solid lightgreen;
     display: grid;
     grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: 1fr 1fr;
+    column-gap: 20px;
+    padding: 20px 0px 20px 20px;
+    background-color: rgb(255, 249, 249);
+    height: 516px;
 }
 
 .horizontal-nav {
     display: flex;
     align-items: center;
-    justify-content: space-between;
+    justify-content: space-between; 
     height: 60px;
+    border-bottom: 1px solid #e4dedd
 }
 
-.nav-brand {
+p {
+    font-weight: 500;
+}
+
+.nav-brand a {
     display: flex;
     align-items: center;
-    padding-left: 10px;
+    padding-left: 12px;
+}
+
+.nav-brand h2{
+    font-weight: 900;
 }
 
 .nav-brand img {
-    padding-right: 4px;
+    padding-right: 5px;
     width: 20%
 }
 
 .search-box {
     display: flex;
-    padding-right: 60px;
+    padding-left: 250px;
+    width: 40%
 }
 
-.search-box button {
-    width: 30%
+
+.search-box img {
+   width: 7%
 }
 
-.midia-card {
-    border: 1px solid lightseagreen;
-    padding: 20px
+input {
+    width: 600px;
+}
+
+.icon {
+    height: 30px;
+    padding-left: 10px;
+}
+
+.icon:hover {
+    opacity: 0.5
+}
+
+a {
+    text-decoration: none;
+    color: black
+}
+
+.horizontal-nav-icons {
+    display: flex;
+    justify-content: flex-end;
+    padding-right: 20px;
+}
+
+.horizontal-nav-icons img {
+    width: 5%;
+    padding-left: 30px
+}
+
+#vertical-nav img {
+    width: 35%
+}
+
+#vertical-nav {
+    display: flex;
+    flex-direction: column;
+    height: 555px;
+    border-right: 1px solid #e4dedd;
+
+}
+
+.vertical-nav-item {
+    display: grid;
+    justify-items: center;
+    row-gap: 10px;
+    margin: 10px 4px 30px;
+}
+
+.vertical-nav-item p {
+    font-size: 11px
+}
+
+.media-card {
+    padding: 5px;
+    margin-right: 20px;
+    margin-bottom: 10px;
 }
 
 footer {
-    background-color: #132E9B;
+    background-color: black;
     height: 40px;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
 }
 
-/************************************************** MIDIA PAGE **************************************************/
+footer h2 {
+    font-size: 14px
+}
+/************************************************** MEDIA PAGE **************************************************/
+.media-page-container{
+    background-color: rgb(255, 249, 249);
+    height: 552px;
+}
+
+
+.layout-media-page {
+    display: flex;
+    justify-content: center;
+}
+
+.media-card-page {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#media-2 {
+    width: 50%;
+}
+
+
+#footer-media-1 {
+    margin-top: 4px ;
+}
+
+#footer-media-2 {
+    margin-top: 4px
+}
