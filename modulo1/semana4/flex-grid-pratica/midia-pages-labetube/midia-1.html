@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Lato&family=Roboto:wght@100&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="../style.css">
     <title>Conheça a beleza natural e arquitetura da Irlanda</title>
 </head>
@@ -20,8 +20,8 @@
                 </div>
                 <div class="search-box">
                     <input type="text" placeholder=" PESQUISAR">
-                    <img class="icon" src="../images/search.png">
-                    <img class="icon" src="../images/microfone.png">
+                    <button><img src="../images/search.png"></button>
+                    <img class="icon" id="mic" src="../images/microfone.png">
                 </div>
                 <div class="horizontal-nav-icons">
                     <img src="../images/video.png">
@@ -37,12 +37,15 @@
                     <video src="https://storage.googleapis.com/future-apis.appspot.com/1.mp4" controls autoplay="true">
                         Your browser does not support the video tag.
                     </video>
-                    <p class="hashtags">#Irlanda #arquitetura #natureza</p>
-                    <p class="title-media">Conheça a beleza natural e arquitetura da Irlanda</p>
+                    <div class="text-media">
+                        <p class="hashtags">#Irlanda #arquitetura #natureza</p>
+                        <p class="title-media">Conheça a beleza natural e arquitetura da Irlanda</p>
+                    </div>
+                    
                 </div>
             </section>    
         </main>
-        <footer id="footer-media-1">
+        <footer class="footer-media">
             <h2>© Copyright 2021 LabeTube</h2>
         </footer>
     </div>
