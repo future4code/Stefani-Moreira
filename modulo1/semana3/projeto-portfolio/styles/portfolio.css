@@ -1,0 +1,115 @@
+/********************************* GENERAL *********************************/
+#container-child-1, #container-child-2, .site-one-page-container{
+    display: flex;
+} 
+
+.image-container p, .site-one-page-img, .site-one-page-description {
+    position: relative;
+}
+
+a p, li, p a {
+    color: #40514E;
+}
+
+/********************************* PORTFOLIO PAGE *********************************/
+main div a img{
+    width: 80%; 
+}
+
+h2, .image-container p {
+    text-align: center;
+}
+
+h2 {
+    margin-top: 90px;
+    font-size: 2.5rem
+}
+
+.image-container {
+    padding: 60px 30px 20px;
+    margin-left: 70px;
+}
+
+.image-container a {
+    text-decoration: none;
+}
+
+.title-white {
+    color: white;
+}
+
+.image-container p {  
+    right: 12.5rem;
+    bottom: 5rem;
+}
+
+#container-child-1, #container-child-2{
+    justify-content: center;
+}
+
+#container-child-2 {
+    margin-top: 100px;
+}
+
+a {
+    text-decoration: none;
+}
+
+a p{
+    display:none;
+}
+
+.img-portfolio:hover{
+    opacity: 0.8;
+}
+
+.img-portfolio:hover p {
+    display: inline;
+    font-size: 0.9rem;
+    font-weight: bold;
+}
+
+/********************************* SITES *********************************/
+.site-one-page-container {
+    margin-top: 139.9px;
+}
+
+.site-one-page-img, .site-one-page-description {
+    width: 60%;
+}
+
+.site-one-page-img, .site-one-page-description {
+    bottom: 60px;
+}
+
+.site-one-page-img {    
+    left: 100px;
+}
+
+.site-one-page-description {
+    right: 100px;
+    text-align: justify;
+}
+
+/********************************* BUTTONS *********************************/
+.prev-button, .next-button {
+    position: absolute;
+    font-size: 3rem;
+    bottom: 16rem;
+}
+
+.prev-button {
+    left: 1rem;
+}
+
+.next-button {
+    right: 1rem;  
+}
+
+.prev-button:hover, .next-button:hover {
+    opacity: 0.4;
+}
+
+.prev-button a, .next-button a {
+    color: #FF8882;
+}

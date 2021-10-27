@@ -1,0 +1,92 @@
+/********************************* GENERAL *********************************/
+h2 {
+    text-align: center;
+    font-size: 2.5rem
+}
+
+main {
+    margin-top: 77px;
+}
+
+#contact-child-1, #contact-child-2, #name, #email, #subject, #message, #message-textarea, button {
+    position: relative;
+}
+
+/********************************* SECTIONS PAGE *********************************/
+#contact-container {
+    display: flex;
+    justify-content: space-around;
+    margin: 50px 0 59.4px 0;
+}
+
+#contact-child-1 {
+    width: 60%;
+    font-size: 16px;
+    left: 10.63rem;
+}
+
+#contact-description {
+    width: 40%
+}
+
+.contact-icon {
+    width: 30%;
+    height: 1.5rem;
+}
+
+#instagram {
+    width: 31%
+}
+
+#contact-child-2 {
+    right: 9.38rem;
+}
+
+
+input, textarea{
+    border-style: solid;
+    border-width: 0px 0px 2px;
+    position: absolute; 
+    width:300px;
+}
+
+textarea {
+    height:8.8rem;
+}
+
+#name {
+    left: 50px;
+}
+
+#email {
+    left: 43px
+}
+
+#subject {
+    left: 35px
+}
+
+#contact{
+    margin-top: 10px
+}
+
+#message {
+    bottom: 8rem;
+}
+
+#message-textarea {
+    left: 16px;
+}
+
+button {
+    top: 5px;
+    left: 21.6rem;
+    border: 1px solid #F6A9A9;
+    border-radius: 10px;
+    background-color: #F6A9A9;
+    color: #40514E;
+}
+
+button:active {
+    background-color:#FFF8E5
+}

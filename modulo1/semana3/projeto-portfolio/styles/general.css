@@ -1,0 +1,97 @@
+/********************************* GENERAL *********************************/
+body {
+    font-family: 'Merriweather';
+    font-size: 14.5px;
+}
+
+header{
+    background-color: #FFF8E5;
+}
+
+body, nav ul, .bottom-container, .bottom-container li a {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+}
+
+body, .bottom-container li a {
+    color: #40514E;
+}
+
+h2, h3, h4 {
+    color: #F6A9A9;
+    font-family: 'Montserrat';
+}
+
+nav ul, li a, .bottom-container ul {
+    display: flex;
+    list-style-type: none;
+    font-family: 'Montserrat-light';
+} 
+
+.nav-item, .nav-link {
+    padding-left: 2.5rem;
+}
+
+li a, .referencia-name {
+    text-align: center;
+}  
+
+p {
+    text-align: justify; 
+} 
+
+/********************************* HEADER *********************************/
+/******** Nav bar **********/
+nav ul {
+    justify-content: right;   
+}
+
+li a {
+    padding: 0.8rem 1rem;
+    text-decoration: none;
+    font-size: 1.1rem;
+    justify-content: space-between;
+    color: #FF8882;
+}
+
+.nav-item {
+    display: inline-block;
+}
+
+#nav-title {
+    position: absolute;
+    left: 0.1rem;
+}
+
+/********************************* FOOTER *********************************/
+.bottom-container, .bottom-container li a {
+    background-color:#FF8882;
+    font-size: 0.8rem;
+}
+
+.bottom-container ul {
+    justify-content: center;
+    padding-top: 1rem;
+}
+
+.bottom-container li a:hover img {
+    opacity: 0.5
+}
+
+.referencia-name {
+    padding-bottom: 0.5rem;
+}
+
+.bottom-container, .bottom-container li a {
+    position: relative;
+}
+
+.bottom-container li a {
+    right: 60px;
+    padding-left: 5rem;
+}
+
+.bottom-container {
+    top: 13px;
+}

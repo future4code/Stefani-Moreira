@@ -1,0 +1,139 @@
+/********************************* GENERAL *********************************/
+.top-container, #degrees-container, #hard-skills, #soft-skills-container {
+    display: flex;
+}  
+
+.top-container, #degrees-container, #hard-skills { 
+    justify-content: center;
+}
+
+#apresentation, #profile-row, #profile-row p, .title{
+    text-align: center;
+}
+
+#courses, #vertical-line, #programming-title, #programming-description, #tech-icons, #description-two, #description-three {
+    position: relative;
+}
+
+#courses, #programming-title {
+    left: 9.8rem;
+}
+
+/********************************* TOP-PAGE *********************************/
+.top-container { 
+    padding: 11.9rem;
+}
+
+h1 {
+    color: #F6A9A9;
+    font-family: 'Sacramento', cursive;
+    font-size: 5.63rem;
+    line-height: 2;
+    margin: 3.2rem auto 0rem auto;
+}
+
+h2 {
+    font-size: 2.5rem;
+    font-weight: normal;
+    margin: 0rem;
+    padding-top: 2.5rem;
+    padding-bottom: 0.63rem;
+}
+
+#apresentation, #subtitle {
+    position: absolute;
+}
+
+#apresentation {
+    font-size: 2rem;
+    left: 25rem;
+}
+
+#subtitle {
+    padding: 0rem;
+    left: 48.8rem;
+    top: 24.9rem;
+}
+
+/********************************* MIDDLE-PAGE *********************************/
+hr {
+    border-color: #FF9A8C;
+    border-style: none;
+    border-top-style: dotted;
+    border-width: 0.32rem;
+    width: 5%;
+}
+
+#profile-row {
+    margin: 5% 0%;
+    width: 100%;
+}
+
+/******************** Study ********************/
+#study-row {
+    background-color: #FFF8E5;
+}
+
+#degrees-container {
+    margin-bottom: 2%;
+    padding: 40px 5px;
+}
+
+#academia, #courses {
+    padding-top: 1%;
+}
+
+#vertical-line {
+    height: 18rem;
+    border-right: 3px dotted #FF9A8C;
+    border-width: 0.32rem;
+    top: 2rem;
+    left: 5.5rem;
+}
+
+.college {
+    font-size: 12px;
+}
+
+/********************************* Skills *********************************/
+#hard-skills {
+    margin-bottom: 1%;
+    width: 90%;
+}
+
+#programming-title {
+    bottom: 7px;
+}
+
+#programming-description {
+    padding-top: 2%;
+    left: 10.7rem;
+    width: 35%;
+}
+
+#tech-icons {
+    padding-top: 5%;
+    left: 50px;
+    width: 30%;
+}
+
+#tech-icons img {
+    height: 1.3rem;
+}
+
+#soft-skills {
+    margin: 4.5rem 0rem;
+}
+
+#soft-skills-container {
+    width: 70%;
+    margin-left: 12.5rem;
+}
+
+#description-two {
+    left: 35px;
+}
+
+#description-three {
+    left: 60px;
+}
