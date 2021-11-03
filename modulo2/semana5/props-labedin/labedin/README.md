@@ -9,5 +9,9 @@ Atividade com objetivo de ser apresentada como um currículo, parecido com as in
 -  Redes sociais
 
 
+### Tech
+- React
+
+
 ### Link
 https://crazy-addition.surge.sh/
