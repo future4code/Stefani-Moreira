@@ -7,7 +7,7 @@ const BigCardContainer = styled.div `
     border: 1px solid black;
     padding: 20px 10px;
     margin-bottom: 10px;
-    height: 200px;
+    height: 150px;
 `
 
 const ImgBigCardContainer = styled.img `
@@ -16,12 +16,16 @@ const ImgBigCardContainer = styled.img `
     border-radius: 30%;
 `
 const HeadingBigCardContainer = styled.h4 `
-    margin-bottom: 15px;
+    margin-bottom: 5px;
 `
 const DescriptionBigCardContainer = styled.div `
     display: flex;
     flex-direction: column;
     justify-items: flex-start;
+
+    p {
+        text-align: justify;
+    }
 `
 
 function CardGrande(props) {
@@ -33,7 +37,7 @@ function CardGrande(props) {
                 <p>{ props.descricao }</p>
             </DescriptionBigCardContainer>
         </BigCardContainer>
-    )
+    );
 }
 
 export default CardGrande;

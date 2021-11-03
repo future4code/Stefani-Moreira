@@ -4,11 +4,13 @@ import styled from 'styled-components';
 const ImageButtonContainer = styled.div `
     display: flex;
     align-items: center;
+    justify-content: center;
     border: 1px solid black;
     border-radius: 50px;
     width: 150px;
-    padding: 15px 20px;
-    margin: 10px auto;
+    padding: 5px 10px;
+    margin: 5px auto;
+    height: 30px;
 
     img  {
         width: 20px;
@@ -23,7 +25,7 @@ function ImagemButton(props) {
             <p>{ props.texto }</p>
         </ImageButtonContainer>
 
-    )
+    );
 }
 
 export default ImagemButton;
