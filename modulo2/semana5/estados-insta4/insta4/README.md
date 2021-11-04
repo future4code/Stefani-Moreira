@@ -8,7 +8,8 @@ Nele é possível:
 - Comentar
 - Salvar post
 
-
+### Tecnologia Utilizada:
+- React
 ### O que não funciona:
 Aba de compartilhar post, apenas o ícone foi posto.
 
