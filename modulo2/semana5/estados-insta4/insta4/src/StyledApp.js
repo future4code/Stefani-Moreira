@@ -24,16 +24,21 @@ const MainContainer = styled.div`
   align-items: center;
 `;
 
-const NewPostContainer = styled.div `
+const NewPostContainer = styled.details `
     display: flex;
     flex-direction: column;
     border: 1px solid gray;
     padding: 1.3rem;
     margin: 10px;
+    width: 259px;
 
-    h2 {
+    summary {
       text-align: center;
-      font-weight: 400
+      font-weight: 400;
+      font-size: 1.2rem;
+      cursor: pointer;
+      padding: 1rem;
+      list-style: none;
     }
     
     input {

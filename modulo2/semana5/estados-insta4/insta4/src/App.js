@@ -57,26 +57,26 @@ class App extends React.Component {
       return <Post {...valor} />
     })
 
-    const adicionarNovoPost = 
-      <NewPostContainer>
-        <h2>CRIAR NOVO POST</h2>
-        <input 
-          value={this.state.inputUsuario}
-          onChange={this.onChangeInputUsuario}
-          placeholder={"Nome de usuário"}
-        />
-        <input 
-          value={this.state.inputFotoPerfil}
-          onChange={this.onChangeInputFotoPerfil}
-          placeholder={"Adicione a URL da foto de perfil"}
-        />
-        <input 
-          value={this.state.inputFotoPost}
-          onChange={this.onChangeInputFotoPost}
-          placeholder={"Adicione a URL da foto do post"}
-        />
-        <button onClick={this.adicionarPost}>Compartilhar</button>
-      </NewPostContainer>;
+    const adicionarNovoPost =      
+        <NewPostContainer>
+          <summary> CRIAR NOVO POST </summary>
+          <input 
+            value={this.state.inputUsuario}
+            onChange={this.onChangeInputUsuario}
+            placeholder={"Nome de usuário"}
+          />
+          <input 
+            value={this.state.inputFotoPerfil}
+            onChange={this.onChangeInputFotoPerfil}
+            placeholder={"Adicione a URL da foto de perfil"}
+          />
+          <input 
+            value={this.state.inputFotoPost}
+            onChange={this.onChangeInputFotoPost}
+            placeholder={"Adicione a URL da foto do post"}
+          />
+          <button onClick={this.adicionarPost}>Compartilhar</button>
+        </NewPostContainer>
     
     return (
       <div>
