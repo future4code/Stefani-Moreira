@@ -29,30 +29,31 @@ class App extends React.Component {
         fotoPost: 'https://picsum.photos/200/152'
       }
     ],
-    valorInputUsuario: "",
-    valorInputFotoPerfil: "",
-    valorInputFotoPost: ""
+    inputUsuario: "",
+    inputFotoPerfil: "",
+    inputFotoPost: ""
   };
 
   adicionarPost = () => {
     const novoPost = {
-      nomeUsuario: this.state.valorInputUsuario,
-      fotoUsuario: this.state.valorInputFotoPerfil,
-      fotoPost: this.state.valorInputFotoPost
+      nomeUsuario: this.state.inputUsuario,
+      fotoUsuario: this.state.inputFotoPerfil,
+      fotoPost: this.state.inputFotoPost
     }
     const novoPostUsuario = [novoPost, ...this.state.post]
 
-    this.setState({ post: novoPostUsuario })
-  }
+    this.setState({ post: novoPostUsuario });
+    this.setState({ inputUsuario:"", inputFotoPerfil:"", inputFotoPost:"" });
+  };
 
   onChangeInputUsuario = (event) => {
-    this.setState({ valorInputUsuario: event.target.value });
+    this.setState({ inputUsuario: event.target.value });
   }
   onChangeInputFotoPerfil = (event) => {
-    this.setState({ valorInputFotoPerfil: event.target.value })
+    this.setState({ inputFotoPerfil: event.target.value })
   }
   onChangeInputFotoPost = (event) => {
-    this.setState({ valorInputFotoPost: event.target.value })
+    this.setState({ inputFotoPost: event.target.value })
   }
   
   
@@ -63,29 +64,29 @@ class App extends React.Component {
       return <Post {...valor} />
     })
 
-    const novoPostAdicionar = 
+    const adicionarNovoPost = 
       <div>
             <input 
-              value={this.state.valorInputUsuario}
+              value={this.state.inputUsuario}
               onChange={this.onChangeInputUsuario}
               placeholder={"Nome de usuário"}
             />
             <input 
-              value={this.state.valorInputFotoPerfil}
+              value={this.state.inputFotoPerfil}
               onChange={this.onChangeInputFotoPerfil}
               placeholder={"Adicione a foto de perfil"}
             />
             <input 
-              value={this.state.valorInputFotoPost}
+              value={this.state.inputFotoPost}
               onChange={this.onChangeInputFotoPost}
               placeholder={"Adicione a foto do post"}
             />
             <button onClick={this.adicionarPost}>Compartilhar</button>
-          </div>
+        </div>;
     
     return (
       <MainContainer>
-        {novoPostAdicionar}
+        {adicionarNovoPost}
         {postUsuario}
       </MainContainer>
     );
