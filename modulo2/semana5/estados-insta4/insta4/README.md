@@ -7,6 +7,7 @@ Nele é possível:
 - Curtir e descurtir post
 - Comentar
 - Salvar post
+- Criar um post
 
 ### Tecnologia Utilizada:
 - React
