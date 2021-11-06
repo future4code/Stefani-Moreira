@@ -1,13 +1,6 @@
 import React from 'react';
-import styled from 'styled-components'
+import { GlobalStyle, MainContainer, NewPostContainer } from './StyledApp';
 import Post from './components/Post/Post';
-
-const MainContainer = styled.div`
-  display: flex;
-  justify-content: center;
-  flex-direction: column;
-  align-items: center;
-`
 
 class App extends React.Component {
   state = {
@@ -65,30 +58,34 @@ class App extends React.Component {
     })
 
     const adicionarNovoPost = 
-      <div>
-            <input 
-              value={this.state.inputUsuario}
-              onChange={this.onChangeInputUsuario}
-              placeholder={"Nome de usuário"}
-            />
-            <input 
-              value={this.state.inputFotoPerfil}
-              onChange={this.onChangeInputFotoPerfil}
-              placeholder={"Adicione a foto de perfil"}
-            />
-            <input 
-              value={this.state.inputFotoPost}
-              onChange={this.onChangeInputFotoPost}
-              placeholder={"Adicione a foto do post"}
-            />
-            <button onClick={this.adicionarPost}>Compartilhar</button>
-        </div>;
+      <NewPostContainer>
+        <h2>CRIAR NOVO POST</h2>
+        <input 
+          value={this.state.inputUsuario}
+          onChange={this.onChangeInputUsuario}
+          placeholder={"Nome de usuário"}
+        />
+        <input 
+          value={this.state.inputFotoPerfil}
+          onChange={this.onChangeInputFotoPerfil}
+          placeholder={"Adicione a URL da foto de perfil"}
+        />
+        <input 
+          value={this.state.inputFotoPost}
+          onChange={this.onChangeInputFotoPost}
+          placeholder={"Adicione a URL da foto do post"}
+        />
+        <button onClick={this.adicionarPost}>Compartilhar</button>
+      </NewPostContainer>;
     
     return (
-      <MainContainer>
+      <div>
+        <GlobalStyle />
+        <MainContainer>
         {adicionarNovoPost}
         {postUsuario}
       </MainContainer>
+      </div>
     );
   }
 }
