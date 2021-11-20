@@ -1,9 +1,10 @@
 import React from "react";
 import axios from "axios";
-import CreatePlaylists from "./CreatePlaylist";
 import PlaylistsScreen from "../screens/Playlists/PlaylistsScreen";
 import PlaylistDetailsScreen from "../screens/PlaylistDetails/PlaylistDetailsScreen";
 import { urlApi, headers } from "../../api";
+// import Sidebar from '../screens/Sidebar/Sidebar'
+import { /*General,*/ GeneralFeaturesPlaylist } from './Styles'
 
 export default class PlaylistScreen extends React.Component {
   state = {
@@ -62,13 +63,14 @@ export default class PlaylistScreen extends React.Component {
       });
       console.log(this.state.tracks);
     } catch (err) {
-      console.log(err.message);
+      console.log(err.response.data.message);
     }
   };
 
-  /**************************** SCREEN  ****************************/
+  /**************************** SCREEN  ****************************/ 
 
   render() {
+
     return (
       <div>
         {this.state.page ? (
@@ -79,21 +81,28 @@ export default class PlaylistScreen extends React.Component {
               playlistId={this.state.playlistId}
               tracks={this.state.tracks}
               getPlaylistTracks={this.getPlaylistTracks}
-              quantify={this.state.quantify}
               getAllPlaylists={this.getAllPlaylists}
+              pageAddTracks={this.props.pageAddTracks}
             />
           </div>
         ) : (
-          <div>
-            <CreatePlaylists getAllPlaylists={this.getAllPlaylists} />
+          <GeneralFeaturesPlaylist>
             <PlaylistsScreen
+              pageCreated={this.props.pageCreatePlaylists}
               playlists={this.state.playlists}
               getPlaylistTracks={this.getPlaylistTracks}
               deletePlaylist={this.deletePlaylist}
+              pagePlaylists={this.playlistsScreen}
+              playlistName={this.state.playlistName}
+              playlistId={this.state.playlistId}
+              tracks={this.state.tracks}
+              getAllPlaylists={this.getAllPlaylists}
+              pageAddTracks={this.props.pageAddTracks}
             />
-          </div>
+          </GeneralFeaturesPlaylist>
         )}
       </div>
+      
     );
   }
 }

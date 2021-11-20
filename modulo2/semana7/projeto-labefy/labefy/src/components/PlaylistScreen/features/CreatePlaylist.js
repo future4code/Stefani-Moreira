@@ -1,6 +1,8 @@
 import React from "react";
 import axios from "axios";
 import { urlApi, headers } from "../../api";
+// import Sidebar from '../screens/Sidebar/Sidebar'
+// import { General } from './Styles'
 
 export default class CreatePlaylists extends React.Component {
   state = {
@@ -28,13 +30,21 @@ export default class CreatePlaylists extends React.Component {
   render() {
     return (
       <div>
+          {/* <Sidebar 
+            pageCreatePlaylists={this.props.pageCreatePlaylists}
+            pagePlaylists={this.props.pagePlaylists}
+          /> */}
+          <div>
         <input
           placeholder={"Informe o nome da playlist"}
           value={this.state.playlist}
           onChange={this.onChangePlaylistName}
         />
         <button onClick={this.createPlaylist}>Criar Playlist</button>
+        <button onClick={() => this.props.pagePlaylists()}>Acessar Playlists</button>
       </div>
+      </div>
+      
     );
   }
 }

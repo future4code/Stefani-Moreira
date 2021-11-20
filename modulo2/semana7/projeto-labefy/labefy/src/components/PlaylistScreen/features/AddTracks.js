@@ -27,22 +27,22 @@ export default class AddTrack extends React.Component {
             url: this.state.urlTrack
         }
         try {
-            const res = await axios.post(`${urlApi}/${id}/tracks`, body, headers)
+            const res = await axios.post(`${urlApi}/${this.props.playlistId}/tracks`, body, headers)
 
-            alert("Musica adicionada");
+            alert("Musica adicionada. Clique novamente na playlist para escutar a música");
             console.log(res.data);
             this.setState({ name: "", artist:"", urlTrack:"" });
-            this.props.getPlaylistTracks()
+            this.props.getPlaylistTracks(this.props.playlistId)
         }catch (err) {
-            alert(err.message)
-            console.log(err.message)
+            alert(err.response.data.message)
+            console.log(err.response)
         }
         
     }
 
     render() {
         return (
-            <div>
+            <div>  
                 <input 
                     placeholder={"Informe o nome da música"}
                     value={this.state.name}
