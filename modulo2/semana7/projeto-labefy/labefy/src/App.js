@@ -1,11 +1,11 @@
-import Home from './components/PlaylistScreen/screens/Home/Home';
-import GeneralStyle from './GeneralStyle';
+import Home from "./components/Home";
+import GlobalStyle from "./StyledApp";
 
-export default function App (){
-    return (
-      <div>
-      <GeneralStyle/>
+export default function App() {
+  return (
+    <div>
+      <GlobalStyle />
       <Home />
-      </div>
-    )
+    </div>
+  );
 }
