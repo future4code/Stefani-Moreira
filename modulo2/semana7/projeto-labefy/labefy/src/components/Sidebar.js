@@ -11,12 +11,14 @@ import {
   AddStyle,
   HeartStyle,
   PlaylistsTitle,
-  ContainerItems,
+  PlaylistsContainer,
+  ContainerItems
 } from "./styles/StyledSidebar";
 
 export default class Sidebar extends React.Component {
+
   componentDidMount() {
-    this.props.getAllPlaylists();
+    this.props.getAllPlaylists()
   }
 
   render() {
@@ -34,36 +36,38 @@ export default class Sidebar extends React.Component {
 
     return (
       <SideBarContainer>
-        <ContainerItems>
-          <div>
-            <h1>Labefy</h1>
-          </div>
-          <FirstContainer>
-            <FirstContainerItem onClick={() => this.props.pageHome()}>
-              <img src={Home} alt="Ícone home" />
-              <h4>Início</h4>
-            </FirstContainerItem>
-            <FirstContainerItem>
-              <img src={Search} alt="Ícone home" />
-              <h4>Buscar</h4>
-            </FirstContainerItem>
-            <FirstContainerItem onClick={() => this.props.pagePlaylists()}>
-              <img src={Library} alt="Ícone home" />
-              <h4>Sua Biblioteca</h4>
-            </FirstContainerItem>
-          </FirstContainer>
-          <SecondContainer>
-            <SecondContainerItem onClick={() => this.props.pageCreate()}>
-              <AddStyle>+</AddStyle>
-              <h4>Criar playlist</h4>
-            </SecondContainerItem>
-            <SecondContainerItem>
-              <HeartStyle>❤</HeartStyle>
-              <h4>Músicas Curtidas</h4>
-            </SecondContainerItem>
-          </SecondContainer>
-          <div>{playlists}</div>
-        </ContainerItems>
+      <ContainerItems>
+      <div>
+          <h1>Labefy</h1>
+        </div>
+        <FirstContainer>
+          <FirstContainerItem onClick={() => this.props.pageHome()}>
+            <img src={Home} alt="Ícone home" />
+            <h4>Início</h4>
+          </FirstContainerItem>
+          <FirstContainerItem>
+            <img src={Search} alt="Ícone home" />
+            <h4>Buscar</h4>
+          </FirstContainerItem>
+          <FirstContainerItem onClick={() => this.props.pagePlaylists()}>
+            <img src={Library} alt="Ícone home" />
+            <h4>Sua Biblioteca</h4>
+          </FirstContainerItem>
+        </FirstContainer>
+        <SecondContainer>
+          <SecondContainerItem onClick={() => this.props.pageCreate()}>
+            <AddStyle>+</AddStyle>
+            <h4>Criar playlist</h4>
+          </SecondContainerItem>
+          <SecondContainerItem>
+            <HeartStyle>❤</HeartStyle>
+            <h4>Músicas Curtidas</h4>
+          </SecondContainerItem>
+        </SecondContainer>
+        < hr/>
+        <PlaylistsContainer>{playlists}</PlaylistsContainer>
+      </ContainerItems>
+        
       </SideBarContainer>
     );
   }

@@ -1,98 +1,124 @@
-import styled from "styled-components";
+import styled from "styled-components"
 
-const SideBarContainer = styled.div`
-  background-color: #000000;
-`;
+const SideBarContainer = styled.div ` 
+    background-color: #000000;
+`
 
-const FirstContainer = styled.div`
-  margin: 2rem 0;
-`;
+const FirstContainer = styled.div `
+    margin: 2rem 0;
+    cursor: pointer;
+`
 
-const FirstContainerItem = styled.div`
-  display: flex;
-  align-items: center;
-  margin: 5px;
-  opacity: 0.7;
+const FirstContainerItem = styled.div `
+    display: flex;
+    align-items: center;
+    margin: 5px;
+    opacity: 0.7;
+    padding: 0.4rem 0;
 
-  :hover {
-    opacity: 1;
-  }
+    :hover {
+        opacity: 1
+    }
 
-  img {
-    width: 12%;
-    margin-right: 1rem;
-  }
+    img {
+        width: 12%;
+        margin-right: 1rem
+    }
 
-  h4 {
-    font-size: 0.8rem;
-  }
-`;
+    h4 {
+        font-size: 0.8rem
+    }
+`
 
-const SecondContainer = styled.div`
-  margin-bottom: 2rem;
-`;
 
-const SecondContainerItem = styled.div`
-  display: flex;
-  align-items: center;
-  align-self: center;
-  margin: 5px;
-  opacity: 0.7;
+const SecondContainer = styled.div `
+    margin-bottom: 2rem;
+    cursor: pointer;
+`
 
-  :hover {
-    opacity: 1;
-  }
+const SecondContainerItem = styled.div `
+    display: flex;
+    align-items: center;
+    align-self: center;
+    margin: 5px;
+    opacity: 0.7;
+    padding: 0.4rem 0;
 
-  h4 {
-    font-size: 0.86rem;
-    margin-left: 1.2rem;
-  }
-`;
+    :hover {
+        opacity: 1
+    }
 
-const AddStyle = styled.span`
-  font-size: 1.3rem;
-  background-color: #ffffff;
-  color: #000000;
-  width: 5.2%;
-  padding: 0 6px;
-`;
+    h4 {
+        font-size: 0.86rem;
+        margin-left: 1.2rem;
+    }
+`
 
-const HeartStyle = styled.span`
-  font-size: 1.3rem;
-  background: linear-gradient(#e66465, #9198e5);
-  color: #ffffff;
-  width: 6%;
-  padding: 0 8.5px 0 2px;
-`;
+const AddStyle = styled.span `
+        font-size: 1.3rem;
+        display: flex;
+        justify-content: center;
+        background-color: #ffffff;
+        color: #000000;
+        width: 12%;
+        height: 1.4rem;
+        padding-top: 2px;
+`
 
-const PlaylistsTitle = styled.h4`
-  width: 90%;
-  margin: 0.5rem 0.8rem 0;
-  opacity: 0.7;
+const HeartStyle = styled.span `
+        font-size: 0.8rem;
+        display: flex;
+        justify-content: center;
+        background: linear-gradient(#e66465, #9198e5);
+        color: #ffffff;
+        width: 12%;
+        height: 1.4rem;
+        padding-top: 2px;
+        
 
-  :hover {
-    opacity: 1;
-  }
-`;
+`
 
-const ContainerItems = styled.div`
-  position: fixed;
-  width: 16%;
-  margin-left: 1.2rem;
+const PlaylistsTitle = styled.h4 `
+    width: 90%;
+    margin: 0.5rem 0.8rem 0;
+    opacity: 0.7;
+    cursor: default;
+    
 
-  h1 {
+    :hover {
+        opacity: 1
+    }
+`
+const PlaylistsContainer = styled.div `
+    overflow-y: auto;
+    height: 10.8rem;
+
+    ::-webkit-scrollbar-track {
+        background-color: #000000;
+    }
+    ::-webkit-scrollbar {
+        width: 8px;
+    }
+    ::-webkit-scrollbar-thumb {
+        background: #282828;
+    }
+`
+
+const ContainerItems = styled.div `
+position: fixed;
+width: 16%;
+margin-left: 1.2rem;
+
+h1 {
     margin: 2rem;
-  }
-`;
+}
 
-export {
-  SideBarContainer,
-  FirstContainer,
-  FirstContainerItem,
-  SecondContainer,
-  SecondContainerItem,
-  AddStyle,
-  HeartStyle,
-  PlaylistsTitle,
-  ContainerItems,
-};
+hr {
+    border-width: 0px 0px 1px;
+    width: 90%;
+    border-color: #282828;
+}
+`
+
+
+export { SideBarContainer, FirstContainer, FirstContainerItem, SecondContainer, SecondContainerItem, AddStyle, HeartStyle, PlaylistsTitle, PlaylistsContainer, ContainerItems }
