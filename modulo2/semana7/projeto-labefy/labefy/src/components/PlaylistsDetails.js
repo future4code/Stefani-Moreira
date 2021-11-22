@@ -8,8 +8,8 @@ import {
   TrackCard,
   LeftButtonContainer,
   TracksListContainer,
-  ButtonMainContainer1, 
-  MainContainer2, 
+  ButtonMainContainer1,
+  MainContainer2,
 } from "./styles/StyledDetails";
 
 const urlApi =
@@ -58,7 +58,6 @@ export default class PlaylistsDetails extends React.Component {
           headers
         );
         alert("Música deletada");
-        console.log(res.data);
         this.props.getPlaylistTracks(this.props.playlistId);
       } catch (err) {
         alert(err.res.data.message);
@@ -123,14 +122,18 @@ export default class PlaylistsDetails extends React.Component {
           <MainContainer2>
             <h4>Sua playlist está vazia 😕</h4>
             <div>
-              <ButtonMainContainer1 onClick={this.openAddTrack}>Adicionar Musica</ButtonMainContainer1>
+              <ButtonMainContainer1 onClick={this.openAddTrack}>
+                Adicionar Musica
+              </ButtonMainContainer1>
             </div>
           </MainContainer2>
         )}
         {this.props.tracks.length > 0 && (
           <div>
             <div>
-              <ButtonMainContainer1 onClick={this.openAddTrack}>Adicionar Musica</ButtonMainContainer1>
+              <ButtonMainContainer1 onClick={this.openAddTrack}>
+                Adicionar Musica
+              </ButtonMainContainer1>
             </div>
             <TracksListContainer>{showTracks}</TracksListContainer>
           </div>

@@ -1,70 +1,37 @@
-# Getting Started with Create React App
+## Labefy
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Atividade com objetivo de reproduzir algumas funcionalidades do Spotify.
 
-## Available Scripts
+### Nele é possível:
 
-In the project directory, you can run:
+- Criar um nova playlist
+- Adicionar música a playlist
+- Visualizar todas as playlists criadas
+- Deletar músicas da playlist
+- Deletar a playlist pela página de playlists ou pela página de detalhes da playlist
 
-### `yarn start`
+### Tecnologia Utilizada:
+- React
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+### Link Surge 
+https://labe-fy.surge.sh/
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+### Imagem
 
-### `yarn test`
+#### Home
+<img src="https://user-images.githubusercontent.com/69688122/142749162-f95b5549-f611-42e3-9858-ea642a306516.png"/>
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+#### Página de criar playlist
+<img src="https://user-images.githubusercontent.com/69688122/142749159-993ed519-82cc-437f-88c4-d79036a900ee.png"/>
 
-### `yarn build`
+#### Lista de playlists
+<img src="https://user-images.githubusercontent.com/69688122/142749163-12595839-3cc0-4266-b85d-be710bf83407.png"/>
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+#### Detalhes da playlist
+<img src="https://user-images.githubusercontent.com/69688122/142749160-5252f794-1af8-4f21-9516-299190270f57.png"/>
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+#### Detalhes da playlist vazia
+<img src="https://user-images.githubusercontent.com/69688122/142749161-8bc4a4cc-10c5-44a4-897f-c3f57564f416.png"/>
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `yarn eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `yarn build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+#### Área para adicionar música a playlist
+<img src="https://user-images.githubusercontent.com/69688122/142749157-cbb23649-80d0-49c2-bd23-5105394cb0fb.png"/>
