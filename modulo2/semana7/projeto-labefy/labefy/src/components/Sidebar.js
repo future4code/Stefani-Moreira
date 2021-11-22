@@ -38,7 +38,7 @@ export default class Sidebar extends React.Component {
       <SideBarContainer>
       <ContainerItems>
       <div>
-          <h1>Labefy</h1>
+          <h1 onClick={() => this.props.pageHome()}>Labefy</h1>
         </div>
         <FirstContainer>
           <FirstContainerItem onClick={() => this.props.pageHome()}>

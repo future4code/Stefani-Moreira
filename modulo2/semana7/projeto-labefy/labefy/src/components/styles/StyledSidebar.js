@@ -111,6 +111,7 @@ margin-left: 1.2rem;
 
 h1 {
     margin: 2rem;
+    cursor: pointer;
 }
 
 hr {
