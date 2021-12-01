@@ -1,15 +1,16 @@
-import React, { useEffect, useState } from "react";
+import React, { useState, useEffect } from "react";
 import axios from "axios";
-import { BASE_URL } from "../../constants/astromatch-api";
-import ChoosePerson from "../ChoosePersonScreen/ChoosePersonScreen";
-import Matches from "../MatchesScreen/MatchesScreen";
+import { BASE_URL } from "../../../constants/astromatch-api";
+import ChoosePerson from "../../../features/ChoosePerson/components/ChoosePersonScreen";
+import Matches from "../../../features/Matches/components/MatchesScreen";
 
-export default function GenerallPage() {
+export default function GeneralPage() {
   const [peopleProfile, setPeopleProfile] = useState({});
   const [matches, setMatches] = useState([]);
+  const [page, setPage] = useState(true)
 
   useEffect(() => {
-    getProfileToChose()
+    getProfileToChose();
   }, []);
 
   const getProfileToChose = () => {
@@ -47,13 +48,21 @@ export default function GenerallPage() {
       });
   };
 
+
   return (
     <div>
       <button onClick={clearPages}>Limpar matches</button>
-      <ChoosePerson
-        peopleProfile={peopleProfile}
-        getProfileToChose={getProfileToChose}
-      />
+      {peopleProfile ? (
+        <ChoosePerson
+          peopleProfile={peopleProfile}
+          getProfileToChose={getProfileToChose}
+        />
+      ) : (
+        <div>
+          <h2>Acabou os matches</h2>
+          <button onClick={clearPages}>Limpar matches</button>
+        </div>
+      )}
       <Matches getMatches={getMatches} matches={matches} />
     </div>
   );

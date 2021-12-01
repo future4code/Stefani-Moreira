@@ -1,9 +1,9 @@
-import GenerallPage from "./components/GeneralPage/GenerallPage";
+import GeneralPage from "./shared/GeneralPage/components/GeneralPage";
 
 function App() {
   return (
     <div>
-      <GenerallPage />
+      <GeneralPage />
     </div>
   );
 }

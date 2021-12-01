@@ -1,9 +1,10 @@
 import React from "react";
 import axios from "axios";
-import { BASE_URL } from "../../constants/astromatch-api";
+import { BASE_URL } from "../../../constants/astromatch-api";
+
+import ImgPersonProfile from '../styles/StyledChooseScreen'
 
 export default function ChoosePersonScreen(props) {
-          
   const choosePerson = (chosen) => {
     const body = {
       id: props.peopleProfile.id,
@@ -28,7 +29,7 @@ export default function ChoosePersonScreen(props) {
 
   const renderPeopleProfile = (
     <div>
-      <img src={props.peopleProfile.photo} alt={props.peopleProfile.name} />
+      <ImgPersonProfile src={props.peopleProfile.photo} alt={props.peopleProfile.name} />
       <p>
         {props.peopleProfile.name}, {props.peopleProfile.age}
       </p>
@@ -40,7 +41,6 @@ export default function ChoosePersonScreen(props) {
 
   return (
     <div>
-      <button onClick={props.getProfileToChose}>Ver Pessoas</button>
       {renderPeopleProfile}
     </div>
   );
