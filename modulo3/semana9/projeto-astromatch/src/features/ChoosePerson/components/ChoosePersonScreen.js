@@ -2,9 +2,13 @@ import React from "react";
 import axios from "axios";
 import { BASE_URL } from "../../../constants/astromatch-api";
 
-import ImgPersonProfile from '../styles/StyledChooseScreen'
+import Heart from "../../../assets/image/heart.png"
+import Cancel from "../../../assets/image/cancel.png"
+
+import { ImgPersonProfile, ChoiceButtons, InfoPerson } from '../styles/StyledChooseScreen'
 
 export default function ChoosePersonScreen(props) {
+
   const choosePerson = (chosen) => {
     const body = {
       id: props.peopleProfile.id,
@@ -17,7 +21,6 @@ export default function ChoosePersonScreen(props) {
         if (res.data.isMatch === true) {
           alert(
             ` Você e ${props.peopleProfile.name} acabaram de dar um Match! 😍😍😍`
-            // EXEMPLO TINDER: foto do usuário - novo match. Toque para falar com nome do usuário
           );
         }
       })
@@ -29,19 +32,35 @@ export default function ChoosePersonScreen(props) {
 
   const renderPeopleProfile = (
     <div>
-      <ImgPersonProfile src={props.peopleProfile.photo} alt={props.peopleProfile.name} />
-      <p>
-        {props.peopleProfile.name}, {props.peopleProfile.age}
-      </p>
-      <p>{props.peopleProfile.bio}</p>
-      <button onClick={() => {choosePerson(false)}}>x</button>
-      <button onClick={() => {choosePerson(true)}}>❤</button>
+      <ImgPersonProfile image={props.peopleProfile.photo}>
+        <section>
+          <img src={props.peopleProfile.photo} alt={props.peopleProfile.name} />
+        </section>
+      </ImgPersonProfile>
+      <InfoPerson>
+        <h2>
+          {props.peopleProfile.name}, <span>{props.peopleProfile.age}</span>
+        </h2>
+        <p>{props.peopleProfile.bio}</p>
+      </InfoPerson>
+      <ChoiceButtons>
+        <button onClick={() => {choosePerson(false)}}><img src={Cancel} alt="Botão de recusar" /></button>
+        <button onClick={() => {choosePerson(true)}}><img src={Heart} alt="Botão de like" /></button>
+      </ChoiceButtons>
     </div>
   );
 
   return (
     <div>
-      {renderPeopleProfile}
+    { props.peopleProfile ? (
+      <div>
+        {renderPeopleProfile}
+      </div>
+    ) : (
+      <div>
+        <h2> O amor é paciente</h2>
+      </div>
+    )} 
     </div>
   );
 }

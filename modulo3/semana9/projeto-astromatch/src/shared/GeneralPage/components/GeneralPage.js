@@ -4,10 +4,21 @@ import { BASE_URL } from "../../../constants/astromatch-api";
 import ChoosePerson from "../../../features/ChoosePerson/components/ChoosePersonScreen";
 import Matches from "../../../features/Matches/components/MatchesScreen";
 
+import LogoAstromach from "../../../assets/image/download.png"
+import Match from "../../../assets/image/puzzle.png"
+import Search from "../../../assets/image/search.png"
+
+import {
+  MainContainer,
+  NoProfileContainer,
+  ChangePageButtons,
+  Logo
+} from "../styles/StyledGeneralPages";
+
 export default function GeneralPage() {
   const [peopleProfile, setPeopleProfile] = useState({});
   const [matches, setMatches] = useState([]);
-  const [page, setPage] = useState(true)
+  const [page, setPage] = useState(true);
 
   useEffect(() => {
     getProfileToChose();
@@ -48,22 +59,55 @@ export default function GeneralPage() {
       });
   };
 
+  const changePage = () => {
+    setPage(!page);
+  };
 
   return (
-    <div>
-      <button onClick={clearPages}>Limpar matches</button>
-      {peopleProfile ? (
-        <ChoosePerson
-          peopleProfile={peopleProfile}
-          getProfileToChose={getProfileToChose}
-        />
-      ) : (
+    <MainContainer>
+    <Logo>
+      <div>
+        <img src={LogoAstromach} alt="Logo astromatch" />
+      </div>
+    </Logo>
+      {page ? (
         <div>
-          <h2>Acabou os matches</h2>
-          <button onClick={clearPages}>Limpar matches</button>
+          {peopleProfile ? (
+            <div>
+            <details>
+              <summary>...</summary>
+              <button onClick={clearPages}>Limpar matches</button>
+            </details>
+              <ChoosePerson
+                peopleProfile={peopleProfile}
+                getProfileToChose={getProfileToChose}
+              />
+            </div>
+          ) : (
+            <NoProfileContainer>
+              <iframe
+                src="https://giphy.com/embed/S9oNGC1E42VT2JRysv"
+                class="giphy-embed"
+                allowFullScreen
+                title="Pássaro do amor"
+              ></iframe>
+              <h2>Não há mais perfis a serem exibidos.</h2>
+              <p>Clique no ícone abaixo para reiniciar</p>
+              <button onClick={clearPages}>Limpar matches</button>
+            </NoProfileContainer>
+          )}
         </div>
+      ) : (
+          <Matches
+            getMatches={getMatches}
+            matches={matches}
+            clearMatches={clearPages}
+          />
       )}
-      <Matches getMatches={getMatches} matches={matches} />
-    </div>
+      <ChangePageButtons>
+        <img src={Search} alt="Ícone de área para procurar matches" onClick={changePage} />
+        <img src={Match} alt="Ícone de área de matches" onClick={changePage} />
+      </ChangePageButtons>
+    </MainContainer>
   );
 }
