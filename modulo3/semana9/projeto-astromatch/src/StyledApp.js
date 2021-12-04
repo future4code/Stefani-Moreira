@@ -1,11 +1,11 @@
 import { createGlobalStyle } from "styled-components";
-import "./assets/fonts/fonts.css"
+import "./assets/fonts/fonts.css";
 
 const GlobalStyle = createGlobalStyle`
   * {
     margin: 0;
     padding: 0;
-    font-family: 'Ubuntu';
+    font-family: 'Ubuntu'; 
   }
 
   body {

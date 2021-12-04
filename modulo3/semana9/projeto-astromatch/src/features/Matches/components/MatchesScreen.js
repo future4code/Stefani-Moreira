@@ -3,7 +3,7 @@ import React, { useEffect } from "react";
 import {
   ImgPersonMatches,
   MatchesContainer,
-  NoMatchesContainer
+  NoMatchesContainer,
 } from "../styles/StyledMatchesPage";
 
 export default function MatchesScreen(props) {
@@ -24,12 +24,11 @@ export default function MatchesScreen(props) {
 
   return (
     <main>
-    
       {props.matches.length > 0 ? (
         <div>
           <details>
-              <summary>...</summary>
-              <button onClick={props.clearMatches}>Limpar matches</button>
+            <summary>...</summary>
+            <button onClick={props.clearMatches}>Limpar matches</button>
           </details>
           <MatchesContainer>{renderMatches}</MatchesContainer>
         </div>

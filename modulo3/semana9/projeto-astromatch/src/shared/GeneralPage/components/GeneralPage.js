@@ -4,15 +4,18 @@ import { BASE_URL } from "../../../constants/astromatch-api";
 import ChoosePerson from "../../../features/ChoosePerson/components/ChoosePersonScreen";
 import Matches from "../../../features/Matches/components/MatchesScreen";
 
-import LogoAstromach from "../../../assets/image/download.png"
-import Match from "../../../assets/image/puzzle.png"
-import Search from "../../../assets/image/search.png"
+import LogoAstromach from "../../../assets/image/download.png";
+import Match from "../../../assets/image/puzzle.png";
+import Search from "../../../assets/image/search.png";
+import Recycle from "../../../assets/image/recycle.png";
+
+import Swal from "sweetalert2";
 
 import {
   MainContainer,
   NoProfileContainer,
   ChangePageButtons,
-  Logo
+  Logo,
 } from "../styles/StyledGeneralPages";
 
 export default function GeneralPage() {
@@ -23,6 +26,14 @@ export default function GeneralPage() {
   useEffect(() => {
     getProfileToChose();
   }, []);
+
+  const MessageArea = Swal.mixin({
+    toast: true,
+    position: "top-end",
+    showConfirmButton: false,
+    timer: 2000,
+    timerProgressBar: true,
+  });
 
   const getProfileToChose = () => {
     axios
@@ -41,21 +52,19 @@ export default function GeneralPage() {
       .then((res) => {
         setMatches(res.data.matches);
       })
-      .catch((err) => {
-        console.log(err.message);
-      });
+      .catch((err) => {});
   };
 
   const clearPages = () => {
     axios
       .put(`${BASE_URL}/clear`)
       .then((res) => {
-        alert("Lista de matches apagado");
+        MessageArea.fire({ title: "Lista de matches apagada" });
         getProfileToChose();
         getMatches();
       })
       .catch((err) => {
-        alert("Não foi possível resetar");
+        MessageArea.fire({ title: "Não foi possível resetar" });
       });
   };
 
@@ -65,22 +74,24 @@ export default function GeneralPage() {
 
   return (
     <MainContainer>
-    <Logo>
-      <div>
-        <img src={LogoAstromach} alt="Logo astromatch" />
-      </div>
-    </Logo>
+      <Logo>
+        <div>
+          <img src={LogoAstromach} alt="Logo astromatch" />
+        </div>
+      </Logo>
       {page ? (
         <div>
           {peopleProfile ? (
             <div>
-            <details>
-              <summary>...</summary>
-              <button onClick={clearPages}>Limpar matches</button>
-            </details>
+              <details>
+                <summary>...</summary>
+                <button onClick={clearPages}>Limpar matches</button>
+              </details>
               <ChoosePerson
                 peopleProfile={peopleProfile}
                 getProfileToChose={getProfileToChose}
+                getMatches={getMatches}
+                messageArea={MessageArea}
               />
             </div>
           ) : (
@@ -91,21 +102,29 @@ export default function GeneralPage() {
                 allowFullScreen
                 title="Pássaro do amor"
               ></iframe>
-              <h2>Não há mais perfis a serem exibidos.</h2>
+              <h2>Acabou os possíveis amores.</h2>
               <p>Clique no ícone abaixo para reiniciar</p>
-              <button onClick={clearPages}>Limpar matches</button>
+              <img
+                src={Recycle}
+                alt="Ícone para resetar aplicação"
+                onClick={clearPages}
+              />
             </NoProfileContainer>
           )}
         </div>
       ) : (
-          <Matches
-            getMatches={getMatches}
-            matches={matches}
-            clearMatches={clearPages}
-          />
+        <Matches
+          getMatches={getMatches}
+          matches={matches}
+          clearMatches={clearPages}
+        />
       )}
       <ChangePageButtons>
-        <img src={Search} alt="Ícone de área para procurar matches" onClick={changePage} />
+        <img
+          src={Search}
+          alt="Ícone de área de procurar perfis"
+          onClick={changePage}
+        />
         <img src={Match} alt="Ícone de área de matches" onClick={changePage} />
       </ChangePageButtons>
     </MainContainer>

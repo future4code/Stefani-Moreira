@@ -30,7 +30,7 @@ const ImgPersonProfile = styled.div`
 
 const ChoiceButtons = styled.section`
   position: absolute;
-  top: 30.9rem;
+  top: 28.9rem;
   left: 31rem;
   display: flex;
   align-items: center;
@@ -45,19 +45,19 @@ const ChoiceButtons = styled.section`
   }
 
   img {
-      width: 40%;
-    }
+    width: 40%;
+  }
 
   button:nth-child(2) {
     img {
-      width:60%;
+      width: 60%;
       margin-top: 4px;
     }
   }
 `;
 const InfoPerson = styled.section`
   position: absolute;
-  top: 26.9rem;
+  top: 24.9rem;
   left: 30.7rem;
   width: 22%;
   color: #ffffff;

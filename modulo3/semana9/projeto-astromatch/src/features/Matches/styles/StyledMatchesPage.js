@@ -26,7 +26,7 @@ const MatchesContainer = styled.div`
   }
 `;
 
-const NoMatchesContainer = styled.div `
+const NoMatchesContainer = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -45,6 +45,6 @@ const NoMatchesContainer = styled.div `
     text-align: center;
     margin-bottom: 1rem;
   }
-`
+`;
 
 export { ImgPersonMatches, MatchesContainer, NoMatchesContainer };
