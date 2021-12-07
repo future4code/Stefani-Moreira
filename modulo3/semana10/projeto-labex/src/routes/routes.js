@@ -13,12 +13,12 @@ export default function routes() {
     <BrowserRouter>
       <Routes>
         <Route exact path="/" element={<HomePage />} />
-        <Route exact path="/trips" element={<ListTripsPage />} />
-        <Route exact path="/signUp" element={<ApplicationFormPage />} />
+        <Route exact path="/trips/list" element={<ListTripsPage />} />
+        <Route exact path="/trips/signUp" element={<ApplicationFormPage />} />
         <Route exact path="/login" element={<LoginPage />} />
-        <Route exact path="/admin/home" element={<AdminHomePage />} />
-        <Route exact path="/admin/details" element={<TripDetailsPage />} />
-        <Route exact path="/admin/create" element={<CreateTripPage />} />
+        <Route exact path="/admin/trips/home" element={<AdminHomePage />} />
+        <Route exact path="/admin/trips/details" element={<TripDetailsPage />} />
+        <Route exact path="/admin/trips/create" element={<CreateTripPage />} />
       </Routes>
     </BrowserRouter>
   );

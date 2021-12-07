@@ -10,7 +10,7 @@ export default function Header() {
                 <ul>
                     <li onClick={() => navigate('/')}>LabeX</li>
                     <li onClick={() => navigate('/')}>HOME</li>
-                    <li onClick={() => navigate('/signUp')}>INSCREVER-SE</li>
+                    <li onClick={() => navigate('/trips/signUp')}>INSCREVER-SE</li>
                     <li onClick={() => navigate('/login')}>LOGIN</li>
                 </ul>
             </nav>

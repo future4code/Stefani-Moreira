@@ -6,7 +6,7 @@ export default function Home() {
 
     return (
         <div>
-            <button onClick={() => navigate('/trips')}>
+            <button onClick={() => navigate('/trips/list')}>
                 VIAGENS
             </button>
             <button onClick={() => navigate('/login')}>
