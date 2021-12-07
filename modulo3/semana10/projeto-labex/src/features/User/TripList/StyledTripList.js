@@ -1,0 +1,41 @@
+import styled from "styled-components";
+import "../../../assets/fonts/fonts.css";
+
+const CardTrip = styled.div`
+  background: rgba(255, 251, 251, 0.6);
+  border-radius: 8px;
+  width: 18rem;
+  height: 8rem;
+  padding: 2rem 1rem;
+  font-family: "Roboto";
+  font-weight: 800;
+  line-height: 1.4rem;
+`;
+
+const MainContainer = styled.main`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 4rem;
+
+  h2 {
+    color: #b89ed9;
+    margin-bottom: 3.6rem;
+    font-family: "Montserrat";
+    font-weight: bold;
+    font-size: 2rem;
+  }
+`;
+
+const CardContainer = styled.div`
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem 2rem;
+  overflow-y: scroll;
+  ::-webkit-scrollbar {
+    width: 0px;
+  }
+  margin-bottom: 0.5rem;
+`;
+
+export { CardTrip, MainContainer, CardContainer };

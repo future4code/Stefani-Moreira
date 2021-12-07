@@ -7,6 +7,7 @@ const Navbar = styled.nav`
   align-items: center;
   padding: 1rem 0 2rem;
   cursor: pointer;
+  color: #ffffff;
 `;
 const NavBrand = styled.div`
   margin-left: 3rem;

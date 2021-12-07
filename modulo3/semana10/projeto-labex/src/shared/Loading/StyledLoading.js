@@ -2,10 +2,10 @@ import styled from "styled-components";
 import "../../assets/fonts/fonts.css";
 
 const LoadingContainer = styled.div`
-  padding: 10rem 2rem;
+  padding: 12rem 2rem;
   display: flex;
   flex-direction: column;
-  
+
   h2 {
     display: flex;
     justify-content: center;
@@ -17,6 +17,7 @@ const LoadingContainer = styled.div`
 `;
 
 const RocketLoading = styled.img`
+  padding-left: 4rem;
   width: 100px;
   height: 100px;
   animation: infinite-spinning 2s infinite;
@@ -25,10 +26,10 @@ const RocketLoading = styled.img`
 
   @keyframes infinite-spinning {
     from {
-      transform: rotate(2deg);
+      transform: rotate(10deg);
     }
     to {
-      transform: rotate(180deg);
+      transform: rotate(90deg);
     }
   }
 `;

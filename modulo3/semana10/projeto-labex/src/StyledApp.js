@@ -4,9 +4,12 @@ const GlobalStyle = createGlobalStyle`
   * {
     margin: 0;
     padding: 0; 
-    color: #ffffff;
-
-  } 
+   } 
+   body {
+    ::-webkit-scrollbar {
+    width: 0px;
+  }
+   }
 `;
 
 export default GlobalStyle;
