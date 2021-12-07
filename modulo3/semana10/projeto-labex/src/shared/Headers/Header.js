@@ -1,19 +1,21 @@
-import React from 'react';
-import { useNavigate } from 'react-router-dom'
+import React from "react";
+import { useNavigate } from "react-router-dom";
+
+import { Navbar, NavBrand, NavItems } from "./StyledHeader";
 
 export default function Header() {
-    const navigate = useNavigate()
+  const navigate = useNavigate();
 
-    return (
-        <header>
-            <nav>
-                <ul>
-                    <li onClick={() => navigate('/')}>LabeX</li>
-                    <li onClick={() => navigate('/')}>HOME</li>
-                    <li onClick={() => navigate('/trips/signUp')}>INSCREVER-SE</li>
-                    <li onClick={() => navigate('/login')}>LOGIN</li>
-                </ul>
-            </nav>
-        </header>
-    )
+  return (
+    <Navbar>
+      <NavBrand>
+        <p onClick={() => navigate("/")}>Labe<span>X</span></p>
+      </NavBrand>
+      <NavItems>
+        <li onClick={() => navigate("/")}>HOME</li>
+        <li onClick={() => navigate("/trips/signUp")}>INSCREVER-SE</li>
+        <li onClick={() => navigate("/login")}>LOGIN</li>
+      </NavItems>
+    </Navbar>
+  );
 }

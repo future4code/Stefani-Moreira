@@ -3,7 +3,6 @@ import "../../assets/fonts/fonts.css";
 
 const MainContainer = styled.main`
   padding-top: 20rem;
-  font-family: Roboto;
 `;
 
 const LogoContainer = styled.p`
@@ -12,6 +11,7 @@ const LogoContainer = styled.p`
   line-height: 112px;
   display: flex;
   justify-content: center;
+  font-family: "Roboto";
 
   span {
     color: #b89ed9;
@@ -25,10 +25,12 @@ const ButtonsContainer = styled.div`
 
   button {
     width: 6.8rem;
-    height: 2.8rem;
+    height: 2.4rem;
     background: transparent;
     border: 2px solid #b89ed9;
     border-radius: 4px;
+    font-family: "Ubuntu";
+    font-weight: 600;
   }
 
   button:first-child {
