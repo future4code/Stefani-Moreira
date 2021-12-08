@@ -1,9 +1,9 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
 
-import { Navbar, NavBrand, NavItems } from "./StyledHeader";
+import { Navbar, NavBrand, NavItems } from "../styles/StyledHeader";
 
-export default function Header() {
+export default function PublicHeader() {
   const navigate = useNavigate();
 
   return (

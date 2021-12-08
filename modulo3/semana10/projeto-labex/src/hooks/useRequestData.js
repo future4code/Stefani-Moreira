@@ -16,7 +16,7 @@ export const useRequestData = (trips) => {
         setData(res.data.trips);
       })
       .catch((err) => {
-        alert(err.response);
+        alert(err.response.message);
         setIsLoading(false);
         setError(err);
       });

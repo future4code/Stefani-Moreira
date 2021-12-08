@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import "../../assets/fonts/fonts.css";
+import "../../../assets/fonts/fonts.css";
 
 const Navbar = styled.nav`
   display: flex;

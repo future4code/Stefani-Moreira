@@ -1,5 +1,5 @@
 import React from 'react';
-import Header from '../../shared/Headers/Header';
+import PublicHeader from '../../shared/Headers/PublicHeader/PublicHeader';
 import SignUp from '../../features/User/SignUp/SignUp';
 
 import { PublicPageStyle } from '../styles/GeneralStyles'
@@ -7,7 +7,7 @@ import { PublicPageStyle } from '../styles/GeneralStyles'
 export default function ApplicationFormPage() {
     return (
         <PublicPageStyle>
-            <Header />
+            <PublicHeader />
             <SignUp />
         </PublicPageStyle>
     )
