@@ -1,7 +1,8 @@
-import React, { useState } from "react";
+import React from "react";
 import axios from "axios";
 import { BASE_URL } from "../../../constants/parameters";
 import { useNavigate } from "react-router-dom";
+import { useForm } from "../../../hooks/useForm";
 
 import {
   MainContainer,
@@ -12,26 +13,23 @@ import {
 } from "./StyledLogin";
 
 export default function Login() {
-  const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
+  const [form, onChange] = useForm({ email: "", password: "" });
 
-  const login = () => {
-    const body = {
-      email: email,
-      senha: password,
-    };
+  const navigate = useNavigate();
+
+  const submitLogin = (event) => {
+    event.preventDefault();
+    const body = form;
     axios
       .post(`${BASE_URL}/login`, body)
       .then((res) => {
-        window.localStorage.setItem("token", res.data.token);
-        navigate("/admin/trips/home");
+        localStorage.setItem("token", res.data.token);
+        navigate("/admin/trips/list");
       })
       .catch((err) => {
-        alert(err.response.message);
+        alert(err.response.data.message);
       });
   };
-
-  const navigate = useNavigate();
 
   return (
     <MainContainer>
@@ -43,12 +41,24 @@ export default function Login() {
       <LoginContainer>
         <h2>Login</h2>
         <InputsContainer>
-          <input placeholder="E-mail" />
-          <input placeholder="Senha" />
+          <input
+            placeholder="E-mail"
+            type="email"
+            name="email"
+            value={form.email}
+            onChange={onChange}
+          />
+          <input
+            placeholder="Senha"
+            type="password"
+            name="password"
+            value={form.password}
+            onChange={onChange}
+          />
         </InputsContainer>
         <ButtonsContainer>
-          <button onClick={login}>Entrar</button>
-          <button>Cancelar</button>
+          <button onClick={submitLogin}>Entrar</button>
+          <button onClick={() => navigate("/trips/list")}>Cancelar</button>
         </ButtonsContainer>
       </LoginContainer>
     </MainContainer>

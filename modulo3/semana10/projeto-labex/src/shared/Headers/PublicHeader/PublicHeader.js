@@ -12,7 +12,7 @@ export default function PublicHeader() {
         <p onClick={() => navigate("/")}>Labe<span>X</span></p>
       </NavBrand>
       <NavItems>
-        <li onClick={() => navigate("/")}>HOME</li>
+        <li onClick={() => navigate("/")}>INÍCIO</li>
         {window.location.pathname !== "/trips/signUp" ? <li onClick={() => navigate("/trips/signUp")}>INSCREVER-SE</li> : ''}
         {window.location.pathname === "/trips/signUp" ? <li onClick={() => navigate("/trips/list")}>VIAGENS</li> : ''}
         <li onClick={() => navigate("/login")}>LOGIN</li>

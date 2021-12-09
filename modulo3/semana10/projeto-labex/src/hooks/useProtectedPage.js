@@ -1,14 +1,14 @@
-import { useEffect } from 'react/effects';
+import { useEffect } from "react/effects";
 import { useNavigate } from "react-router-dom";
 
 export const useProtectedPage = () => {
-    const navigate = useNavigate();
+  const navigate = useNavigate();
 
-    useEffect(() => {
-        const token = window.localStorage.getItem('token')
+  useEffect(() => {
+    const token = localStorage.getItem("token");
 
-        if(token === null) {
-            navigate("/login")
-        }
-    }, [navigate])
-}
+    if (!token) {
+      navigate("/login");
+    }
+  }, [navigate]);
+};

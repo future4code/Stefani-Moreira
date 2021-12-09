@@ -6,16 +6,20 @@ import { Navbar, NavBrand, NavItems } from "../styles/StyledHeader";
 export default function PrivateHeader() {
   const navigate = useNavigate();
 
+  const exit = () => {
+    localStorage.clear();
+    navigate("/login");
+  };
+
   return (
     <Navbar>
       <NavBrand>
-        <p onClick={() => navigate("/")}>Labe<span>X</span></p>
+        <p onClick={() => navigate("/")}> Labe<span>X</span></p>
       </NavBrand>
       <NavItems>
-        <li onClick={() => navigate("/")}>HOME</li>
-        {window.location.pathname !== "/trips/signUp" ? <li onClick={() => navigate("/trips/signUp")}>INSCREVER-SE</li> : ''}
-        {window.location.pathname === "/trips/signUp" ? <li onClick={() => navigate("/trips/list")}>VIAGENS</li> : ''}
-        <li onClick={() => navigate("/login")}>LOGIN</li>
+        <li onClick={() => navigate("/admin/trips/list")}>INÍCIO</li>
+        <li onClick={() => navigate("/admin/trips/create")}>CRIAR VIAGENS</li>
+        <li onClick={exit}>LOGOUT</li>
       </NavItems>
     </Navbar>
   );

@@ -14,6 +14,7 @@ const LogoContainer = styled.div`
   line-height: 112px;
   font-family: "Roboto";
   margin: 2rem;
+  cursor: default;
   span {
     color: #b89ed9;
   }
@@ -22,6 +23,8 @@ const LogoContainer = styled.div`
 const LoginContainer = styled.form`
   margin: 8rem 18rem 0;
   background: rgba(229, 229, 229, 0.4);
+  backdrop-filter: blur(2px);
+  -webkit-backdrop-filter: blur(2px);
   width: 22rem;
   height: 30rem;
   border-radius: 10px;

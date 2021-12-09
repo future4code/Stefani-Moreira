@@ -4,12 +4,15 @@ import PrivatePage from "../../assets/images/background-private-page.jpg";
 
 
 const PublicPageStyle = styled.div `
-background: url(${PublicPage}) center center;
-background-size: 99.99% 99.99%;
+background: url(${PublicPage}) no-repeat center center;
+background-size: 99.97% 99.99%;
+background-color: #000000;
 min-height: 41.05rem;
 `
 const PrivatePageStyle = styled.div `
-background-image: url(${PrivatePage});
+background: url(${PrivatePage}) no-repeat;
+background-size: 99.97% 99.96%;
+background-color: #000000;
 min-height: 41.05rem;
 `
 
