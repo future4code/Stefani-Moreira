@@ -13,7 +13,7 @@ const LogoContainer = styled.div`
   font-weight: 800;
   line-height: 112px;
   font-family: "Roboto";
-  margin: 2rem;
+  margin: 1rem 2rem;
   cursor: default;
   span {
     color: #b89ed9;
@@ -39,6 +39,22 @@ const LoginContainer = styled.form`
     line-height: 82px;
     margin: 2rem 0 3rem;
   }
+  button {
+    width: 6.8rem;
+    height: 2rem;
+    margin: 0.5rem;
+    color: #ffffff;
+    background: #b89ed9;
+    text-transform: uppercase;
+    border: 2px solid #b89ed9;
+    border-radius: 4px;
+    font-family: "Ubuntu";
+    font-weight: 600;
+  }
+
+  button:hover {
+    opacity: 0.8;
+  }
 `;
 
 const InputsContainer = styled.section`
@@ -57,40 +73,31 @@ const InputsContainer = styled.section`
 
     ::placeholder {
       color: #000000;
-      font-family: 'Montserrat';
+      font-family: "Montserrat";
       font-weight: bold;
     }
 
     :focus {
-    outline: none;
-    box-shadow: 0px 0px 2px 2px #b89ed9;
-  }
+      outline: none;
+      box-shadow: 0px 0px 2px 2px #b89ed9;
+    }
   }
 `;
 
-const ButtonsContainer = styled.section`
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-
-  button {
-    width: 6.8rem;
-    height: 2rem;
-    margin: 0.5rem;
-    color: #ffffff;
-    background: transparent;
-    border: 2px solid #b89ed9;
-    border-radius: 4px;
-    font-family: "Ubuntu";
-    font-weight: 600;
-  }
-
-  button:first-child {
-    background: #b89ed9;
-    text-transform: uppercase;
-  }
-
-  button:hover {
+const CancelButton = styled.button`
+  width: 6.8rem;
+  height: 2rem;
+  margin: 0.5rem;
+  color: #ffffff;
+  background: transparent;
+  border: 2px solid #b89ed9;
+  border-radius: 4px;
+  font-family: "Ubuntu";
+  font-weight: 600;
+  position: absolute;
+  left: 39.2rem;
+  top: 30rem;
+  :hover {
     opacity: 0.8;
   }
 `;
@@ -100,5 +107,5 @@ export {
   LogoContainer,
   LoginContainer,
   InputsContainer,
-  ButtonsContainer,
+  CancelButton,
 };

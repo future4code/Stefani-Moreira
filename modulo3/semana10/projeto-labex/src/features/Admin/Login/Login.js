@@ -9,7 +9,7 @@ import {
   LogoContainer,
   LoginContainer,
   InputsContainer,
-  ButtonsContainer,
+  CancelButton,
 } from "./StyledLogin";
 
 export default function Login() {
@@ -38,7 +38,7 @@ export default function Login() {
           Labe<span>X</span>
         </h2>
       </LogoContainer>
-      <LoginContainer>
+      <LoginContainer onSubmit={submitLogin}>
         <h2>Login</h2>
         <InputsContainer>
           <input
@@ -56,11 +56,11 @@ export default function Login() {
             onChange={onChange}
           />
         </InputsContainer>
-        <ButtonsContainer>
-          <button onClick={submitLogin}>Entrar</button>
-          <button onClick={() => navigate("/trips/list")}>Cancelar</button>
-        </ButtonsContainer>
+        <button>Entrar</button>
       </LoginContainer>
+      <CancelButton onClick={() => navigate("/trips/list")}>
+        Cancelar
+      </CancelButton>
     </MainContainer>
   );
 }

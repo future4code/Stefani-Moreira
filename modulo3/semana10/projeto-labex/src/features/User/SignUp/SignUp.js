@@ -4,6 +4,8 @@ import { BASE_URL } from "../../../constants/parameters";
 import { useForm } from "../../../hooks/useForm";
 import { useRequestData } from "../../../hooks/useRequestData";
 
+import { MainContainer, PhraseContainer, FormContainer, CancelButton } from './StyledSignUp'
+
 export default function SignUp() {
   const [form, onChange] = useForm({
     name: "",
@@ -12,7 +14,7 @@ export default function SignUp() {
     profession: "",
     country: "",
   });
-  const [trips, isLoading, error] = useRequestData(`/trips`);
+  const [trips] = useRequestData(`/trips`);
   const [tripId, setTripId] = useState("");
   const [countries, setCountries] = useState([]);
 
@@ -22,6 +24,7 @@ export default function SignUp() {
       .post(`${BASE_URL}/trips/${tripId}/apply`, body)
       .then((res) => {
         alert(res.data.message);
+        setTripId(tripId)
       })
       .catch((err) => {
         alert(err.res.data.message);
@@ -30,7 +33,7 @@ export default function SignUp() {
 
   const getCountries = () => {
     axios
-      .get(`https://servicodados.ibge.gov.br/api/v1/paises`)
+      .get(`https://servicodados.ibge.gov.br/api/v1/paises?orderBy=nome`)
       .then((res) => {
         setCountries(res.data);
       })
@@ -43,9 +46,7 @@ export default function SignUp() {
     getCountries();
   }, []);
 
-  const tripsList =
-    trips &&
-    trips.map((trip) => {
+  const tripsList = trips && trips.map((trip) => {
       return (
         <option key={trip.id} value={trip.id}>
           {trip.name}
@@ -62,15 +63,16 @@ export default function SignUp() {
   });
 
   return (
-    <div>
-      <div>
+    <MainContainer>
+      <PhraseContainer>
         <p>
           Os grandes pensamentos não necessitam apenas de asas, mas também de
           algum veículo para aterrisar.
         </p>
         <p>Neil Armstrong</p>
-      </div>
-      <form>
+      </PhraseContainer>
+      <FormContainer onSubmit={applyToTrip}>
+      <h2>INSCREVA-SE PARA UMA VIAGEM</h2>
         <select name={"tripId"} defaultValue={""} onChange={onChange}>
           <option selected disabled>
             Escolha uma viagem
@@ -105,13 +107,15 @@ export default function SignUp() {
           value={form.profession}
           onChange={onChange}
         />
-        <select name={"country"} defaultValue={""} onChange={onChange}>
+        <select type="text" name={"country"} defaultValue={""} onChange={onChange}>
           <option selected disabled>
             Escolha o seu país de origem
           </option>
           {countriesList}
         </select>
-      </form>
-    </div>
+        <button>Enviar</button>
+      </FormContainer>
+      <CancelButton>Cancelar</CancelButton>
+    </MainContainer>
   );
 }
