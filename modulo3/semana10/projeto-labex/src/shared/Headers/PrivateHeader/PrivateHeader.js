@@ -7,7 +7,7 @@ export default function PrivateHeader() {
   const navigate = useNavigate();
 
   const exit = () => {
-    localStorage.clear();
+    localStorage.removeItem("token");
     navigate("/login");
   };
 

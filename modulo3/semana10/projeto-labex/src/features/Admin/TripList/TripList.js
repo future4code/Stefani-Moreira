@@ -1,27 +1,31 @@
 import React from "react";
 import { useRequestData } from "../../../hooks/useRequestData";
 import Loading from "../../../shared/Loading/Loading";
-import { BASE_URL } from '../../../constants/parameters'
+import { BASE_URL } from "../../../constants/parameters";
 
 import { MainContainer, TripCard } from "./StyledTripList";
 import axios from "axios";
 
 export default function TripList() {
-  const [trips, isLoading, error] = useRequestData(`/trips`);
+  const [trips, isLoading, error, getData] = useRequestData(`/trips`);
 
-  const token = localStorage.getItem("token")
+  const token = localStorage.getItem("token");
 
   const deleteTrip = (id) => {
-    axios.delete(`${BASE_URL}/trips/${id}`, {
-      headers: {
-        auth: token
-      }
-    }).then((res) => {
-      alert(res.data.message)
-    }).catch((err) => {
-      alert (err.response.data.message)
-    })
-  }
+    axios
+      .delete(`${BASE_URL}/trips/${id}`, {
+        headers: {
+          auth: token,
+        },
+      })
+      .then((res) => {
+        alert("Viagem deletada");
+        getData();
+      })
+      .catch((err) => {
+        alert(err.response.data.message);
+      });
+  };
 
   const tripsList =
     trips &&
@@ -29,7 +33,7 @@ export default function TripList() {
       return (
         <TripCard key={trip.id}>
           <p>{trip.name}</p>
-          <button onClick={deleteTrip}>Deletar</button>
+          <button onClick={() => deleteTrip(trip.id)}>Deletar</button>
         </TripCard>
       );
     });

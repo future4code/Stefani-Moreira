@@ -7,7 +7,7 @@ export const useRequestData = (trips) => {
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState("");
 
-  const getTrips = () => {
+  const getData = () => {
     setIsLoading(true);
     axios
       .get(`${BASE_URL}${trips}`)
@@ -23,8 +23,8 @@ export const useRequestData = (trips) => {
   };
 
   useEffect(() => {
-    getTrips();
+    getData();
   }, []);
 
-  return [data, isLoading, error];
+  return [data, isLoading, error, getData];
 };

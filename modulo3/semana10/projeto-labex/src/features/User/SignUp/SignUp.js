@@ -21,10 +21,10 @@ export default function SignUp() {
   const applyToTrip = (id) => {
     const body = form;
     axios
-      .post(`${BASE_URL}/trips/${tripId}/apply`, body)
+      .post(`${BASE_URL}/trips/${id}/apply`, body)
       .then((res) => {
         alert(res.data.message);
-        setTripId(tripId)
+        setTripId(id)
       })
       .catch((err) => {
         alert(err.res.data.message);
@@ -71,7 +71,7 @@ export default function SignUp() {
         </p>
         <p>Neil Armstrong</p>
       </PhraseContainer>
-      <FormContainer onSubmit={applyToTrip}>
+      <FormContainer onSubmit={() => applyToTrip(tripId)}>
       <h2>INSCREVA-SE PARA UMA VIAGEM</h2>
         <select name={"tripId"} defaultValue={""} onChange={onChange}>
           <option selected disabled>
