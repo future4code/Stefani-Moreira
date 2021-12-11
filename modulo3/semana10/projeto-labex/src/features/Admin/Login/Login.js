@@ -47,6 +47,7 @@ export default function Login() {
             name="email"
             value={form.email}
             onChange={onChange}
+            required
           />
           <input
             placeholder="Senha"
@@ -54,6 +55,7 @@ export default function Login() {
             name="password"
             value={form.password}
             onChange={onChange}
+            required
           />
         </InputsContainer>
         <button>Entrar</button>

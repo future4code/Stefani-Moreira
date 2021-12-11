@@ -7,8 +7,8 @@ const CardTrip = styled.div`
   -webkit-backdrop-filter: blur(20px);
   border-radius: 8px;
   width: 18rem;
-  height: 8rem;
-  padding: 2rem 1rem;
+  height: 9rem;
+  padding: 1.6rem 1rem;
   font-family: "Roboto";
   font-weight: 800;
   line-height: 1.4rem;
@@ -35,7 +35,7 @@ const CardContainer = styled.div`
   gap: 2rem;
   overflow-y: scroll;
   ::-webkit-scrollbar {
-    width: 0px;
+    width: 2px;
   }
   margin-bottom: 0.5rem;
 `;

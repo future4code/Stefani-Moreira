@@ -8,9 +8,9 @@ const GlobalStyle = createGlobalStyle`
    
    body {
     ::-webkit-scrollbar {
-    width: 0px;
+      width: 0px;
+    }
   }
-   }
 `;
 
 export default GlobalStyle;

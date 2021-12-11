@@ -3,11 +3,18 @@ import axios from "axios";
 import { BASE_URL } from "../../../constants/parameters";
 import { useForm } from "../../../hooks/useForm";
 import { useRequestData } from "../../../hooks/useRequestData";
+import { useNavigate } from "react-router-dom";
 
-import { MainContainer, PhraseContainer, FormContainer, CancelButton } from './StyledSignUp'
+import {
+  MainContainer,
+  PhraseContainer,
+  FormContainer,
+  CancelButton,
+} from "./StyledSignUp";
 
 export default function SignUp() {
   const [form, onChange] = useForm({
+    trip: "",
     name: "",
     age: "",
     applicationText: "",
@@ -15,21 +22,23 @@ export default function SignUp() {
     country: "",
   });
   const [trips] = useRequestData(`/trips`);
-  const [tripId, setTripId] = useState("");
   const [countries, setCountries] = useState([]);
+  const navigate = useNavigate();
 
-  const applyToTrip = (id) => {
+  const applyToTrip = (event) => {
+    event.preventDefault();
     const body = form;
     axios
-      .post(`${BASE_URL}/trips/${id}/apply`, body)
+      .post(`${BASE_URL}/trips/${form.trip}/apply`, body)
       .then((res) => {
-        alert(res.data.message);
-        setTripId(id)
+        alert("Formulário enviado");
+        navigate("/trips/list")
       })
       .catch((err) => {
-        alert(err.res.data.message);
+        alert("Deu ruim");
       });
   };
+
 
   const getCountries = () => {
     axios
@@ -46,7 +55,9 @@ export default function SignUp() {
     getCountries();
   }, []);
 
-  const tripsList = trips && trips.map((trip) => {
+  const tripsList =
+    trips &&
+    trips.map((trip) => {
       return (
         <option key={trip.id} value={trip.id}>
           {trip.name}
@@ -56,7 +67,7 @@ export default function SignUp() {
 
   const countriesList = countries.map((country) => {
     return (
-      <option key={country.id} value={country.id}>
+      <option key={country.id} value={country.nome.abreviado}>
         {country.nome.abreviado}
       </option>
     );
@@ -71,10 +82,10 @@ export default function SignUp() {
         </p>
         <p>Neil Armstrong</p>
       </PhraseContainer>
-      <FormContainer onSubmit={() => applyToTrip(tripId)}>
-      <h2>INSCREVA-SE PARA UMA VIAGEM</h2>
-        <select name={"tripId"} defaultValue={""} onChange={onChange}>
-          <option selected disabled>
+      <FormContainer onSubmit={applyToTrip}>
+        <h2>INSCREVA-SE PARA UMA VIAGEM</h2>
+        <select name={"trip"} defaultValue={" "} onChange={onChange} required>
+          <option value={" "} disabled>
             Escolha uma viagem
           </option>
           {tripsList}
@@ -85,13 +96,15 @@ export default function SignUp() {
           name="name"
           value={form.name}
           onChange={onChange}
+          required
         />
         <input
           placeholder="Idade"
-          type="text"
+          type="number"
           name="age"
           value={form.age}
           onChange={onChange}
+          required
         />
         <input
           placeholder="Texto de candidatura"
@@ -99,6 +112,7 @@ export default function SignUp() {
           name="applicationText"
           value={form.applicationText}
           onChange={onChange}
+          required
         />
         <input
           placeholder="Profissão"
@@ -106,16 +120,22 @@ export default function SignUp() {
           name="profession"
           value={form.profession}
           onChange={onChange}
+          required
         />
-        <select type="text" name={"country"} defaultValue={""} onChange={onChange}>
-          <option selected disabled>
+        <select
+          name={"country"}
+          defaultValue={" "}
+          onChange={onChange}
+          required
+        >
+          <option value={" "} disabled>
             Escolha o seu país de origem
           </option>
           {countriesList}
         </select>
         <button>Enviar</button>
       </FormContainer>
-      <CancelButton>Cancelar</CancelButton>
+      <CancelButton onClick={()=> navigate("/trips/list")}>Cancelar</CancelButton>
     </MainContainer>
   );
 }

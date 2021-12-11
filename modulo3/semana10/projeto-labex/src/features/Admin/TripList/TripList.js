@@ -1,23 +1,26 @@
 import React from "react";
 import { useRequestData } from "../../../hooks/useRequestData";
 import Loading from "../../../shared/Loading/Loading";
-import { BASE_URL } from "../../../constants/parameters";
+import { BASE_URL, headers } from "../../../constants/parameters";
+import axios from "axios";
+import { useNavigate } from "react-router-dom";
+
+import TrashIcon from "../../../assets/images/trash-icon.svg"
 
 import { MainContainer, TripCard } from "./StyledTripList";
-import axios from "axios";
 
 export default function TripList() {
   const [trips, isLoading, error, getData] = useRequestData(`/trips`);
 
-  const token = localStorage.getItem("token");
+  const navigate = useNavigate();
+
+  const goToDetails = (id) => {
+    navigate(`/admin/trips/details/${id}`);
+  };
 
   const deleteTrip = (id) => {
     axios
-      .delete(`${BASE_URL}/trips/${id}`, {
-        headers: {
-          auth: token,
-        },
-      })
+      .delete(`${BASE_URL}/trips/${id}`, headers)
       .then((res) => {
         alert("Viagem deletada");
         getData();
@@ -32,8 +35,10 @@ export default function TripList() {
     trips.map((trip) => {
       return (
         <TripCard key={trip.id}>
-          <p>{trip.name}</p>
-          <button onClick={() => deleteTrip(trip.id)}>Deletar</button>
+          <div onClick={() => goToDetails(trip.id)}>
+            <p>{trip.name}</p>
+          </div>
+          <img src={TrashIcon} alt="Ícone de deletar viagem" onClick={() => deleteTrip(trip.id)} />
         </TripCard>
       );
     });
@@ -44,7 +49,7 @@ export default function TripList() {
       {!isLoading && error && <p>Ocorreu um erro...</p>}
       {!isLoading && trips && trips.length > 0 && (
         <MainContainer>
-          <h2>LISTA DE VIAGENS</h2>
+          <h2>PAINEL ADMINISTRATIVO</h2>
           <div>{tripsList}</div>
         </MainContainer>
       )}
