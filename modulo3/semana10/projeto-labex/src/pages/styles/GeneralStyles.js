@@ -10,7 +10,7 @@ background-color: #000000;
 min-height: 41.05rem;
 `
 const PrivatePageStyle = styled.div `
-background: url(${PrivatePage}) no-repeat;
+background: url(${PrivatePage});
 background-size: 99.97% 99.96%;
 background-color: #000000;
 min-height: 41.05rem;

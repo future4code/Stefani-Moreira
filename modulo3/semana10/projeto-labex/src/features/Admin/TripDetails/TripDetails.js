@@ -8,21 +8,30 @@ import Loading from "../../../shared/Loading/Loading";
 import Trash from "../../../assets/images/Trash.svg";
 import Check from "../../../assets/images/Check.svg";
 
-import { MainContainer, PendingCard } from "./StyledTripDetails";
+import {
+  MainContainer,
+  TripCard,
+  ApprovedContainer,
+  PendingCard,
+  PedingContainer,
+} from "./StyledTripDetails";
 
 export default function TripDetails() {
   const params = useParams();
   const navigate = useNavigate();
   const [tripDetails, setTripDetails] = useState({});
+  const [isLoading, setIsLoading] = useState(true);
 
   const getTripDetails = () => {
     axios
       .get(`${BASE_URL}/trip/${params.id}`, headers)
       .then((res) => {
+        setIsLoading(false);
         setTripDetails(res.data.trip);
       })
       .catch((err) => {
         alert(err.res.message);
+        setIsLoading(false);
       });
   };
 
@@ -35,7 +44,11 @@ export default function TripDetails() {
       approve: choice,
     };
     axios
-      .put( `${BASE_URL}/trips/${tripDetails.id}/candidates/${id}/decide`, body, headers)
+      .put(
+        `${BASE_URL}/trips/${tripDetails.id}/candidates/${id}/decide`,
+        body,
+        headers
+      )
       .then((res) => {
         console.log(res);
         if (choice === true) {
@@ -51,17 +64,21 @@ export default function TripDetails() {
   };
 
   const tripData = (
-    <div>
+    <TripCard>
       <h2>{tripDetails.name}</h2>
+      <div>
       <p>Descrição: {tripDetails.description}</p>
       <p>Planeta: {tripDetails.planet}</p>
       <p>Duração: {tripDetails.durationInDays} dias</p>
       <p>Data: {tripDetails.date}</p>
       <button onClick={() => navigate("/admin/trips/list")}>Voltar</button>
-    </div>
+      </div>
+    </TripCard>
   );
 
-  const candidatesList = tripDetails.candidates && tripDetails.candidates.map((candidate) => {
+  const candidatesList =
+    tripDetails.candidates &&
+    tripDetails.candidates.map((candidate) => {
       return (
         <PendingCard>
           <p>
@@ -86,7 +103,9 @@ export default function TripDetails() {
       );
     });
 
-  const approvedList = tripDetails.approved && tripDetails.approved.map((candidate) => {
+  const approvedList =
+    tripDetails.approved &&
+    tripDetails.approved.map((candidate) => {
       return (
         <div key={candidate.id}>
           <p>{candidate.name}</p>
@@ -95,28 +114,36 @@ export default function TripDetails() {
     });
 
   return (
-    <MainContainer>
-      <div>
-        <div>{tripData}</div>
-        <h2>Candidatos Aprovados</h2>
-        {tripDetails.approved && tripDetails.approved.length === 0 ? (
+    <div>
+      {!isLoading && tripDetails ? (
+        <MainContainer>
           <div>
-            <p>Não há candidatos aprovados</p>
+            <div>{tripData}</div>
+            <ApprovedContainer>
+              <h2>Candidatos Aprovados</h2>
+              {tripDetails.approved && tripDetails.approved.length === 0 ? (
+                <div>
+                  <p>Não há candidatos aprovados</p>
+                </div>
+              ) : (
+                <div>{approvedList}</div>
+              )}
+            </ApprovedContainer>
           </div>
-        ) : (
-          <div>{approvedList}</div>
-        )}
-      </div>
-      <div>
-        <h2>Candidatos Pendentes</h2>
-        {tripDetails.candidates && tripDetails.candidates.length === 0 ? (
-          <div>
-            <p>Não há candidatos pendentes</p>
-          </div>
-        ) : (
-          <div>{candidatesList}</div>
-        )}
-      </div>
-    </MainContainer>
+          <PedingContainer>
+            <h2>Candidatos Pendentes</h2>
+            {tripDetails.candidates && tripDetails.candidates.length === 0 ? (
+              <div>
+                <p>Não há candidatos pendentes</p>
+              </div>
+            ) : (
+              <div>{candidatesList}</div>
+            )}
+          </PedingContainer>
+        </MainContainer>
+      ) : (
+        <Loading />
+      )}
+    </div>
   );
 }

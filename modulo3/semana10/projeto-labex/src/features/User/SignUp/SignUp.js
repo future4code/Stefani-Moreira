@@ -4,6 +4,7 @@ import { BASE_URL } from "../../../constants/parameters";
 import { useForm } from "../../../hooks/useForm";
 import { useRequestData } from "../../../hooks/useRequestData";
 import { useNavigate } from "react-router-dom";
+import { countries } from "../../../assets/data/countries";
 
 import {
   MainContainer,
@@ -22,7 +23,6 @@ export default function SignUp() {
     country: "",
   });
   const [trips] = useRequestData(`/trips`);
-  const [countries, setCountries] = useState([]);
   const navigate = useNavigate();
 
   const applyToTrip = (event) => {
@@ -39,22 +39,6 @@ export default function SignUp() {
       });
   };
 
-
-  const getCountries = () => {
-    axios
-      .get(`https://servicodados.ibge.gov.br/api/v1/paises?orderBy=nome`)
-      .then((res) => {
-        setCountries(res.data);
-      })
-      .catch((err) => {
-        console.log(err);
-      });
-  };
-
-  useEffect(() => {
-    getCountries();
-  }, []);
-
   const tripsList =
     trips &&
     trips.map((trip) => {
@@ -67,8 +51,8 @@ export default function SignUp() {
 
   const countriesList = countries.map((country) => {
     return (
-      <option key={country.id} value={country.nome.abreviado}>
-        {country.nome.abreviado}
+      <option key={country} value={country}>
+        {country}
       </option>
     );
   });
