@@ -7,6 +7,11 @@ const MainContainer = styled.main`
   font-family: "Roboto";
   color: #ffffff;
   backdrop-filter: blur(1px);
+
+  @media (max-width: 800px) {
+   flex-direction: column;
+   padding: 2rem;
+  }
 `;
 
 const TripCard = styled.section`
@@ -36,6 +41,21 @@ const TripCard = styled.section`
   button:hover {
     opacity: 0.8;
   }
+
+  @media (max-width: 800px) {
+    p{
+      font-size: 1.2rem;
+    }
+
+   div {
+     width: 90%;
+   }
+
+   button {
+    width: 6rem;
+    font-size: 1rem;
+   }
+  }
 `;
 
 const ApprovedContainer = styled.div`
@@ -43,6 +63,12 @@ font-weight: bold;
   h2 {
     color: #b89ed9;
     margin-bottom: 0.6rem;
+  }
+
+  @media (max-width: 800px) {
+   p{
+     font-size: 1.2rem;
+   }
   }
 `;
 
@@ -70,12 +96,26 @@ const PendingCard = styled.section`
       width: 8%;
     }
   }
+
+   @media (max-width: 800px) {
+    div img {
+      width: 10%;
+    }
+}
+
 `;
 
 const PedingContainer = styled.div`
     font-weight: bold;
   h2 {
     margin-bottom: 0.6rem;
+  }
+
+  @media (max-width: 800px) {
+   margin-top: 2rem;
+   p {
+     font-size: 1.1rem;
+   }
   }
 `;
 

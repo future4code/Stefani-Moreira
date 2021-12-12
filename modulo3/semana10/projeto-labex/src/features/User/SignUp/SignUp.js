@@ -10,7 +10,6 @@ import {
   MainContainer,
   PhraseContainer,
   FormContainer,
-  CancelButton,
 } from "./StyledSignUp";
 
 export default function SignUp() {
@@ -22,7 +21,7 @@ export default function SignUp() {
     profession: "",
     country: "",
   });
-  const [trips] = useRequestData(`/trips`);
+  const [tripsData] = useRequestData(`/trips`, {});
   const navigate = useNavigate();
 
   const applyToTrip = (event) => {
@@ -40,8 +39,8 @@ export default function SignUp() {
   };
 
   const tripsList =
-    trips &&
-    trips.map((trip) => {
+  tripsData.trips &&
+  tripsData.trips.map((trip) => {
       return (
         <option key={trip.id} value={trip.id}>
           {trip.name}
@@ -119,7 +118,6 @@ export default function SignUp() {
         </select>
         <button>Enviar</button>
       </FormContainer>
-      <CancelButton onClick={()=> navigate("/trips/list")}>Cancelar</CancelButton>
     </MainContainer>
   );
 }

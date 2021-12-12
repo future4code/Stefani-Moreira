@@ -12,6 +12,10 @@ const CardTrip = styled.div`
   font-family: "Roboto";
   font-weight: 800;
   line-height: 1.4rem;
+  @media (max-width: 800px) {
+    height: 10.9rem;
+   font-size: 1.18rem;
+  }
 `;
 
 const MainContainer = styled.main`
@@ -26,6 +30,11 @@ const MainContainer = styled.main`
     font-family: "Montserrat";
     font-weight: bold;
     font-size: 2.4rem;
+
+    @media (max-width: 800px) {
+      font-size: 2rem;
+      margin-right: 0.8rem;
+}
   }
 `;
 
@@ -38,6 +47,12 @@ const CardContainer = styled.div`
     width: 2px;
   }
   margin-bottom: 0.5rem;
+
+  @media (max-width: 800px) {
+  display: grid;
+  grid-template-columns: 1fr;
+  margin-left: 0.1rem;
+}
 `;
 
 export { CardTrip, MainContainer, CardContainer };

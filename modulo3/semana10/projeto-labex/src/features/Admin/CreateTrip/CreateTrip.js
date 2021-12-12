@@ -4,10 +4,13 @@ import { BASE_URL, headers } from "../../../constants/parameters";
 import { useNavigate } from "react-router-dom";
 import { useForm } from "../../../hooks/useForm";
 import { planets } from "../../../assets/data/planets";
+import { useProtectedPage } from "../../../hooks/useProtectedPage";
 
-import { MainContainer, FormContainer, CancelButton } from './StyledCreateTrip'
+import { MainContainer, FormContainer } from './StyledCreateTrip'
 
 export default function CreateTrip() {
+  useProtectedPage()
+
   const [form, onChange] = useForm({
     name: "",
     planet: "",
@@ -82,7 +85,6 @@ export default function CreateTrip() {
         />
         <button>Criar</button>
       </FormContainer>
-      <CancelButton onClick={() => navigate("/admin/trips/list")}>Cancelar</CancelButton>
     </MainContainer>
   );
 }

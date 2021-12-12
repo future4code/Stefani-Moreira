@@ -18,6 +18,7 @@ const MainContainer = styled.main`
 const FormContainer = styled.form`
   display: flex;
   flex-direction: column;
+  align-items: center;
 
   input,
   select {
@@ -67,7 +68,7 @@ const FormContainer = styled.form`
   button {
     width: 6.8rem;
     height: 2rem;
-    margin: 0.5rem 4rem;
+    margin: 0.5rem;
     color: #ffffff;
     background: #b89ed9;
     border: 2px solid #b89ed9;
@@ -81,22 +82,5 @@ const FormContainer = styled.form`
   }
 `;
 
-const CancelButton = styled.button`
-  width: 6.8rem;
-  height: 2rem;
-  margin: 0.5rem;
-  color: #ffffff;
-  background: transparent;
-  border: 2px solid #b89ed9;
-  border-radius: 4px;
-  font-family: "Ubuntu";
-  font-weight: 600;
-  position: absolute;
-  right: 34.8rem;
-  bottom: 4.889rem;
-  :hover {
-    opacity: 0.8;
-  }
-`;
 
-export { MainContainer, FormContainer, CancelButton };
+export { MainContainer, FormContainer };

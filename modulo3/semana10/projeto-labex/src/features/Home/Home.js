@@ -1,12 +1,11 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
+import { token } from '../../constants/parameters'
 
 import { MainContainer, LogoContainer, ButtonsContainer } from "./StyledHome";
 
 export default function Home() {
   const navigate = useNavigate();
-
-  const token = localStorage.getItem("token")
 
   const goToPageAdmin = () => {
     if(token) {

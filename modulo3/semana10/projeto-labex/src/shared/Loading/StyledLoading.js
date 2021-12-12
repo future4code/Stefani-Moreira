@@ -14,6 +14,10 @@ const LoadingContainer = styled.div`
     color: #b89ed9;
     font-size: 2rem;
   }
+
+  @media (max-width: 800px) {
+    padding: 12rem 1rem 0;
+}
 `;
 
 const RocketLoading = styled.img`
@@ -32,6 +36,20 @@ const RocketLoading = styled.img`
       transform: rotate(90deg);
     }
   }
+
+  @media (max-width: 800px) {
+    padding-left: 0rem;
+    width: 70px;
+    height: 70px;
+    @keyframes infinite-spinning {
+    from {
+      transform: rotate(2deg);
+    }
+    to {
+      transform: rotate(50deg);
+    }
+  }
+}
 `;
 
 export { LoadingContainer, RocketLoading };

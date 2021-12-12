@@ -55,6 +55,10 @@ const LoginContainer = styled.form`
   button:hover {
     opacity: 0.8;
   }
+
+  @media (max-width: 800px) {
+    margin: 10rem -12rem 0;
+  }
 `;
 
 const InputsContainer = styled.section`
@@ -84,28 +88,10 @@ const InputsContainer = styled.section`
   }
 `;
 
-const CancelButton = styled.button`
-  width: 6.8rem;
-  height: 2rem;
-  margin: 0.5rem;
-  color: #ffffff;
-  background: transparent;
-  border: 2px solid #b89ed9;
-  border-radius: 4px;
-  font-family: "Ubuntu";
-  font-weight: 600;
-  position: absolute;
-  left: 39.2rem;
-  top: 30rem;
-  :hover {
-    opacity: 0.8;
-  }
-`;
 
 export {
   MainContainer,
   LogoContainer,
   LoginContainer,
   InputsContainer,
-  CancelButton,
 };

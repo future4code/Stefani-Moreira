@@ -1,20 +1,19 @@
 import { useState, useEffect } from "react";
 import axios from "axios";
-import { BASE_URL } from "../constants/parameters";
+import { BASE_URL, headers } from "../constants/parameters";
 
-export const useRequestData = (trips) => {
-  const [data, setData] = useState([]);
+export const useRequestData = (trips, initialState) => {
+  const [data, setData] = useState(initialState);
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState("");
-
 
   const getData = () => {
     setIsLoading(true);
     axios
-      .get(`${BASE_URL}${trips}`)
+      .get(`${BASE_URL}${trips}`, headers)
       .then((res) => {
         setIsLoading(false);
-        setData(res.data.trips);
+        setData(res.data);
       })
       .catch((err) => {
         alert(err.response.message);

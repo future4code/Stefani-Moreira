@@ -5,14 +5,14 @@ import Loading from "../../../shared/Loading/Loading";
 import { CardTrip, MainContainer, CardContainer } from "./StyledTripList";
 
 export default function TripList() {
-  const [trips, isLoading, error] = useRequestData(`/trips`);
+  const [tripsData, isLoading, error] = useRequestData(`/trips`, {});
 
   const tripsList =
-    trips &&
-    trips.map((trip) => {
+    tripsData.trips &&
+    tripsData.trips.map((trip) => {
       return (
         <CardTrip key={trip.id}>
-          <p>Name: {trip.name}</p>
+          <p>Nome: {trip.name}</p>
           <p>Descrição: {trip.description}</p>
           <p>Planeta: {trip.planet}</p>
           <p>Duração: {trip.durationInDays} dias</p>
@@ -23,14 +23,13 @@ export default function TripList() {
 
   return (
     <div>
-      {isLoading && <Loading />}
       {!isLoading && error && <p>Ocorreu um erro...</p>}
-      {!isLoading && trips && trips.length > 0 && (
+      {!isLoading && tripsData.trips && tripsData.trips.length > 0 ? (
         <MainContainer>
           <h2>LISTA DE VIAGENS</h2>
           <CardContainer>{tripsList}</CardContainer>
         </MainContainer>
-      )}
+      ) : (<Loading />)}
     </div>
   );
 }

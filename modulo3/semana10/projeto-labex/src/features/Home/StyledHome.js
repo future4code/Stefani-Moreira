@@ -3,13 +3,17 @@ import "../../assets/fonts/fonts.css";
 
 const MainContainer = styled.main`
   padding-top: 20rem;
-  
+
+  @media (max-width: 600px) {
+    padding-top: 16rem;
+}
+
 `;
 
 const LogoContainer = styled.p`
-  font-size: 50px;
+  font-size: 3.125rem;
   font-weight: 400;
-  line-height: 112px;
+  line-height: 7rem;
   display: flex;
   justify-content: center;
   font-family: "Roboto";
@@ -44,6 +48,7 @@ const ButtonsContainer = styled.div`
   button:hover {
     opacity: 0.8;
   }
+
 `;
 
 export { MainContainer, LogoContainer, ButtonsContainer };

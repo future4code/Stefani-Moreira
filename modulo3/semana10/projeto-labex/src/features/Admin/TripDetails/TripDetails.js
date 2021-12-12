@@ -1,7 +1,9 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
 import { useParams, useNavigate } from "react-router-dom";
 import { BASE_URL, headers } from "../../../constants/parameters";
 import axios from "axios";
+import { useRequestData } from "../../../hooks/useRequestData";
+import { useProtectedPage } from "../../../hooks/useProtectedPage";
 
 import Loading from "../../../shared/Loading/Loading";
 
@@ -17,27 +19,13 @@ import {
 } from "./StyledTripDetails";
 
 export default function TripDetails() {
+  useProtectedPage();
+
   const params = useParams();
+  const [tripDetails, isLoading, error, getTripDetails] = useRequestData(
+    `/trip/${params.id}`
+  );
   const navigate = useNavigate();
-  const [tripDetails, setTripDetails] = useState({});
-  const [isLoading, setIsLoading] = useState(true);
-
-  const getTripDetails = () => {
-    axios
-      .get(`${BASE_URL}/trip/${params.id}`, headers)
-      .then((res) => {
-        setIsLoading(false);
-        setTripDetails(res.data.trip);
-      })
-      .catch((err) => {
-        alert(err.res.message);
-        setIsLoading(false);
-      });
-  };
-
-  useEffect(() => {
-    getTripDetails();
-  }, []);
 
   const decideCandidate = (id, choice) => {
     const body = {
@@ -45,7 +33,7 @@ export default function TripDetails() {
     };
     axios
       .put(
-        `${BASE_URL}/trips/${tripDetails.id}/candidates/${id}/decide`,
+        `${BASE_URL}/trips/${tripDetails.trip.id}/candidates/${id}/decide`,
         body,
         headers
       )
@@ -65,20 +53,21 @@ export default function TripDetails() {
 
   const tripData = (
     <TripCard>
-      <h2>{tripDetails.name}</h2>
+      <h2>{tripDetails && tripDetails.trip.name}</h2>
       <div>
-      <p>Descrição: {tripDetails.description}</p>
-      <p>Planeta: {tripDetails.planet}</p>
-      <p>Duração: {tripDetails.durationInDays} dias</p>
-      <p>Data: {tripDetails.date}</p>
-      <button onClick={() => navigate("/admin/trips/list")}>Voltar</button>
+        <p>Descrição: {tripDetails && tripDetails.trip.description}</p>
+        <p>Planeta: {tripDetails && tripDetails.trip.planet}</p>
+        <p>Duração: {tripDetails && tripDetails.trip.durationInDays} dias</p>
+        <p>Data: {tripDetails && tripDetails.trip.date}</p>
+        <button onClick={() => navigate("/admin/trips/list")}>Voltar</button>
       </div>
     </TripCard>
   );
 
   const candidatesList =
-    tripDetails.candidates &&
-    tripDetails.candidates.map((candidate) => {
+    tripDetails &&
+    tripDetails.trip &&
+    tripDetails.trip.candidates.map((candidate) => {
       return (
         <PendingCard>
           <p>
@@ -104,8 +93,9 @@ export default function TripDetails() {
     });
 
   const approvedList =
-    tripDetails.approved &&
-    tripDetails.approved.map((candidate) => {
+    tripDetails &&
+    tripDetails.trip &&
+    tripDetails.trip.approved.map((candidate) => {
       return (
         <div key={candidate.id}>
           <p>{candidate.name}</p>
@@ -115,13 +105,15 @@ export default function TripDetails() {
 
   return (
     <div>
-      {!isLoading && tripDetails ? (
+      {!isLoading && error && <p>Ocorreu um erro...</p>}
+      {!isLoading && tripDetails && tripDetails.trip ? (
         <MainContainer>
           <div>
             <div>{tripData}</div>
             <ApprovedContainer>
               <h2>Candidatos Aprovados</h2>
-              {tripDetails.approved && tripDetails.approved.length === 0 ? (
+              {tripDetails.trip.approved &&
+              tripDetails.trip.approved.length === 0 ? (
                 <div>
                   <p>Não há candidatos aprovados</p>
                 </div>
@@ -132,7 +124,8 @@ export default function TripDetails() {
           </div>
           <PedingContainer>
             <h2>Candidatos Pendentes</h2>
-            {tripDetails.candidates && tripDetails.candidates.length === 0 ? (
+            {tripDetails.trip.candidates &&
+            tripDetails.trip.candidates.length === 0 ? (
               <div>
                 <p>Não há candidatos pendentes</p>
               </div>

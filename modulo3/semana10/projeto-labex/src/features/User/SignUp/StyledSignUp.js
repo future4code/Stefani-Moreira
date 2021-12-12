@@ -6,6 +6,12 @@ const MainContainer = styled.main`
   color: #ffffff;
   font-family: 'Roboto';
   padding: 2rem 4rem;
+
+  @media (max-width: 800px) {
+    display: flex;
+    flex-direction: column;
+    padding: 1rem 1.6rem;
+}
 `;
 
 const PhraseContainer = styled.section`
@@ -22,11 +28,27 @@ const PhraseContainer = styled.section`
     font-size: 1.4rem;
     color: #b89ed9;
   }
+
+  @media (max-width: 800px) {
+    width: 90%;
+    margin-top: 1.6rem;
+
+    p:first-child {
+      font-size: 1.4rem;
+    }
+
+    p:last-child {
+      margin-left: 10rem;
+      margin-top: 0.4rem;
+      margin-bottom: 2rem;
+    }
+}
 `;
 
 const FormContainer = styled.form`
   display: flex;
   flex-direction: column;
+  align-items: center;
 
   h2 {
     color: #b89ed9;
@@ -90,22 +112,4 @@ const FormContainer = styled.form`
   }
 `;
 
-const CancelButton = styled.button`
-  width: 6.8rem;
-  height: 2rem;
-  margin: 0.5rem;
-  color: #ffffff;
-  background: transparent;
-  border: 2px solid #b89ed9;
-  border-radius: 4px;
-  font-family: "Ubuntu";
-  font-weight: 600;
-  position: absolute;
-  right: 7.8rem;
-  bottom: 4.8rem;
-  :hover {
-    opacity: 0.8;
-  }
-`;
-
-export { MainContainer, PhraseContainer, FormContainer, CancelButton };
+export { MainContainer, PhraseContainer, FormContainer};

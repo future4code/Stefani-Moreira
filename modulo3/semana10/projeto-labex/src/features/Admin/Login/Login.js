@@ -9,7 +9,6 @@ import {
   LogoContainer,
   LoginContainer,
   InputsContainer,
-  CancelButton,
 } from "./StyledLogin";
 
 export default function Login() {
@@ -60,9 +59,6 @@ export default function Login() {
         </InputsContainer>
         <button>Entrar</button>
       </LoginContainer>
-      <CancelButton onClick={() => navigate("/trips/list")}>
-        Cancelar
-      </CancelButton>
     </MainContainer>
   );
 }

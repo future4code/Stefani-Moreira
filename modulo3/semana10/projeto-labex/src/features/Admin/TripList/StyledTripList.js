@@ -10,6 +10,10 @@ const MainContainer = styled.main`
     text-align: center;
     margin: 1rem 0 1.4rem;
   }
+
+  @media (max-width: 800px) {
+   margin-top: 2rem;
+  }
 `;
 
 const TripCard = styled.section`
@@ -34,6 +38,15 @@ const TripCard = styled.section`
   img {
     width: 5%;
     padding-right: 1rem;
+  }
+
+  @media (max-width: 800px) {
+   margin: 1rem 2.6rem 0.5rem;
+   width: 80%;
+
+   img {
+     width: 8%;
+  }
   }
 `;
 
