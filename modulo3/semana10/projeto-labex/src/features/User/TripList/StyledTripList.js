@@ -42,10 +42,6 @@ const CardContainer = styled.div`
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 2rem;
-  overflow-y: scroll;
-  ::-webkit-scrollbar {
-    width: 2px;
-  }
   margin-bottom: 0.5rem;
 
   @media (max-width: 800px) {

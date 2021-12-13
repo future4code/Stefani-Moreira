@@ -7,7 +7,7 @@ import { useNavigate } from "react-router-dom";
 import { countries } from "../../../assets/data/countries";
 
 import { MainContainer, PhraseContainer, FormContainer } from "./StyledSignUp";
-import Swal from "sweetalert2";
+import { MessageArea } from "../../../assets/alert/alert";
 
 export default function SignUp() {
   const [form, onChange] = useForm({
@@ -20,14 +20,6 @@ export default function SignUp() {
   });
   const [tripsData] = useRequestData(`/trips`, {});
   const navigate = useNavigate();
-
-  const MessageArea = Swal.mixin({
-    toast: true,
-    position: "top-end",
-    showConfirmButton: false,
-    timer: 2000,
-    timerProgressBar: true,
-  });
 
   const applyToTrip = (event) => {
     event.preventDefault();

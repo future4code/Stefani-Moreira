@@ -40,7 +40,7 @@ Atividade com objetivo de reproduzir um site de viagens espaciais sendo disponib
 - Sweet Alert 2
 
 ### O que não funciona:
-A data não está formata.
+Não é bem o que não funciona, mas se algo que você tentar fazer e por acaso o retorno for "Não autorizado", é só dar um refresh e tudo funcionará bem.
 
 ### Link Surge 
 https://la-bex.surge.sh/

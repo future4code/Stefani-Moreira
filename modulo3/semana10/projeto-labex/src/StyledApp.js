@@ -7,10 +7,12 @@ const GlobalStyle = createGlobalStyle`
    } 
    
    body {
+    font-family: "Helvetica"
+  }
+  @media (max-width: 800px) {
     ::-webkit-scrollbar {
       width: 0px;
     }
-    font-family: "Helvetica"
   }
 `;
 

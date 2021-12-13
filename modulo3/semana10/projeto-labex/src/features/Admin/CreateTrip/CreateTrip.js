@@ -7,7 +7,7 @@ import { planets } from "../../../assets/data/planets";
 import { useProtectedPage } from "../../../hooks/useProtectedPage";
 
 import { MainContainer, FormContainer } from "./StyledCreateTrip";
-import Swal from "sweetalert2";
+import { MessageArea } from "../../../assets/alert/alert";
 
 export default function CreateTrip() {
   useProtectedPage();
@@ -21,17 +21,13 @@ export default function CreateTrip() {
   });
   const navigate = useNavigate();
 
-  const MessageArea = Swal.mixin({
-    toast: true,
-    position: "top-end",
-    showConfirmButton: false,
-    timer: 2000,
-    timerProgressBar: true,
-  });
-
   const createTrip = (event) => {
     event.preventDefault();
-    const body = form;
+    let convertDate = new Date(form.date);
+    const formattedDate = convertDate.toLocaleDateString("pt-BR", {
+          timeZone: "UTC",
+        });
+    const body = {...form , date: formattedDate};
     axios
       .post(`${BASE_URL}/trips`, body, headers)
       .then((res) => {

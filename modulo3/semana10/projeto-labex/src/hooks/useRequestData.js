@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import axios from "axios";
 import { BASE_URL } from "../constants/parameters";
 
-import Swal from "sweetalert2";
+import { MessageArea } from "../assets/alert/alert";
 
 export const useRequestData = (trips, initialState) => {
   const [data, setData] = useState(initialState);
@@ -10,16 +10,6 @@ export const useRequestData = (trips, initialState) => {
   const [error, setError] = useState("");
 
   const token = localStorage.getItem("token");
-
-  const ErrorArea = Swal.mixin({
-    toast: true,
-    position: "top-end",
-    showConfirmButton: false,
-    timer: 2000,
-    timerProgressBar: true,
-    background: "#bc316f",
-    color: "#ffffff",
-  });
 
   const getData = () => {
     setIsLoading(true);
@@ -34,7 +24,11 @@ export const useRequestData = (trips, initialState) => {
         setData(res.data);
       })
       .catch((err) => {
-        ErrorArea.fire({ title: err.response.data.message });
+        MessageArea.fire({
+          title: err.response.data.message,
+          background: "#bc316f",
+          color: "#ffffff",
+        });
         setIsLoading(false);
         setError(err);
       });

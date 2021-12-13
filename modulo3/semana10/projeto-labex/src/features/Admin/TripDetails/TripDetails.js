@@ -17,7 +17,7 @@ import {
   PendingCard,
   PedingContainer,
 } from "./StyledTripDetails";
-import Swal from "sweetalert2";
+import { MessageArea } from "../../../assets/alert/alert";
 
 export default function TripDetails() {
   useProtectedPage();
@@ -26,14 +26,6 @@ export default function TripDetails() {
     `/trip/${params.id}`
   );
   const navigate = useNavigate();
-
-  const MessageArea = Swal.mixin({
-    toast: true,
-    position: "top-end",
-    showConfirmButton: false,
-    timer: 2000,
-    timerProgressBar: true,
-  });
 
   const decideCandidate = (id, choice) => {
     const body = { approve: choice };

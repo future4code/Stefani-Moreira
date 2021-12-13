@@ -9,7 +9,7 @@ import { useNavigate } from "react-router-dom";
 import TrashIcon from "../../../assets/images/trash-icon.svg";
 
 import { MainContainer, TripCard } from "./StyledTripList";
-import Swal from "sweetalert2";
+import { MessageArea } from "../../../assets/alert/alert";
 
 export default function TripList() {
   useProtectedPage();
@@ -18,14 +18,6 @@ export default function TripList() {
   const goToDetails = (id) => {
     navigate(`/admin/trips/details/${id}`);
   };
-
-  const MessageArea = Swal.mixin({
-    toast: true,
-    position: "top-end",
-    showConfirmButton: false,
-    timer: 2000,
-    timerProgressBar: true,
-  });
 
   const deleteTrip = (id) => {
     axios

@@ -11,22 +11,12 @@ import {
   InputsContainer,
 } from "./StyledLogin";
 
-import Swal from "sweetalert2";
+import { MessageArea } from "../../../assets/alert/alert";
 
 export default function Login() {
   const [form, onChange] = useForm({ email: "", password: "" });
 
   const navigate = useNavigate();
-
-  const ErrorArea = Swal.mixin({
-    toast: true,
-    position: "top-end",
-    showConfirmButton: false,
-    timer: 2000,
-    timerProgressBar: true,
-    background: "#bc316f",
-    color: "#ffffff",
-  });
 
   const submitLogin = (event) => {
     event.preventDefault();
@@ -38,7 +28,11 @@ export default function Login() {
         navigate("/admin/trips/list");
       })
       .catch((err) => {
-        ErrorArea.fire({ title: err.response.data.message });
+        MessageArea.fire({
+          title: err.response.data.message,
+          background: "#bc316f",
+          color: "#ffffff",
+        });
       });
   };
 
