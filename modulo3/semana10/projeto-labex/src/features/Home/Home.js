@@ -1,6 +1,6 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
-import { token } from '../../constants/parameters'
+import { token } from "../../constants/parameters";
 
 import { MainContainer, LogoContainer, ButtonsContainer } from "./StyledHome";
 
@@ -8,12 +8,12 @@ export default function Home() {
   const navigate = useNavigate();
 
   const goToPageAdmin = () => {
-    if(token) {
-      navigate("/admin/trips/list")
+    if (token) {
+      navigate("/admin/trips/list");
     } else {
-      navigate("/login")
+      navigate("/login");
     }
-  }
+  };
 
   return (
     <div>

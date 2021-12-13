@@ -6,8 +6,7 @@ const MainContainer = styled.main`
 
   @media (max-width: 600px) {
     padding-top: 16rem;
-}
-
+  }
 `;
 
 const LogoContainer = styled.p`
@@ -38,17 +37,16 @@ const ButtonsContainer = styled.div`
     font-family: "Ubuntu";
     font-weight: 600;
     color: #ffffff;
-  }
 
-  button:first-child {
-    margin-right: 5rem;
-    background: #b89ed9;
-  }
+    &:first-child {
+      margin-right: 5rem;
+      background: #b89ed9;
+    }
 
-  button:hover {
-    opacity: 0.8;
+    &:hover {
+      opacity: 0.8;
+    }
   }
-
 `;
 
 export { MainContainer, LogoContainer, ButtonsContainer };

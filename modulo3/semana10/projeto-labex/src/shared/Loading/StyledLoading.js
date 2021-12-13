@@ -17,7 +17,7 @@ const LoadingContainer = styled.div`
 
   @media (max-width: 800px) {
     padding: 12rem 1rem 0;
-}
+  }
 `;
 
 const RocketLoading = styled.img`
@@ -42,14 +42,14 @@ const RocketLoading = styled.img`
     width: 70px;
     height: 70px;
     @keyframes infinite-spinning {
-    from {
-      transform: rotate(2deg);
-    }
-    to {
-      transform: rotate(50deg);
+      from {
+        transform: rotate(2deg);
+      }
+      to {
+        transform: rotate(50deg);
+      }
     }
   }
-}
 `;
 
 export { LoadingContainer, RocketLoading };

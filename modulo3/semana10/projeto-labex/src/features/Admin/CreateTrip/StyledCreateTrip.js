@@ -48,9 +48,9 @@ const FormContainer = styled.form`
   }
 
   input[type="date"]::-webkit-calendar-picker-indicator {
-  cursor: pointer;
-  filter: invert(1);
-}
+    cursor: pointer;
+    filter: invert(1);
+  }
 
   select {
     height: 2.6rem;
@@ -81,6 +81,5 @@ const FormContainer = styled.form`
     opacity: 0.8;
   }
 `;
-
 
 export { MainContainer, FormContainer };

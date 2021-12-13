@@ -3,7 +3,7 @@ import styled from "styled-components";
 const MainContainer = styled.main`
   display: flex;
   flex-direction: column;
-  font-family: 'Roboto';
+  font-family: "Roboto";
   color: #ffffff;
 
   h2 {
@@ -12,7 +12,7 @@ const MainContainer = styled.main`
   }
 
   @media (max-width: 800px) {
-   margin-top: 2rem;
+    margin-top: 2rem;
   }
 `;
 
@@ -29,10 +29,10 @@ const TripCard = styled.section`
   cursor: pointer;
 
   div {
-      width: 88%;
-      height: 100%;
-      padding: 1.6rem 1rem;
-      font-weight: bold;
+    width: 88%;
+    height: 100%;
+    padding: 1.6rem 1rem;
+    font-weight: bold;
   }
 
   img {
@@ -41,12 +41,12 @@ const TripCard = styled.section`
   }
 
   @media (max-width: 800px) {
-   margin: 1rem 2.6rem 0.5rem;
-   width: 80%;
+    margin: 1rem 2.6rem 0.5rem;
+    width: 80%;
 
-   img {
-     width: 8%;
-  }
+    img {
+      width: 8%;
+    }
   }
 `;
 

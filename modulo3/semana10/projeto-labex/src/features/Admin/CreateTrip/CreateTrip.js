@@ -6,19 +6,28 @@ import { useForm } from "../../../hooks/useForm";
 import { planets } from "../../../assets/data/planets";
 import { useProtectedPage } from "../../../hooks/useProtectedPage";
 
-import { MainContainer, FormContainer } from './StyledCreateTrip'
+import { MainContainer, FormContainer } from "./StyledCreateTrip";
+import Swal from "sweetalert2";
 
 export default function CreateTrip() {
-  useProtectedPage()
+  useProtectedPage();
 
   const [form, onChange] = useForm({
     name: "",
     planet: "",
     date: "",
     description: "",
-    durationInDays: ""
+    durationInDays: "",
   });
   const navigate = useNavigate();
+
+  const MessageArea = Swal.mixin({
+    toast: true,
+    position: "top-end",
+    showConfirmButton: false,
+    timer: 2000,
+    timerProgressBar: true,
+  });
 
   const createTrip = (event) => {
     event.preventDefault();
@@ -26,11 +35,18 @@ export default function CreateTrip() {
     axios
       .post(`${BASE_URL}/trips`, body, headers)
       .then((res) => {
-        alert("Viagem criada com sucesso");
-        navigate("/admin/trips/list")
+        MessageArea.fire({
+          title: "Viagem criada com sucesso",
+          background: "#eeffde",
+        });
+        navigate("/admin/trips/list");
       })
       .catch((err) => {
-        alert(err.response.data.message);
+        MessageArea.fire({
+          title: err.response.data.message,
+          background: "#bc316f",
+          color: "#ffffff",
+        });
       });
   };
 
@@ -44,7 +60,7 @@ export default function CreateTrip() {
 
   return (
     <MainContainer>
-    <h2>CRIAR VIAGEM</h2>
+      <h2>CRIAR VIAGEM</h2>
       <FormContainer onSubmit={createTrip}>
         <input
           placeholder="Nome da viagem"
@@ -66,7 +82,13 @@ export default function CreateTrip() {
           </option>
           {planetsList}
         </select>
-        <input type="date" name="date" value={form.date} onChange={onChange} required/>
+        <input
+          type="date"
+          name="date"
+          value={form.date}
+          onChange={onChange}
+          required
+        />
         <input
           placeholder="Descrição da viagem"
           type="text"
@@ -74,6 +96,8 @@ export default function CreateTrip() {
           value={form.description}
           onChange={onChange}
           required
+          pattern={"^.{1,60}"}
+          title={"A descrição deve ter no máximo 60 caracters"}
         />
         <input
           placeholder="Duração da viagem (em dias)"
@@ -81,6 +105,7 @@ export default function CreateTrip() {
           name="durationInDays"
           value={form.durationInDays}
           onChange={onChange}
+          min={1}
           required
         />
         <button>Criar</button>

@@ -9,6 +9,7 @@ import { useNavigate } from "react-router-dom";
 import TrashIcon from "../../../assets/images/trash-icon.svg";
 
 import { MainContainer, TripCard } from "./StyledTripList";
+import Swal from "sweetalert2";
 
 export default function TripList() {
   useProtectedPage();
@@ -18,15 +19,27 @@ export default function TripList() {
     navigate(`/admin/trips/details/${id}`);
   };
 
+  const MessageArea = Swal.mixin({
+    toast: true,
+    position: "top-end",
+    showConfirmButton: false,
+    timer: 2000,
+    timerProgressBar: true,
+  });
+
   const deleteTrip = (id) => {
     axios
       .delete(`${BASE_URL}/trips/${id}`, headers)
       .then((res) => {
-        alert("Viagem deletada");
+        MessageArea.fire({ title: "Viagem deletada", background: "#eeffde" });
         getData();
       })
       .catch((err) => {
-        alert(err.response.data.message);
+        MessageArea.fire({
+          title: err.response.data.message,
+          background: "#bc316f",
+          color: "#ffffff",
+        });
       });
   };
 
@@ -55,7 +68,9 @@ export default function TripList() {
           <h2>PAINEL ADMINISTRATIVO</h2>
           <div>{tripsList}</div>
         </MainContainer>
-      ) : (<Loading />)}
+      ) : (
+        <Loading />
+      )}
     </div>
   );
 }

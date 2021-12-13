@@ -26,7 +26,7 @@ const LoginContainer = styled.form`
   backdrop-filter: blur(2px);
   -webkit-backdrop-filter: blur(2px);
   width: 22rem;
-  height: 30rem;
+  height: 70vh;
   border-radius: 10px;
   display: flex;
   flex-direction: column;
@@ -57,7 +57,9 @@ const LoginContainer = styled.form`
   }
 
   @media (max-width: 800px) {
-    margin: 10rem -12rem 0;
+    margin: 10rem -13rem 0;
+    width: 90vw;
+    height: 70vh;
   }
 `;
 
@@ -86,12 +88,12 @@ const InputsContainer = styled.section`
       box-shadow: 0px 0px 2px 2px #b89ed9;
     }
   }
+
+  @media (max-width: 800px) {
+    input {
+      width: 70vw;
+    }
+  }
 `;
 
-
-export {
-  MainContainer,
-  LogoContainer,
-  LoginContainer,
-  InputsContainer,
-};
+export { MainContainer, LogoContainer, LoginContainer, InputsContainer };

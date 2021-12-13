@@ -4,14 +4,14 @@ const MainContainer = styled.main`
   display: flex;
   justify-content: space-between;
   color: #ffffff;
-  font-family: 'Roboto';
+  font-family: "Roboto";
   padding: 2rem 4rem;
 
   @media (max-width: 800px) {
     display: flex;
     flex-direction: column;
     padding: 1rem 1.6rem;
-}
+  }
 `;
 
 const PhraseContainer = styled.section`
@@ -19,30 +19,32 @@ const PhraseContainer = styled.section`
   font-weight: 600;
   margin-top: 10rem;
 
-  p:first-child {
-    font-size: 2rem;
-  }
-
-  p:last-child {
-    margin-top: 1.6rem;
-    font-size: 1.4rem;
-    color: #b89ed9;
+  p {
+    &:first-child {
+      font-size: 2rem;
+    }
+    &:last-child {
+      margin-top: 1.6rem;
+      font-size: 1.4rem;
+      color: #b89ed9;
+    }
   }
 
   @media (max-width: 800px) {
     width: 90%;
     margin-top: 1.6rem;
+    p {
+      &:first-child {
+        font-size: 1.4rem;
+      }
 
-    p:first-child {
-      font-size: 1.4rem;
+      &:last-child {
+        margin-left: 10rem;
+        margin-top: 0.4rem;
+        margin-bottom: 2rem;
+      }
     }
-
-    p:last-child {
-      margin-left: 10rem;
-      margin-top: 0.4rem;
-      margin-bottom: 2rem;
-    }
-}
+  }
 `;
 
 const FormContainer = styled.form`
@@ -52,7 +54,7 @@ const FormContainer = styled.form`
 
   h2 {
     color: #b89ed9;
-    font-family: 'Roboto';
+    font-family: "Roboto";
     margin-bottom: 2rem;
   }
 
@@ -105,11 +107,11 @@ const FormContainer = styled.form`
     border-radius: 4px;
     font-family: "Ubuntu";
     font-weight: 600;
-  }
 
-  button:hover {
-    opacity: 0.8;
+    :hover {
+      opacity: 0.8;
+    }
   }
 `;
 
-export { MainContainer, PhraseContainer, FormContainer};
+export { MainContainer, PhraseContainer, FormContainer };

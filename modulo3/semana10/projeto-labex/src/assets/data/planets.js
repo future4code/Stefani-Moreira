@@ -1,10 +1,10 @@
 export const planets = [
-    "Mércurio",
-    "Vênus",
-    "Terra",
-    "Marte",
-    "Júpiter",
-    "Saturno",
-    "Urano",
-    "Netuno",
-  ];
+  "Mércurio",
+  "Vênus",
+  "Terra",
+  "Marte",
+  "Júpiter",
+  "Saturno",
+  "Urano",
+  "Netuno",
+];

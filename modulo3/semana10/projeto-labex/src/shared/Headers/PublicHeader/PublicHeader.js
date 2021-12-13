@@ -1,7 +1,12 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 
-import { Navbar, NavBrand, NavItems, MenuHamburguer } from "../styles/StyledHeader";
+import {
+  Navbar,
+  NavBrand,
+  NavItems,
+  MenuHamburguer,
+} from "../styles/StyledHeader";
 
 export default function PublicHeader() {
   const [open, setOpen] = useState(false);
@@ -31,15 +36,9 @@ export default function PublicHeader() {
           )}
           {window.location.pathname === "/trips/signUp" ? (
             <li onClick={() => navigate("/trips/list")}>VIAGENS</li>
-          ) : (
-            ""
-          )}
+          ) : ("")}
           {token ? (
-            <li
-              onClick={() => {
-                navigate("/admin/trips/list");
-              }}
-            >
+            <li onClick={() => {navigate("/admin/trips/list")}}>
               ÁREA ADMIN
             </li>
           ) : (

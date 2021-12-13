@@ -10,6 +10,7 @@ const GlobalStyle = createGlobalStyle`
     ::-webkit-scrollbar {
       width: 0px;
     }
+    font-family: "Helvetica"
   }
 `;
 

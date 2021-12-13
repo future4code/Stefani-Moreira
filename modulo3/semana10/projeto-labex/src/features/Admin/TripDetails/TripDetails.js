@@ -17,37 +17,49 @@ import {
   PendingCard,
   PedingContainer,
 } from "./StyledTripDetails";
+import Swal from "sweetalert2";
 
 export default function TripDetails() {
   useProtectedPage();
-
   const params = useParams();
   const [tripDetails, isLoading, error, getTripDetails] = useRequestData(
     `/trip/${params.id}`
   );
   const navigate = useNavigate();
 
+  const MessageArea = Swal.mixin({
+    toast: true,
+    position: "top-end",
+    showConfirmButton: false,
+    timer: 2000,
+    timerProgressBar: true,
+  });
+
   const decideCandidate = (id, choice) => {
-    const body = {
-      approve: choice,
-    };
+    const body = { approve: choice };
     axios
-      .put(
-        `${BASE_URL}/trips/${tripDetails.trip.id}/candidates/${id}/decide`,
+      .put(`${BASE_URL}/trips/${tripDetails.trip.id}/candidates/${id}/decide`,
         body,
         headers
       )
       .then((res) => {
-        console.log(res);
         if (choice === true) {
-          alert("Candidato aprovado!");
+          MessageArea.fire({ title: "Candidato aprovado.", background: "#eeffde" });
         } else {
-          alert("O candidato foi reprovado");
+          MessageArea.fire({
+            title: "Candidato reprovado.",
+            background: "#bc316f",
+            color: "#ffffff",
+          });
         }
         getTripDetails();
       })
       .catch((err) => {
-        alert(err.response.message);
+        MessageArea.fire({
+          title: err.response.data.message,
+          background: "#bc316f",
+          color: "#ffffff",
+        });
       });
   };
 
@@ -64,9 +76,7 @@ export default function TripDetails() {
     </TripCard>
   );
 
-  const candidatesList =
-    tripDetails &&
-    tripDetails.trip &&
+  const candidatesList =tripDetails && tripDetails.trip &&
     tripDetails.trip.candidates.map((candidate) => {
       return (
         <PendingCard>
@@ -77,14 +87,10 @@ export default function TripDetails() {
           <p>{candidate.country}</p>
           <p>Motivo: {candidate.applicationText}</p>
           <div>
-            <img
-              src={Trash}
-              alt="Ícone de reprovação"
+            <img src={Trash} alt="Ícone de reprovação"
               onClick={() => decideCandidate(candidate.id, false)}
             />
-            <img
-              src={Check}
-              alt="Ícone de aprovação"
+            <img src={Check} alt="Ícone de aprovação"
               onClick={() => decideCandidate(candidate.id, true)}
             />
           </div>
@@ -92,9 +98,7 @@ export default function TripDetails() {
       );
     });
 
-  const approvedList =
-    tripDetails &&
-    tripDetails.trip &&
+  const approvedList =  tripDetails && tripDetails.trip &&
     tripDetails.trip.approved.map((candidate) => {
       return (
         <div key={candidate.id}>

@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
 import axios from "axios";
 import { BASE_URL } from "../../../constants/parameters";
 import { useForm } from "../../../hooks/useForm";
@@ -6,11 +6,8 @@ import { useRequestData } from "../../../hooks/useRequestData";
 import { useNavigate } from "react-router-dom";
 import { countries } from "../../../assets/data/countries";
 
-import {
-  MainContainer,
-  PhraseContainer,
-  FormContainer,
-} from "./StyledSignUp";
+import { MainContainer, PhraseContainer, FormContainer } from "./StyledSignUp";
+import Swal from "sweetalert2";
 
 export default function SignUp() {
   const [form, onChange] = useForm({
@@ -24,23 +21,36 @@ export default function SignUp() {
   const [tripsData] = useRequestData(`/trips`, {});
   const navigate = useNavigate();
 
+  const MessageArea = Swal.mixin({
+    toast: true,
+    position: "top-end",
+    showConfirmButton: false,
+    timer: 2000,
+    timerProgressBar: true,
+  });
+
   const applyToTrip = (event) => {
     event.preventDefault();
     const body = form;
     axios
       .post(`${BASE_URL}/trips/${form.trip}/apply`, body)
       .then((res) => {
-        alert("Formulário enviado");
-        navigate("/trips/list")
+        MessageArea.fire({title: "Formulário enviado",
+          background: "#eeffde",
+        });
+        navigate("/trips/list");
       })
       .catch((err) => {
-        alert("Deu ruim");
+        MessageArea.fire({title: err.response,
+          background: "#bc316f",
+          color: "#ffffff",
+        });
       });
   };
 
   const tripsList =
-  tripsData.trips &&
-  tripsData.trips.map((trip) => {
+    tripsData.trips &&
+    tripsData.trips.map((trip) => {
       return (
         <option key={trip.id} value={trip.id}>
           {trip.name}
@@ -79,6 +89,8 @@ export default function SignUp() {
           name="name"
           value={form.name}
           onChange={onChange}
+          pattern={"^.{3,}"}
+          title={"Seu nome de ter no mínimo 3 caracteres e apenas letras"}
           required
         />
         <input
@@ -88,6 +100,7 @@ export default function SignUp() {
           value={form.age}
           onChange={onChange}
           required
+          min={18}
         />
         <input
           placeholder="Texto de candidatura"
@@ -96,6 +109,10 @@ export default function SignUp() {
           value={form.applicationText}
           onChange={onChange}
           required
+          pattern={"^.{10,30}"}
+          title={
+            "Seu texto deve ter no mínimo 10 caracters e máximo 30 caracters"
+          }
         />
         <input
           placeholder="Profissão"

@@ -29,7 +29,9 @@ export default function TripList() {
           <h2>LISTA DE VIAGENS</h2>
           <CardContainer>{tripsList}</CardContainer>
         </MainContainer>
-      ) : (<Loading />)}
+      ) : (
+        <Loading />
+      )}
     </div>
   );
 }
