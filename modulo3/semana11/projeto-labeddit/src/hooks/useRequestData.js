@@ -22,7 +22,7 @@ export const useRequestData = (endpoint, initialState) => {
         setData(res.data);
       })
       .catch((err) => {
-        alert(err.response);
+        console.log(err.response.message);
         setIsLoading(false);
         setError(err);
       });
@@ -32,5 +32,5 @@ export const useRequestData = (endpoint, initialState) => {
     getData();
   }, []);
 
-  return [data, isLoading, error];
+  return [data, isLoading, error, getData];
 };

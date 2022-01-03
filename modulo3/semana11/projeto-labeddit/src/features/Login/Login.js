@@ -3,6 +3,7 @@ import axios from "axios";
 import { BASE_URL } from "../../constants/parameters";
 import { useNavigate } from "react-router-dom";
 import { useForm } from "../../hooks/useForm";
+import TextField from "@mui/material/TextField";
 
 export default function Login() {
   const [form, onChange] = useForm({ email: "", password: "" });
@@ -27,24 +28,28 @@ export default function Login() {
       <form onSubmit={submitLogin}>
         <h2>Login</h2>
         <div>
-          <input
-            placeholder="E-mail"
+          <TextField
             type="email"
             name="email"
             value={form.email}
             onChange={onChange}
             required
+            label={"E-mail"}
+            fullWidth
+            margin={"normal"}
           />
-          <input
-            placeholder="Senha"
+          <TextField
             type="password"
             name="password"
             value={form.password}
             onChange={onChange}
             required
+            label={"Senha"}
+            fullWidth
+            margin={"normal"}
           />
         </div>
-        <button disabled={form.email === "" || form.password === ""}>Entrar</button>
+        <button type={"submit"} disabled={form.email === "" || form.password === ""}>Entrar</button>
       </form>
       <button onClick={() => {navigate("/signUp")}}>Cadastrar</button>
     </div>

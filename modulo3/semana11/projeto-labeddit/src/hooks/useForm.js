@@ -8,5 +8,9 @@ export const useForm = (initialState) => {
     setForm({ ...form, [name]: value });
   };
 
-  return [form, onChange];
+  const clear = () => {
+    setForm(initialState)
+}
+
+  return [form, onChange, clear];
 };

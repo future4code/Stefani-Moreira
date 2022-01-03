@@ -1,11 +1,13 @@
 import React from "react";
 import Routes from "./routes/routes";
+import theme from "./constants/theme"
+import { ThemeProvider } from '@mui/material/styles';
 
 function App() {
   return (
-    <div>
+    <ThemeProvider theme={theme}>
       <Routes />
-    </div>
+    </ThemeProvider>
   );
 }
 
