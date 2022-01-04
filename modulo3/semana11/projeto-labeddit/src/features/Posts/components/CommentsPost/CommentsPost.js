@@ -1,17 +1,17 @@
 import React from "react";
-import { useRequestData } from "../../../hooks/useRequestData";
-import { useForm } from "../../../hooks/useForm";
+import { useRequestData } from "../../../../hooks/useRequestData";
+import { useForm } from "../../../../hooks/useForm";
 import { useParams } from "react-router-dom";
 import {
   createComment,
   createVote,
   changeVote,
   deleteVote,
-} from "../services/posts";
+} from "../../services/posts";
 import TextField from "@mui/material/TextField";
-import ArrowUpwardIcon from '@mui/icons-material/ArrowUpward';
-import ArrowDownwardIcon from '@mui/icons-material/ArrowDownward';
-
+import ArrowUpwardIcon from "@mui/icons-material/ArrowUpward";
+import ArrowDownwardIcon from "@mui/icons-material/ArrowDownward";
+import CommentsContainer from "./StyledComments";
 
 export default function Post() {
   const params = useParams();
@@ -54,21 +54,32 @@ export default function Post() {
     };
 
     return (
-      <div key={comment.id}>
-        <li>{comment.username}</li>
-        <li>{comment.body}</li>
-        <ArrowUpwardIcon onClick={positiveVote} color={comment.userVote === 1 ? "primary" : "inherit"}/>
-        <p>{comment.voteSum}</p>
-          <ArrowDownwardIcon onClick={negativeVote} color={comment.userVote === -1 ? "secundary" : "inherit"}/>
-      </div>
+      <CommentsContainer key={comment.id}>
+        <div>
+          <p>{comment.username}</p>
+          <p>{comment.body}</p>
+        </div>
+        <div>
+          <ArrowUpwardIcon
+            onClick={positiveVote}
+            color={comment.userVote === 1 ? "primary" : "inherit"}
+          />
+          <p>{comment.voteSum}</p>
+          <ArrowDownwardIcon
+            onClick={negativeVote}
+            color={comment.userVote === -1 ? "secundary" : "inherit"}
+          />
+        </div>
+      </CommentsContainer>
     );
   });
 
   return (
     <div>
       {!isLoading && error && <p>Ocorreu um erro...</p>}
-      {!isLoading && !error && <div>
-        <form onSubmit={submitComment}>
+      {!isLoading && !error && (
+        <div>
+          <form onSubmit={submitComment}>
             <div>
               <TextField
                 type="text"
@@ -83,11 +94,10 @@ export default function Post() {
             </div>
             <button type={"submit"}>Enviar</button>
           </form>
-      </div>}
-      {!isLoading && comments.length > 0 ? (
-        <div>
-          {postComments}
         </div>
+      )}
+      {!isLoading && comments.length > 0 ? (
+        <div>{postComments}</div>
       ) : (
         <p>CARREGANDO...</p>
       )}

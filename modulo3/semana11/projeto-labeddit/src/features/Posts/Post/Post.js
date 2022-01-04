@@ -1,17 +1,15 @@
 import React from "react";
 import { useRequestData } from "../../../hooks/useRequestData";
-import { useParams } from "react-router-dom";
-import {
-  createVote,
-  changeVote,
-  deleteVote,
-} from "../services/posts";
-import CommentsPost from "../components/CommentsPost";
-import ArrowUpwardIcon from '@mui/icons-material/ArrowUpward';
-import ArrowDownwardIcon from '@mui/icons-material/ArrowDownward';
+import { useParams, useNavigate } from "react-router-dom";
+import { createVote, changeVote, deleteVote } from "../services/posts";
+import CommentsPost from "../components/CommentsPost/CommentsPost";
+import ArrowUpwardIcon from "@mui/icons-material/ArrowUpward";
+import ArrowDownwardIcon from "@mui/icons-material/ArrowDownward";
+import { MainContainer, PostContainer } from "./StyledPost";
 
 export default function Post() {
   const params = useParams();
+  const navigate = useNavigate();
   const [posts, isLoading, error, getPosts] = useRequestData(`/posts`, []);
 
   const renderPost = posts.map((post) => {
@@ -44,31 +42,46 @@ export default function Post() {
     let cardPost;
     if (post.id === params.id) {
       cardPost = (
-        <div key={post.id}>
-          <p>{post.username}</p>
-          <p>{post.title}</p>
-          <p>{post.body}</p>
-          <ArrowUpwardIcon onClick={positiveVote} color={post.userVote === 1 ? "primary" : "inherit"}/>
-        <p>{post.voteSum}</p>
-          <ArrowDownwardIcon onClick={negativeVote} color={post.userVote === -1 ? "secundary" : "inherit"}/>
-          <p>{post.commentCount}</p>
-        </div>
+        <PostContainer key={post.id}>
+          <div>
+            <p>{post.username}</p>
+            <p>{post.title}</p>
+            <p>{post.body}</p>
+            {post.commentCount ? (
+              <p>{post.commentCount} comentários</p>
+            ) : (
+              <div>{""}</div>
+            )}
+          </div>
+          <div>
+            <ArrowUpwardIcon
+              onClick={positiveVote}
+              color={post.userVote === 1 ? "primary" : "inherit"}
+            />
+            <p>{post.voteSum}</p>
+            <ArrowDownwardIcon
+              onClick={negativeVote}
+              color={post.userVote === -1 ? "secundary" : "inherit"}
+            />
+          </div>
+        </PostContainer>
       );
     }
     return cardPost;
   });
 
   return (
-    <div>
+    <MainContainer>
       {!isLoading && error && <p>Ocorreu um erro...</p>}
       {!isLoading && posts.length > 0 ? (
         <div>
+          <h3 onClick={() => navigate("/")}>X</h3>
           {renderPost}
-          <CommentsPost />
+            <CommentsPost />
         </div>
       ) : (
         <p>CARREGANDO...</p>
       )}
-    </div>
+    </MainContainer>
   );
 }

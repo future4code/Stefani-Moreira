@@ -4,6 +4,7 @@ import { useNavigate } from "react-router-dom";
 import { createVote, changeVote, deleteVote } from "../services/posts";
 import ArrowUpwardIcon from "@mui/icons-material/ArrowUpward";
 import ArrowDownwardIcon from "@mui/icons-material/ArrowDownward";
+import { MainContainer, PostContainer } from "./StyledFeed";
 
 export default function Feed() {
   const [posts, isLoading, error, getPosts] = useRequestData(`/posts`, []);
@@ -39,29 +40,55 @@ export default function Feed() {
       }
     };
     return (
-      <div key={post.id}>
-        <p>{post.username}</p>
-        <div onClick={() => goToDetails(post.id)}>
-          <p>{post.title}</p>
-          <p>{post.body}</p>
+      <PostContainer key={post.id}>
+        <div>
+          <p>Enviado por {post.username}</p>
+          <div onClick={() => goToDetails(post.id)}>
+            <p>{post.title}</p>
+            <p>{post.body}</p>
+          </div>
+          {post.commentCount ? (
+            <p onClick={() => goToDetails(post.id)}>
+              {post.commentCount} comentários
+            </p>
+          ) : (
+            <div>{""}</div>
+          )}
         </div>
-          <ArrowUpwardIcon onClick={positiveVote} color={post.userVote === 1 ? "primary" : "inherit"}/>
-        <p>{post.voteSum}</p>
-          <ArrowDownwardIcon onClick={negativeVote} color={post.userVote === -1 ? "secundary" : "inherit"}/>
-        <p onClick={() => goToDetails(post.id)}>{post.commentCount}</p>
-      </div>
+        <div>
+          <ArrowUpwardIcon
+            onClick={positiveVote}
+            color={post.userVote === 1 ? "primary" : "inherit"}
+          />
+          <span>{post.voteSum}</span>
+          <ArrowDownwardIcon
+            onClick={negativeVote}
+            color={post.userVote === -1 ? "secundary" : "inherit"}
+          />
+        </div>
+      </PostContainer>
     );
   });
 
   return (
-    <div>
+    <MainContainer>
       {isLoading && (
         <div>
           <p>CARREGANDO...</p>
         </div>
       )}
       {!isLoading && error && <p>Ocorreu um erro...</p>}
-      {!isLoading && !error && posts.length > 0 && <div>{renderFeed}</div>}
-    </div>
+      {!isLoading && !error && posts.length > 0 && (
+        <div>
+          {" "}
+          <input
+            onClick={() => navigate("/createPost")}
+            type="text"
+            placeholder="Postar"
+          />
+          {renderFeed}
+        </div>
+      )}
+    </MainContainer>
   );
 }

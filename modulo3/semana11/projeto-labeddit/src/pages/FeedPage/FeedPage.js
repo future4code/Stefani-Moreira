@@ -1,19 +1,15 @@
-import React from 'react';
-import { useProtectedPage } from '../../hooks/useProtectedPage';
-import { useNavigate } from "react-router-dom";
-import Feed from '../../features/Posts/Feed/Feed';
-import Header from '../../shared/Header/Header';
+import React from "react";
+import { useProtectedPage } from "../../hooks/useProtectedPage";
+import Feed from "../../features/Posts/Feed/Feed";
+import Header from "../../shared/Header/Header";
 
 export default function FeedPage() {
-    useProtectedPage()
-    const navigate = useNavigate();
+  useProtectedPage();
 
-    return (
-        <div>
-            <Header />
-            <h2>Feed</h2>
-            <input onClick={() => navigate("/createPost")} type="text" placeholder="Crie um novo post" />
-            <Feed />
-        </div>
-    )
+  return (
+    <div>
+      <Header />
+      <Feed />
+    </div>
+  );
 }

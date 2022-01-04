@@ -8,7 +8,6 @@ export default function PostPage() {
     return (
         <div>
             <Header />
-            <h2>Post</h2>
             <Post />
         </div>
     )

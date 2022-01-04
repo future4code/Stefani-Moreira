@@ -32,7 +32,6 @@ export default function Login() {
   return (
     <div>
       <form onSubmit={createPost}>
-        <h2>Login</h2>
         <div>
           <TextField
             type="text"

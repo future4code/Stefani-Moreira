@@ -4,6 +4,7 @@ import { BASE_URL } from "../../constants/parameters";
 import { useNavigate } from "react-router-dom";
 import { useForm } from "../../hooks/useForm";
 import TextField from "@mui/material/TextField";
+import { GeneralContainer, MainContainer, FormContainer } from "./StyledLogin";
 
 export default function Login() {
   const [form, onChange] = useForm({ email: "", password: "" });
@@ -24,10 +25,10 @@ export default function Login() {
   };
 
   return (
-    <div>
-      <form onSubmit={submitLogin}>
+    <GeneralContainer>
+      <MainContainer>
         <h2>Login</h2>
-        <div>
+        <FormContainer onSubmit={submitLogin}>
           <TextField
             type="email"
             name="email"
@@ -48,10 +49,21 @@ export default function Login() {
             fullWidth
             margin={"normal"}
           />
-        </div>
-        <button type={"submit"} disabled={form.email === "" || form.password === ""}>Entrar</button>
-      </form>
-      <button onClick={() => {navigate("/signUp")}}>Cadastrar</button>
-    </div>
+
+          <button
+            type={"submit"}
+            disabled={form.email === "" || form.password === ""}
+          >
+            Entrar
+          </button>
+        </FormContainer>
+        <p>
+          Ainda não tem uma conta Labeddit?{" "}
+          <span onClick={() => {navigate("/signUp")}}>
+            Crie uma conta
+          </span>
+        </p>
+      </MainContainer>
+    </GeneralContainer>
   );
 }

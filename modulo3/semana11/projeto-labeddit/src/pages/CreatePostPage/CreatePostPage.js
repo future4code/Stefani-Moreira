@@ -9,7 +9,7 @@ export default function CreatePostPage() {
     return (
         <div>
             <Header />
-            <h2>Feed</h2>
+            <h2>Postar</h2>
             <CreatePost />
         </div>
     )
